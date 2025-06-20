@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Fond -->
+  <rect width="800" height="400" fill="white"/>
+  
+  <!-- Titre -->
+  <text x="400" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold" fill="#333">Exemples de chiffres manuscrits MNIST</text>
+  
+  <!-- Grille de chiffres MNIST 5x2 -->
+  
+  <!-- Chiffre 0 -->
+  <g>
+    <rect x="50" y="80" width="120" height="120" fill="#f0f0f0" stroke="#ddd"/>
+    <!-- Stylisation du "0" manuscrit -->
+    <path d="M110,110 C135,105 135,130 135,150 C135,170 120,190 100,190 C80,190 65,175 65,150 C65,125 85,115 110,110 Z" fill="none" stroke="black" stroke-width="8"/>
+    <text x="110" y="220" font-family="Arial" font-size="16" text-anchor="middle">Chiffre: 0</text>
+  </g>
+  
+  <!-- Chiffre 1 -->
+  <g>
+    <rect x="190" y="80" width="120" height="120" fill="#f0f0f0" stroke="#ddd"/>
+    <!-- Stylisation du "1" manuscrit -->
+    <path d="M220,190 L220,120 L210,130" fill="none" stroke="black" stroke-width="8"/>
+    <path d="M220,120 L240,100" fill="none" stroke="black" stroke-width="8"/>
+    <text x="250" y="220" font-family="Arial" font-size="16" text-anchor="middle">Chiffre: 1</text>
+  </g>
+  
+  <!-- Chiffre 2 -->
+  <g>
+    <rect x="330" y="80" width="120" height="120" fill="#f0f0f0" stroke="#ddd"/>
+    <!-- Stylisation du "2" manuscrit -->
+    <path d="M360,110 C380,90 420,90 420,115 C420,135 390,150 375,165 C360,180 350,180 370,180 L420,180" fill="none" stroke="black" stroke-width="8"/>
+    <text x="390" y="220" font-family="Arial" font-size="16" text-anchor="middle">Chiffre: 2</text>
+  </g>
+  
+  <!-- Chiffre 3 -->
+  <g>
+    <rect x="470" y="80" width="120" height="120" fill="#f0f0f0" stroke="#ddd"/>
+    <!-- Stylisation du "3" manuscrit -->
+    <path d="M490,100 C520,85 540,90 545,110 C550,130 525,140 510,140 C525,140 550,150 550,170 C550,190 525,195 500,190" fill="none" stroke="black" stroke-width="8"/>
+    <text x="530" y="220" font-family="Arial" font-size="16" text-anchor="middle">Chiffre: 3</text>
+  </g>
+  
+  <!-- Chiffre 4 -->
+  <g>
+    <rect x="610" y="80" width="120" height="120" fill="#f0f0f0" stroke="#ddd"/>
+    <!-- Stylisation du "4" manuscrit -->
+    <path d="M670,110 L670,190" fill="none" stroke="black" stroke-width="8"/>
+    <path d="M640,160 L690,160" fill="none" stroke="black" stroke-width="8"/>
+    <path d="M670,110 L640,160" fill="none" stroke="black" stroke-width="8"/>
+    <text x="670" y="220" font-family="Arial" font-size="16" text-anchor="middle">Chiffre: 4</text>
+  </g>
+  
+  <!-- Chiffre 5 -->
+  <g>
+    <rect x="50" y="240" width="120" height="120" fill="#f0f0f0" stroke="#ddd"/>
+    <!-- Stylisation du "5" manuscrit -->
+    <path d="M120,260 L100,260 L90,300 C100,290 120,290 130,300 C140,310 140,340 125,345 C110,350 90,340 85,330" fill="none" stroke="black" stroke-width="8"/>
+    <text x="110" y="380" font-family="Arial" font-size="16" text-anchor="middle">Chiffre: 5</text>
+  </g>
+  
+  <!-- Chiffre 6 -->
+  <g>
+    <rect x="190" y="240" width="120" height="120" fill="#f0f0f0" stroke="#ddd"/>
+    <!-- Stylisation du "6" manuscrit -->
+    <path d="M240,260 C230,270 220,290 220,310 C220,335 235,345 250,345 C265,345 280,335 280,315 C280,295 265,285 250,285 C235,285 220,295 220,310" fill="none" stroke="black" stroke-width="8"/>
+    <path d="M240,260 L230,290" fill="none" stroke="black" stroke-width="8"/>
+    <text x="250" y="380" font-family="Arial" font-size="16" text-anchor="middle">Chiffre: 6</text>
+  </g>
+  
+  <!-- Chiffre 7 -->
+  <g>
+    <rect x="330" y="240" width="120" height="120" fill="#f0f0f0" stroke="#ddd"/>
+    <!-- Stylisation du "7" manuscrit -->
+    <path d="M360,260 L420,260 L375,340" fill="none" stroke="black" stroke-width="8"/>
+    <path d="M390,300 L410,280" fill="none" stroke="black" stroke-width="8"/>
+    <text x="390" y="380" font-family="Arial" font-size="16" text-anchor="middle">Chiffre: 7</text>
+  </g>
+  
+  <!-- Chiffre 8 -->
+  <g>
+    <rect x="470" y="240" width="120" height="120" fill="#f0f0f0" stroke="#ddd"/>
+    <!-- Stylisation du "8" manuscrit -->
+    <path d="M520,300 C505,300 490,290 490,275 C490,260 505,250 520,250 C535,250 550,260 550,275 C550,290 535,300 520,300 Z" fill="none" stroke="black" stroke-width="8"/>
+    <path d="M520,300 C505,300 490,310 490,325 C490,340 505,350 520,350 C535,350 550,340 550,325 C550,310 535,300 520,300 Z" fill="none" stroke="black" stroke-width="8"/>
+    <text x="530" y="380" font-family="Arial" font-size="16" text-anchor="middle">Chiffre: 8</text>
+  </g>
+  
+  <!-- Chiffre 9 -->
+  <g>
+    <rect x="610" y="240" width="120" height="120" fill="#f0f0f0" stroke="#ddd"/>
+    <!-- Stylisation du "9" manuscrit -->
+    <path d="M660,260 C645,260 630,270 630,290 C630,310 645,320 660,320 C675,320 690,310 690,290 C690,270 675,260 660,260 Z" fill="none" stroke="black" stroke-width="8"/>
+    <path d="M670,320 L660,350" fill="none" stroke="black" stroke-width="8"/>
+    <text x="670" y="380" font-family="Arial" font-size="16" text-anchor="middle">Chiffre: 9</text>
+  </g>
+</svg>

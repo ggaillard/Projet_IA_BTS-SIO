@@ -1,0 +1,280 @@
+# .github/workflows/link-checker.yml
+name: Check Markdown Links
+
+on:
+  # Exécution manuelle depuis l'interface GitHub
+  workflow_dispatch:
+  # Exécution automatique à chaque push sur main
+  push:
+    branches: [ main ]
+  # Exécution programmée (une fois par semaine)
+  schedule:
+    - cron: '0 0 * * 1'  # Tous les lundis à minuit
+  # Exécution sur les pull requests ciblant main
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  check-links:
+    name: Check Markdown Links
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16'
+      
+      - name: Install markdown-link-check
+        run: npm install -g markdown-link-check
+      
+      - name: Create output directory
+        run: mkdir -p reports
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install MkDocs and plugins
+        run: |
+          pip install mkdocs mkdocs-material
+          pip install pymdownx pymdown-extensions
+          pip install mkdocs-jupyter
+          pip install mkdocs-mermaid2-plugin
+      
+      - name: Check links in all Markdown files
+        run: |
+          echo "# Rapport de vérification des liens" > reports/link_report.md
+          echo "\nDate: $(date)" >> reports/link_report.md
+          echo "\nStatut global : " >> reports/link_report.md
+          
+          all_ok=true
+          
+          for file in $(find docs -name "*.md"); do
+            echo "\n## Fichier: $file" >> reports/link_report.md
+            if ! markdown-link-check "$file" --config .github/workflows/mlc_config.json >> reports/link_report.md 2>&1; then
+              all_ok=false
+              echo "::warning file=$file::Liens cassés détectés dans $file"
+            fi
+          done
+          
+          if [ "$all_ok" = true ]; then
+            echo "✅ SUCCÈS" >> reports/link_report.md
+          else
+            echo "❌ ÉCHEC" >> reports/link_report.md
+          fi
+      
+      - name: Validate MkDocs configuration
+        run: |
+          echo "Validation de la configuration MkDocs..."
+          mkdocs build --strict -d site_test_build 2> mkdocs_build_errors.txt
+          if [ -s mkdocs_build_errors.txt ]; then
+            echo "::error::Problèmes détectés dans la configuration MkDocs"
+            cat mkdocs_build_errors.txt
+            echo "\n## Erreurs de configuration MkDocs" >> reports/link_report.md
+            cat mkdocs_build_errors.txt >> reports/link_report.md
+            exit_code=1
+          else
+            echo "Configuration MkDocs valide"
+            echo "\n## Configuration MkDocs" >> reports/link_report.md
+            echo "✅ Configuration valide" >> reports/link_report.md
+            exit_code=0
+          fi
+          # Ne pas quitter immédiatement pour permettre aux autres vérifications de s'exécuter
+          echo "MkDocs validation exit code: $exit_code" >> reports/exit_codes.txt
+      
+      - name: Check MkDocs navigation links
+        run: |
+          cat > check_nav_links.py << 'EOF'
+          import yaml
+          import os
+          import sys
+          
+          def load_mkdocs_config():
+              with open('mkdocs.yml', 'r') as f:
+                  return yaml.safe_load(f)
+          
+          def check_nav_item(item, docs_dir, prefix=''):
+              issues = []
+              
+              if isinstance(item, dict):
+                  for title, link in item.items():
+                      if isinstance(link, str) and not link.startswith(('http://', 'https://')):
+                          file_path = os.path.join(docs_dir, link)
+                          if not os.path.exists(file_path):
+                              issues.append(f"{prefix}{title}: {link} (fichier non trouvé)")
+                      elif isinstance(link, list):
+                          for sub_item in link:
+                              sub_issues = check_nav_item(sub_item, docs_dir, prefix=f"{title} > ")
+                              issues.extend(sub_issues)
+              elif isinstance(item, list):
+                  for sub_item in item:
+                      sub_issues = check_nav_item(sub_item, docs_dir, prefix)
+                      issues.extend(sub_issues)
+                      
+              return issues
+          
+          def main():
+              config = load_mkdocs_config()
+              docs_dir = config.get('docs_dir', 'docs')
+              nav = config.get('nav', [])
+              
+              all_issues = []
+              for item in nav:
+                  issues = check_nav_item(item, docs_dir)
+                  all_issues.extend(issues)
+              
+              if all_issues:
+                  print("## Problèmes de navigation MkDocs\n")
+                  for issue in all_issues:
+                      print(f"- [❌] {issue}")
+                  print("\n")
+                  return 1
+              else:
+                  print("## Navigation MkDocs\n")
+                  print("✅ Tous les liens de navigation sont valides\n")
+                  return 0
+          
+          if __name__ == "__main__":
+              sys.exit(main())
+          EOF
+
+          python check_nav_links.py >> reports/link_report.md
+          echo "Navigation check exit code: $?" >> reports/exit_codes.txt
+      
+      - name: Check MkDocs internal links
+        run: |
+          cat > check_internal_links.py << 'EOF'
+          import os
+          import re
+          import sys
+          
+          def get_all_md_files(docs_dir):
+              md_files = []
+              for root, _, files in os.walk(docs_dir):
+                  for file in files:
+                      if file.endswith('.md'):
+                          md_files.append(os.path.join(root, file))
+              return md_files
+          
+          def check_internal_md_links(md_files, docs_dir):
+              # Modèle pour capturer les liens Markdown
+              link_pattern = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
+              
+              # Liste de tous les fichiers Markdown disponibles (chemins normalisés)
+              available_files = [os.path.normpath(f) for f in md_files]
+              
+              # Dictionnaire pour stocker les liens cassés par fichier
+              broken_links = {}
+              
+              for file_path in md_files:
+                  file_broken_links = []
+                  file_dir = os.path.dirname(file_path)
+                  
+                  with open(file_path, 'r', encoding='utf-8') as f:
+                      content = f.read()
+                      
+                  # Trouver tous les liens
+                  matches = link_pattern.findall(content)
+                  
+                  for text, link in matches:
+                      # Ignorer les liens externes et les ancres seules
+                      if link.startswith(('http://', 'https://', '#', 'mailto:')):
+                          continue
+                      
+                      # Séparer le lien et l'ancre si présente
+                      if '#' in link:
+                          link_path, anchor = link.split('#', 1)
+                      else:
+                          link_path, anchor = link, ''
+                      
+                      # Ignorer les liens vides (ancres seulement)
+                      if not link_path:
+                          continue
+                          
+                      # Gérer les liens relatifs à la séance
+                      if link_path.startswith(('seance1/', 'seance2/', 'seance3/', 'seance4/')):
+                          target_path = os.path.normpath(os.path.join(docs_dir, link_path))
+                          if not os.path.exists(target_path):
+                              file_broken_links.append((text, link, f"Fichier non trouvé: {link_path}"))
+                          continue
+                      
+                      # Gérer les liens relatifs au fichier actuel
+                      if not link_path.startswith('/'):
+                          target_path = os.path.normpath(os.path.join(file_dir, link_path))
+                      else:
+                          # Liens absolus par rapport à la racine docs
+                          target_path = os.path.normpath(os.path.join(docs_dir, link_path.lstrip('/')))
+                      
+                      if not os.path.exists(target_path):
+                          file_broken_links.append((text, link, f"Fichier non trouvé: {target_path}"))
+                  
+                  if file_broken_links:
+                      broken_links[file_path] = file_broken_links
+              
+              return broken_links
+          
+          def main():
+              docs_dir = 'docs'  # Ajustez si nécessaire
+              md_files = get_all_md_files(docs_dir)
+              
+              broken_links = check_internal_md_links(md_files, docs_dir)
+              
+              if broken_links:
+                  print("## Liens internes cassés dans les fichiers Markdown\n")
+                  for file, links in broken_links.items():
+                      print(f"### {os.path.relpath(file, docs_dir)}\n")
+                      for text, link, error in links:
+                          print(f"- [❌] [{text}]({link}) - {error}")
+                      print("\n")
+                  return 1
+              else:
+                  print("## Liens internes dans les fichiers Markdown\n")
+                  print("✅ Tous les liens internes sont valides\n")
+                  return 0
+          
+          if __name__ == "__main__":
+              sys.exit(main())
+          EOF
+
+          python check_internal_links.py >> reports/link_report.md
+          echo "Internal links check exit code: $?" >> reports/exit_codes.txt
+      
+      - name: Determine overall status
+        run: |
+          if grep -q "1" reports/exit_codes.txt; then
+            echo "❌ ÉCHEC - Problèmes détectés" >> reports/link_report.md
+            exit_status=1
+          else
+            echo "✅ SUCCÈS - Tous les tests ont réussi" >> reports/link_report.md
+            exit_status=0
+          fi
+      
+      - name: Upload link check report
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-check-report
+          path: reports/link_report.md
+      
+      - name: Comment PR with link check results
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('reports/link_report.md', 'utf8');
+            const summary = report.split('\n').slice(0, 20).join('\n');
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## Vérification des liens\n\n${summary}\n\n[Voir le rapport complet](${process.env.GITHUB_SERVER_URL}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})`
+            });
+      
+      - name: Exit with status
+        run: exit $exit_status

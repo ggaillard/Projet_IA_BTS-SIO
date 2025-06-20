@@ -1,0 +1,25 @@
+<svg width="1000" height="300" viewBox="0 0 1000 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond avec dégradé -->
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4285f4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34a853;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Rectangle de fond -->
+  <rect width="1000" height="300" fill="url(#grad)" />
+  
+  <!-- Éléments graphiques pour représenter l'évaluation -->
+  <circle cx="200" cy="150" r="50" fill="white" opacity="0.2" />
+  <circle cx="400" cy="150" r="70" fill="white" opacity="0.3" />
+  <circle cx="650" cy="150" r="90" fill="white" opacity="0.2" />
+  <circle cx="850" cy="150" r="40" fill="white" opacity="0.1" />
+  
+  <!-- Ligne représentant un graphique -->
+  <polyline points="100,200 200,150 300,180 400,120 500,170 600,130 700,150 800,110 900,140" 
+            style="fill:none;stroke:white;stroke-width:4" />
+  
+  <!-- Texte principal -->
+  <text x="500" y="150" font-family="Arial" font-size="48" text-anchor="middle" fill="white">Évaluation</text>
+</svg>

@@ -1,0 +1,277 @@
+{
+  "dashboard_metadata": {
+    "system": "Chatbot Pédagogique IA - Deep Learning",
+    "period": "2025-01-15 00:00:00 to 2025-01-15 23:59:59",
+    "generated_at": "2025-01-16 08:00:00 UTC",
+    "version": "1.0-security-audit",
+    "total_monitoring_hours": 24
+  },
+
+  "security_overview": {
+    "global_security_score": 67.3,
+    "risk_level": "MODERATE",
+    "critical_alerts": 4,
+    "total_incidents": 12,
+    "system_availability": 98.7,
+    "last_security_scan": "2025-01-15 18:30:00"
+  },
+
+  "traffic_metrics": {
+    "total_requests": 1247,
+    "unique_users": 45,
+    "unique_ips": 38,
+    "legitimate_traffic": 89.2,
+    "suspicious_traffic": 10.8,
+    "peak_traffic_hour": "15:00-16:00",
+    "peak_requests_per_hour": 186,
+    "average_requests_per_user": 27.7,
+    
+    "geographic_distribution": {
+      "france": 78.4,
+      "germany": 12.3,
+      "unknown_vpn": 6.8,
+      "russia": 1.8,
+      "china": 0.7
+    },
+
+    "user_agent_analysis": {
+      "browsers": 85.2,
+      "mobile": 8.9,
+      "bots_legitimate": 3.1,
+      "bots_suspicious": 2.8
+    }
+  },
+
+  "attack_detection": {
+    "injection_attempts": {
+      "total_detected": 23,
+      "prompt_injection": 18,
+      "sql_injection": 3,
+      "xss_attempts": 2,
+      "success_rate": 0.0,
+      "blocked_rate": 100.0,
+      "most_active_attacker": "185.220.101.45"
+    },
+
+    "attack_patterns": [
+      {
+        "pattern": "ignore.*instruction",
+        "occurrences": 8,
+        "blocked": 8,
+        "ips": ["185.220.101.45", "91.240.118.172"]
+      },
+      {
+        "pattern": "système.*directive",
+        "occurrences": 4,
+        "blocked": 4,
+        "ips": ["185.220.101.45"]
+      },
+      {
+        "pattern": "admin.*access",
+        "occurrences": 6,
+        "blocked": 5,
+        "ips": ["94.102.49.190", "91.240.118.172"]
+      },
+      {
+        "pattern": "reveal.*secret",
+        "occurrences": 5,
+        "blocked": 4,
+        "ips": ["94.102.49.190", "223.5.5.5"]
+      }
+    ],
+
+    "hourly_attack_distribution": {
+      "00:00": 1, "01:00": 0, "02:00": 4, "03:00": 3, "04:00": 2,
+      "05:00": 0, "06:00": 0, "07:00": 0, "08:00": 0, "09:00": 0,
+      "10:00": 8, "11:00": 0, "12:00": 0, "13:00": 3, "14:00": 0,
+      "15:00": 1, "16:00": 1, "17:00": 0, "18:00": 0, "19:00": 0,
+      "20:00": 0, "21:00": 0, "22:00": 0, "23:00": 0
+    }
+  },
+
+  "performance_metrics": {
+    "response_times": {
+      "average_normal": 847,
+      "average_under_attack": 1342,
+      "degradation_percentage": 58.4,
+      "p95_response_time": 2100,
+      "timeout_threshold": 3000,
+      "timeouts_occurred": 7
+    },
+
+    "api_consumption": {
+      "mistral_quota_total": 10000,
+      "tokens_used": 8700,
+      "quota_percentage": 87.0,
+      "peak_usage_hour": "16:00-17:00",
+      "cost_estimation_eur": 17.40,
+      "legitimate_vs_attack_usage": {
+        "legitimate": 75.2,
+        "attacks_wasted": 19.8,
+        "security_testing": 5.0
+      }
+    },
+
+    "server_resources": {
+      "cpu_average": 34.2,
+      "cpu_peak": 89.7,
+      "memory_average": 67.3,
+      "memory_peak": 91.2,
+      "disk_usage": 23.8,
+      "network_io_mb": 45.7
+    }
+  },
+
+  "security_alerts": [
+    {
+      "id": "ALT-001",
+      "timestamp": "2025-01-15 02:15:34",
+      "severity": "HIGH",
+      "type": "SUSPICIOUS_ACTIVITY",
+      "description": "Multiple injection attempts from Tor exit node",
+      "source_ip": "185.220.101.45",
+      "details": "4 prompt injection attempts in 5 minutes",
+      "action_taken": "IP blocked, alerts sent",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "ALT-002", 
+      "timestamp": "2025-01-15 10:45:23",
+      "severity": "MEDIUM",
+      "type": "RATE_LIMITING",
+      "description": "Unusual traffic volume from single source",
+      "source_ip": "203.0.113.15",
+      "details": "50 requests in 2 minutes",
+      "action_taken": "Rate limiting applied",
+      "status": "MONITORING"
+    },
+    {
+      "id": "ALT-003",
+      "timestamp": "2025-01-15 15:34:28",
+      "severity": "HIGH", 
+      "type": "ENDPOINT_ENUMERATION",
+      "description": "Systematic scanning of admin endpoints",
+      "source_ip": "198.51.100.42",
+      "details": "6 different admin endpoints tested",
+      "action_taken": "IP blocked, investigation ongoing",
+      "status": "UNDER_INVESTIGATION"
+    },
+    {
+      "id": "ALT-004",
+      "timestamp": "2025-01-15 16:45:12",
+      "severity": "CRITICAL",
+      "type": "AUTOMATED_ATTACK",
+      "description": "Large-scale automated vulnerability scan",
+      "source_ip": "45.77.185.94",
+      "details": "324 automated requests with attack payloads",
+      "action_taken": "IP banned, WAF rules updated",
+      "status": "BLOCKED"
+    }
+  ],
+
+  "rgpd_compliance": {
+    "data_processing_score": 72.5,
+    "points_evaluated": 20,
+    "points_compliant": 14.5,
+    "critical_gaps": [
+      "Data retention policy undefined",
+      "Deletion procedure incomplete", 
+      "DPIA documentation missing"
+    ],
+    "data_subjects_requests": 0,
+    "personal_data_encrypted": false,
+    "consent_management": "PARTIAL",
+    "audit_last_date": "2025-01-10"
+  },
+
+  "vulnerability_assessment": {
+    "total_vulnerabilities": 15,
+    "critical": 2,
+    "high": 4,
+    "medium": 6,
+    "low": 3,
+    "remediation_rate": 80.0,
+    "avg_time_to_fix_days": 3.2,
+    "next_scan_scheduled": "2025-01-22"
+  },
+
+  "incident_timeline": [
+    {
+      "time": "02:15",
+      "event": "Tor-based injection attempts started",
+      "severity": "HIGH",
+      "source": "185.220.101.45"
+    },
+    {
+      "time": "10:45", 
+      "event": "Traffic spike detected",
+      "severity": "MEDIUM",
+      "source": "203.0.113.15"
+    },
+    {
+      "time": "12:00",
+      "event": "API authentication errors logged",
+      "severity": "LOW",
+      "source": "SYSTEM"
+    },
+    {
+      "time": "15:34",
+      "event": "Admin endpoint enumeration",
+      "severity": "HIGH", 
+      "source": "198.51.100.42"
+    },
+    {
+      "time": "16:45",
+      "event": "Automated vulnerability scan",
+      "severity": "CRITICAL",
+      "source": "45.77.185.94"
+    }
+  ],
+
+  "recommendations": {
+    "immediate_actions": [
+      "Update rate limiting rules for authenticated users",
+      "Implement geo-blocking for high-risk countries",
+      "Strengthen prompt injection detection rules"
+    ],
+    "short_term": [
+      "Deploy Web Application Firewall (WAF)", 
+      "Implement API key rotation mechanism",
+      "Add behavioral analysis for user patterns"
+    ],
+    "long_term": [
+      "Migrate to zero-trust architecture",
+      "Implement AI-based threat detection",
+      "Complete GDPR compliance gaps"
+    ]
+  },
+
+  "cost_analysis": {
+    "security_incidents_cost": {
+      "investigation_hours": 12,
+      "hourly_rate_eur": 75,
+      "total_investigation_cost": 900,
+      "api_waste_cost": 3.45,
+      "potential_damage_avoided": 15000
+    },
+    "security_investment_roi": {
+      "prevention_cost": 1200,
+      "incident_cost_avoided": 15000,
+      "roi_percentage": 1150
+    }
+  },
+
+  "trend_analysis": {
+    "weekly_comparison": {
+      "attacks_this_week": 23,
+      "attacks_last_week": 8,
+      "change_percentage": 187.5,
+      "new_attack_vectors": 2
+    },
+    "monthly_trends": {
+      "user_growth": 15.7,
+      "attack_growth": 245.0,
+      "security_score_change": -12.3
+    }
+  }
+}

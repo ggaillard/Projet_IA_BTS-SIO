@@ -1,0 +1,124 @@
+<svg width="950" height="570" xmlns="http://www.w3.org/2000/svg">
+  <!-- Palette plus transparente avec dégradés subtils -->
+  <defs>
+    <!-- IA principale - bleu clair -->
+    <linearGradient id="ia-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E3F2FD" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#BBDEFB" stop-opacity="0.7" />
+    </linearGradient>
+    
+    <!-- IA Symbolique - violet clair -->
+    <linearGradient id="symb-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3E5F5" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#E1BEE7" stop-opacity="0.7" />
+    </linearGradient>
+    
+    <!-- ML - vert clair -->
+    <linearGradient id="ml-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8F5E9" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#C8E6C9" stop-opacity="0.7" />
+    </linearGradient>
+    
+    <!-- Algo classiques -  vert bleu -->
+    <linearGradient id="algoclass-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0F2F1" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#B2DFDB" stop-opacity="0.8" />
+    </linearGradient>
+    
+    <!-- Autres algos ML - jaune-vert -->
+    <linearGradient id="othermls-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0F4C3" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#DCE775" stop-opacity="0.8" />
+    </linearGradient>
+    
+    <!-- DL - violet -->
+    <linearGradient id="dl-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EDE7F6" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#D1C4E9" stop-opacity="0.7" />
+    </linearGradient>
+    
+    <!-- CNN - orange clair -->
+    <linearGradient id="cnn-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF3E0" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#FFE0B2" stop-opacity="0.7" />
+    </linearGradient>
+    
+    <!-- RNN - bleu-vert clair -->
+    <linearGradient id="rnn-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0F7FA" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#B2EBF2" stop-opacity="0.7" />
+    </linearGradient>
+    
+    <!-- Transformers - jaune clair -->
+    <linearGradient id="transformers-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF8E1" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#FFECB3" stop-opacity="0.7" />
+    </linearGradient>
+  </defs>
+
+  <!-- Contours fins avec ombres légères -->
+  <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+    <feDropShadow dx="0" dy="1" stdDeviation="1" flood-opacity="0.1"/>
+  </filter>
+
+  <!-- Intelligence Artificielle (forme plus large) -->
+  <ellipse cx="480" cy="295" rx="460" ry="270" fill="url(#ia-gradient)" stroke="#64B5F6" stroke-width="1.5" filter="url(#shadow)" />
+  
+  <!-- IA Symbolique à gauche, dans l'IA mais en dehors du ML -->
+  <ellipse cx="200" cy="250" rx="140" ry="120" fill="url(#symb-gradient)" stroke="#CE93D8" stroke-width="1.5" filter="url(#shadow)" />
+  
+  <!-- Machine Learning (en vert) -->
+  <ellipse cx="550" cy="300" rx="330" ry="240" fill="url(#ml-gradient)" stroke="#81C784" stroke-width="1.5" filter="url(#shadow)" />
+  
+  <!-- Algorithmes classiques en haut dans ML -->
+  <ellipse cx="420" cy="140" rx="110" ry="70" fill="url(#algoclass-gradient)" stroke="#4DB6AC" stroke-width="1.5" filter="url(#shadow)" />
+  
+  <!-- Autre algorithmes de ML au centre -->
+  <ellipse cx="600" cy="160" rx="130" ry="70" fill="url(#othermls-gradient)" stroke="#CDDC39" stroke-width="1.5" filter="url(#shadow)" />
+  
+  <!-- Deep Learning (en violet) -->
+  <ellipse cx="550" cy="390" rx="240" ry="120" fill="url(#dl-gradient)" stroke="#9575CD" stroke-width="1.5" filter="url(#shadow)" />
+  
+  <!-- CNN (vision par ordinateur) -->
+  <ellipse cx="380" cy="390" rx="90" ry="70" fill="url(#cnn-gradient)" stroke="#FFB74D" stroke-width="1.5" filter="url(#shadow)" />
+  
+  <!-- RNN/LSTM pour séquences -->
+  <ellipse cx="550" cy="420" rx="90" ry="70" fill="url(#rnn-gradient)" stroke="#4DD0E1" stroke-width="1.5" filter="url(#shadow)" />
+  
+  <!-- Transformers (plus récent, plus avancé) -->
+  <ellipse cx="700" cy="390" rx="90" ry="70" fill="url(#transformers-gradient)" stroke="#FFD54F" stroke-width="1.5" filter="url(#shadow)" />
+
+  <!-- Étiquettes -->
+  <text x="480" y="65" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#1976D2">INTELLIGENCE ARTIFICIELLE</text>
+  <text x="480" y="95" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#1976D2">(Simule l'intelligence humaine)</text>
+  
+  <text x="200" y="230" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#7B1FA2">IA SYMBOLIQUE</text>
+  <text x="200" y="260" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#7B1FA2">CLASSIQUE</text>
+  <text x="200" y="290" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#7B1FA2">(Règles "Si...Alors...")</text>
+  
+  <text x="550" y="240" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#2E7D32">MACHINE LEARNING</text>
+  <text x="550" y="270" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#2E7D32">(Apprentissage automatique)</text>
+  
+  <text x="420" y="130" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#00897B">ALGORITHMES</text>
+  <text x="420" y="155" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#00897B">CLASSIQUES</text>
+  <text x="420" y="180" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#00897B">(Forêts aléatoires)</text>
+  
+  <text x="600" y="145" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#827717">AUTRES</text>
+  <text x="600" y="170" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#827717">ALGORITHMES ML</text>
+  <text x="600" y="195" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#827717">(Régression, Clustering...)</text>
+  
+  <text x="550" y="300" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#512DA8">DEEP LEARNING</text>
+  <text x="550" y="330" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#512DA8">(Réseaux de neurones multicouches)</text>
+  
+  <text x="380" y="375" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#E65100">CNN</text>
+  <text x="380" y="400" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#E65100">(Réseaux convolutifs)</text>
+  <text x="380" y="420" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#E65100">(Analyse d'images)</text>
+  
+  <text x="550" y="410" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#00838F">RNN/LSTM</text>
+  <text x="550" y="435" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#00838F">(Réseaux récurrents)</text>
+  <text x="550" y="455" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#00838F">(Texte, séquences)</text>
+  
+  <text x="700" y="375" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#F9A825">TRANSFORMERS</text>
+  <text x="700" y="400" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#F9A825">(Modèles de langage)</text>
+  <text x="700" y="420" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#F9A825">(ChatGPT, traduction)</text>
+</svg>

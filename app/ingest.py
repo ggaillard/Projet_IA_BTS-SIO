@@ -12,12 +12,11 @@ except ImportError:
 
 from langchain.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.schema import Document
 
 # Import des variables de configuration
-from app.config import OPENAI_API_KEY, EMBEDDING_MODEL, CHUNK_SIZE, CHUNK_OVERLAP
+from app.config import CHUNK_SIZE, CHUNK_OVERLAP, get_embeddings
 
 class SimpleDocumentIngestor:
     def __init__(self, data_dir: str = "data", vectorstore_dir: str = "vectorstore"):
@@ -148,11 +147,8 @@ class SimpleDocumentIngestor:
             return None
         
         try:
-            # Créer les embeddings
-            embeddings = OpenAIEmbeddings(
-                openai_api_key=OPENAI_API_KEY,
-                model=EMBEDDING_MODEL
-            )
+            # Créer les embeddings (gratuits ou OpenAI selon config)
+            embeddings = get_embeddings()
             
             # Créer le vectorstore
             with st.spinner(f"Création des embeddings pour {len(documents)} chunks..."):
@@ -167,6 +163,9 @@ class SimpleDocumentIngestor:
             
         except Exception as e:
             st.error(f"Erreur lors de la création du vectorstore: {e}")
+            # Afficher plus de détails pour le debug
+            import traceback
+            st.error(f"Détails: {traceback.format_exc()}")
             return None
     
     def ingest_from_repo(self, repo_url: str) -> bool:
@@ -195,10 +194,7 @@ class SimpleDocumentIngestor:
         # Fusionner avec l'index existant si possible
         try:
             if self.vectorstore_dir.exists():
-                embeddings = OpenAIEmbeddings(
-                    openai_api_key=OPENAI_API_KEY,
-                    model=EMBEDDING_MODEL
-                )
+                embeddings = get_embeddings()
                 existing_store = FAISS.load_local(str(self.vectorstore_dir), embeddings)
                 
                 # Créer un nouveau store pour les nouveaux documents

@@ -4,20 +4,20 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Configuration des modèles
-PROVIDER = os.getenv("PROVIDER", "openai")
-MODEL_NAME = os.getenv("MODEL_NAME", "gpt-3.5-turbo")
+PROVIDER = os.getenv("PROVIDER", "mistral")
+MODEL_NAME = os.getenv("MODEL_NAME", "mistral-small")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
 MISTRAL_API_BASE = os.getenv("MISTRAL_API_BASE", "https://api.mistral.ai/v1")
 
-# Configuration du repository (ajouté)
+# Configuration du repository
 REPO_URL = os.getenv("REPO_URL", "")
 
-# Configuration du repository (optionnel)
-REPO_URL = os.getenv("REPO_URL", "")
+# Configuration de l'embedding - utilise gratuit si pas d'OpenAI
+USE_FREE_EMBEDDINGS = os.getenv("USE_FREE_EMBEDDINGS", "true").lower() == "true"
+EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "sentence-transformers/all-MiniLM-L6-v2")
 
-# Configuration de l'embedding
-EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "text-embedding-ada-002")
+# Configuration de l'ingestion
 CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "1000"))
 CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "200"))
 
@@ -49,3 +49,24 @@ def get_model_config():
             "api_key": OPENAI_API_KEY,
             "model": MODEL_NAME or "gpt-3.5-turbo"
         }
+
+def get_embeddings():
+    """Retourne l'instance d'embeddings selon la configuration"""
+    if USE_FREE_EMBEDDINGS or not OPENAI_API_KEY:
+        # Utiliser des embeddings gratuits HuggingFace
+        try:
+            from langchain.embeddings import HuggingFaceEmbeddings
+            return HuggingFaceEmbeddings(
+                model_name=EMBEDDING_MODEL,
+                model_kwargs={'device': 'cpu'},
+                encode_kwargs={'normalize_embeddings': True}
+            )
+        except ImportError:
+            raise ImportError("Pour utiliser les embeddings gratuits, installez: pip install sentence-transformers")
+    else:
+        # Utiliser OpenAI embeddings
+        from langchain.embeddings import OpenAIEmbeddings
+        return OpenAIEmbeddings(
+            openai_api_key=OPENAI_API_KEY,
+            model=EMBEDDING_MODEL
+        )

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <!-- Background -->
+  <rect width="900" height="400" fill="#f9f9f9" rx="10" ry="10" />
+  
+  <!-- Title -->
+  <text x="450" y="40" font-family="Arial" font-size="22" text-anchor="middle" font-weight="bold">Transformation progressive d'une image dans un CNN</text>
+  
+  <!-- Original Image Section -->
+  <rect x="50" y="80" width="150" height="150" fill="#ffffff" stroke="#333333" stroke-width="2" />
+  <text x="125" y="70" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Image originale</text>
+  
+  <!-- Drawing of number 7 -->
+  <path d="M70 110 L180 110 L125 200" stroke="#000000" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  
+  <!-- Arrow -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555" />
+    </marker>
+  </defs>
+  <path d="M210 150 L240 150" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Convolution Layer Section -->
+  <rect x="250" y="80" width="150" height="150" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" />
+  <text x="325" y="70" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Convolution</text>
+  
+  <!-- Filter visualization -->
+  <rect x="270" y="100" width="30" height="30" fill="#ffffff" stroke="#1976d2" />
+  <rect x="290" y="100" width="30" height="30" fill="#90caf9" stroke="#1976d2" />
+  <rect x="310" y="100" width="30" height="30" fill="#ffffff" stroke="#1976d2" />
+  <rect x="270" y="120" width="30" height="30" fill="#90caf9" stroke="#1976d2" />
+  <rect x="290" y="120" width="30" height="30" fill="#1565c0" stroke="#1976d2" />
+  <rect x="310" y="120" width="30" height="30" fill="#90caf9" stroke="#1976d2" />
+  <rect x="270" y="140" width="30" height="30" fill="#ffffff" stroke="#1976d2" />
+  <rect x="290" y="140" width="30" height="30" fill="#90caf9" stroke="#1976d2" />
+  <rect x="310" y="140" width="30" height="30" fill="#ffffff" stroke="#1976d2" />
+  
+  <!-- Feature maps -->
+  <rect x="350" y="100" width="30" height="30" fill="#ffffff" stroke="#1976d2" />
+  <path d="M355 115 L375 115" stroke="#1976d2" stroke-width="2" />
+  <rect x="350" y="140" width="30" height="30" fill="#ffffff" stroke="#1976d2" />
+  <path d="M365 145 L365 165" stroke="#1976d2" stroke-width="2" />
+  
+  <!-- Arrow -->
+  <path d="M410 150 L440 150" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Pooling Layer Section -->
+  <rect x="450" y="80" width="150" height="150" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2" />
+  <text x="525" y="70" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Pooling</text>
+  
+  <!-- Pooling visualization -->
+  <rect x="480" y="100" width="90" height="90" fill="none" stroke="#2e7d32" stroke-width="1" />
+  <line x1="480" y1="145" x2="570" y2="145" stroke="#2e7d32" stroke-width="1" />
+  <line x1="525" y1="100" x2="525" y2="190" stroke="#2e7d32" stroke-width="1" />
+  
+  <!-- Simplified version -->
+  <path d="M490 130 L550 130 L520 170" stroke="#2e7d32" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  
+  <!-- Arrow -->
+  <path d="M610 150 L640 150" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Fully Connected Section -->
+  <rect x="650" y="80" width="150" height="150" fill="#fff3e0" stroke="#e65100" stroke-width="2" />
+  <text x="725" y="70" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Fully Connected</text>
+  
+  <!-- Neuron network simplified -->
+  <circle cx="680" cy="120" r="10" fill="#ffb74d" stroke="#e65100" />
+  <circle cx="680" cy="150" r="10" fill="#ffb74d" stroke="#e65100" />
+  <circle cx="680" cy="180" r="10" fill="#ffb74d" stroke="#e65100" />
+  
+  <circle cx="725" cy="135" r="10" fill="#ffb74d" stroke="#e65100" />
+  <circle cx="725" cy="165" r="10" fill="#ffb74d" stroke="#e65100" />
+  
+  <circle cx="770" cy="150" r="15" fill="#ff9800" stroke="#e65100" />
+  <text x="770" y="155" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">7</text>
+  
+  <!-- Connections -->
+  <line x1="690" y1="120" x2="715" y2="135" stroke="#e65100" stroke-width="1" />
+  <line x1="690" y1="120" x2="715" y2="165" stroke="#e65100" stroke-width="1" />
+  <line x1="690" y1="150" x2="715" y2="135" stroke="#e65100" stroke-width="1" />
+  <line x1="690" y1="150" x2="715" y2="165" stroke="#e65100" stroke-width="1" />
+  <line x1="690" y1="180" x2="715" y2="135" stroke="#e65100" stroke-width="1" />
+  <line x1="690" y1="180" x2="715" y2="165" stroke="#e65100" stroke-width="1" />
+  
+  <line x1="735" y1="135" x2="755" y2="150" stroke="#e65100" stroke-width="1" />
+  <line x1="735" y1="165" x2="755" y2="150" stroke="#e65100" stroke-width="1" />
+  
+  <!-- Bottom Explanation -->
+  <text x="125" y="260" font-family="Arial" font-size="14" text-anchor="middle">Entrée: Image brute</text>
+  <text x="325" y="260" font-family="Arial" font-size="14" text-anchor="middle">Détection des caractéristiques</text>
+  <text x="525" y="260" font-family="Arial" font-size="14" text-anchor="middle">Réduction et sélection</text>
+  <text x="725" y="260" font-family="Arial" font-size="14" text-anchor="middle">Classification finale</text>
+  
+  <!-- Bottom description -->
+  <rect x="50" y="290" width="800" height="80" fill="#f0f0f0" rx="5" ry="5" />
+  <text x="450" y="315" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Transformation des données dans un CNN</text>
+  <text x="450" y="340" font-family="Arial" font-size="14" text-anchor="middle">1. L'image originale est traitée par des filtres de convolution qui détectent les motifs locaux</text>
+  <text x="450" y="360" font-family="Arial" font-size="14" text-anchor="middle">2. Le pooling simplifie ces motifs en réduisant leur dimensionnalité</text>
+  <text x="450" y="380" font-family="Arial" font-size="14" text-anchor="middle">3. Les couches fully connected combinent ces caractéristiques pour la classification</text>
+</svg>

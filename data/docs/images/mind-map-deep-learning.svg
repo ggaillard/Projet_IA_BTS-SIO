@@ -1,0 +1,183 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Définition des styles de base -->
+  <style>
+    .node {
+      fill: #f0f4ff;
+      stroke: #3b82f6;
+      stroke-width: 2;
+      rx: 15;
+      ry: 15;
+    }
+    .main-node {
+      fill: #3b82f6;
+      stroke: #1d4ed8;
+      stroke-width: 3;
+    }
+    .text-main {
+      font-family: Arial, sans-serif;
+      font-size: 22px;
+      font-weight: bold;
+      fill: white;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+    .text-node {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      fill: #1e40af;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+    .text-leaf {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      fill: #1e40af;
+      text-anchor: start;
+      dominant-baseline: middle;
+    }
+    .connector {
+      fill: none;
+      stroke: #93c5fd;
+      stroke-width: 2;
+    }
+    .level1 {
+      fill: #dbeafe;
+      stroke: #3b82f6;
+    }
+    .level2 {
+      fill: #eff6ff;
+      stroke: #60a5fa;
+    }
+    .text-level1 {
+      fill: #1e40af;
+    }
+    .text-level2 {
+      fill: #3b82f6;
+    }
+    .icon {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+  </style>
+  <!-- Nœud principal -->
+  <rect x="550" y="350" width="200" height="80" class="node main-node" />
+  <text x="650" y="390" class="text-main">DEEP LEARNING</text>
+  <!-- Définition du Deep Learning -->
+  <rect x="250" y="150" width="180" height="70" class="node level1" />
+  <text x="340" y="185" class="text-node text-level1">C'est quoi?</text>
+  <path d="M 650,350 Q 550,250 340,185" class="connector" />
+  <!-- Feuilles pour Définition -->
+<text x="100" y="100" class="text-leaf">🧠 Réseaux de neurones multicouches</text>
+<path d="M 340,150 Q 250,120 120,100" class="connector" />
+<text x="100" y="140" class="text-leaf">🔍 Apprend automatiquement les caractéristiques</text>
+<path d="M 340,160 Q 250,160 120,140" class="connector" />
+<text x="100" y="180" class="text-leaf">🖼️ Idéal pour images, texte, son</text>
+<path d="M 340,180 Q 250,180 120,180" class="connector" />
+<text x="100" y="220" class="text-leaf">🚀 Plus puissant que ML classique</text>
+<path d="M 340,200 Q 250,200 120,220" class="connector" />
+  <!-- Neurones & Réseau -->
+  <rect x="250" y="350" width="180" height="70" class="node level1" />
+  <text x="340" y="385" class="text-node text-level1">Architecture</text>
+  <path d="M 550,380 L 430,380" class="connector" />
+  <!-- Feuilles pour Neurones & Réseau -->
+<text x="100" y="310" class="text-leaf">🔌 Neurones artificiels interconnectés</text>
+<path d="M 340,350 Q 250,320 120,310" class="connector" />
+<text x="100" y="350" class="text-leaf">📊 Couche d'entrée (données brutes)</text>
+<path d="M 250,370 L 120,350" class="connector" />
+<text x="100" y="390" class="text-leaf">🧩 Couches cachées (traitement)</text>
+<path d="M 250,385 L 120,390" class="connector" />
+<text x="100" y="430" class="text-leaf">🎯 Couche de sortie (prédiction)</text>
+<path d="M 340,400 Q 250,410 120,430" class="connector" />
+  <!-- Types de réseaux -->
+  <rect x="880" y="150" width="180" height="70" class="node level1" />
+  <text x="970" y="185" class="text-node text-level1">Types de réseaux</text>
+  <path d="M 650,350 Q 750,250 970,185" class="connector" />
+  <!-- Feuilles pour Types de réseaux -->
+<text x="1090" y="100" class="text-leaf">👁️ CNN: pour les images</text>
+<path d="M 970,150 Q 1060,120 1090,100" class="connector" />
+<text x="1090" y="140" class="text-leaf">📝 RNN/LSTM: pour les textes/séquences</text>
+<path d="M 970,170 Q 1060,155 1090,140" class="connector" />
+<text x="1090" y="180" class="text-leaf">🔄 Transformers: pour le langage avancé</text>
+<path d="M 970,190 Q 1060,190 1090,180" class="connector" />
+<text x="1090" y="220" class="text-leaf">🎵 GAN: pour générer du contenu</text>
+<path d="M 970,200 Q 1060,210 1090,220" class="connector" />
+  <!-- Comment ça apprend -->
+  <rect x="880" y="350" width="180" height="70" class="node level1" />
+  <text x="970" y="385" class="text-node text-level1">Apprentissage</text>
+  <path d="M 750,380 L 880,380" class="connector" />
+  <!-- Feuilles pour Comment ça apprend -->
+<text x="1090" y="310" class="text-leaf">👀 Forward propagation: prédiction</text>
+<path d="M 970,350 Q 1060,320 1090,310" class="connector" />
+<text x="1090" y="350" class="text-leaf">⚖️ Calcul d'erreur: écart avec réalité</text>
+<path d="M 1060,370 L 1090,350" class="connector" />
+<text x="1090" y="390" class="text-leaf">🔄 Backpropagation: ajustement des poids</text>
+<path d="M 1060,385 L 1090,390" class="connector" />
+<text x="1090" y="430" class="text-leaf">🔁 Époque: passage complet des données</text>
+<path d="M 970,400 Q 1060,420 1090,430" class="connector" />
+  <!-- Applications -->
+  <rect x="250" y="550" width="180" height="70" class="node level1" />
+  <text x="340" y="585" class="text-node text-level1">Applications</text>
+  <path d="M 650,430 Q 550,500 340,585" class="connector" />
+  <!-- Feuilles pour Applications -->
+<text x="100" y="500" class="text-leaf">📷 Reconnaissance d'images et objets</text>
+<path d="M 340,550 Q 250,520 120,500" class="connector" />
+<text x="100" y="540" class="text-leaf">🗣️ Traduction et génération de texte</text>
+<path d="M 250,565 L 120,540" class="connector" />
+<text x="100" y="580" class="text-leaf">🎬 Recommandation de contenu</text>
+<path d="M 250,585 L 120,580" class="connector" />
+<text x="100" y="620" class="text-leaf">🚗 Voitures autonomes</text>
+<path d="M 340,600 Q 250,610 120,620" class="connector" />
+<text x="100" y="660" class="text-leaf">🏥 Applications médicales</text>
+<path d="M 340,610 Q 250,635 120,660" class="connector" />
+  <!-- Défis -->
+  <rect x="880" y="550" width="180" height="70" class="node level1" />
+  <text x="970" y="585" class="text-node text-level1">Défis actuels</text>
+  <path d="M 650,430 Q 750,500 970,585" class="connector" />
+  <!-- Feuilles pour Défis -->
+<text x="1090" y="500" class="text-leaf">📊 Besoin de grandes quantités de données</text>
+<path d="M 970,550 Q 1060,520 1090,500" class="connector" />
+<text x="1090" y="540" class="text-leaf">⚡ Consommation élevée d'énergie</text>
+<path d="M 1060,565 L 1090,540" class="connector" />
+<text x="1090" y="580" class="text-leaf">❓ Difficile d'expliquer les décisions</text>
+<path d="M 1060,585 L 1090,580" class="connector" />
+<text x="1090" y="620" class="text-leaf">⚠️ Risques de biais dans les modèles</text>
+<path d="M 970,600 Q 1060,610 1090,620" class="connector" />
+<text x="1090" y="660" class="text-leaf">💰 Coûts importants pour l'entraînement</text>
+<path d="M 970,610 Q 1060,635 1090,660" class="connector" />
+  <!-- Vs Machine Learning -->
+  <rect x="550" y="200" width="180" height="70" class="node level1" />
+  <text x="640" y="235" class="text-node text-level1">Vs ML classique</text>
+  <path d="M 640,350 L 640,270" class="connector" />
+  <!-- Feuilles pour Vs Machine Learning -->
+  <rect x="450" y="100" width="180" height="50" class="node level2" />
+  <text x="540" y="125" class="text-node text-level2">Caractéristiques</text>
+  <path d="M 600,200 L 540,150" class="connector" />
+<text x="380" y="60" class="text-leaf">ML: extraction manuelle 🔧</text>
+<path d="M 540,100 Q 480,80 400,60" class="connector" />
+<text x="380" y="90" class="text-leaf">DL: extraction automatique 🤖</text>
+<path d="M 540,110 Q 480,100 400,90" class="connector" />
+  <rect x="700" y="100" width="180" height="50" class="node level2" />
+  <text x="790" y="125" class="text-node text-level2">Performance</text>
+  <path d="M 680,200 L 750,150" class="connector" />
+<text x="900" y="60" class="text-leaf">ML: problèmes simples ✓</text>
+<path d="M 790,100 Q 850,80 900,60" class="connector" />
+<text x="900" y="90" class="text-leaf">DL: problèmes complexes ✓✓</text>
+<path d="M 790,110 Q 850,100 900,90" class="connector" />
+  <!-- Conseils pratiques -->
+  <rect x="550" y="480" width="180" height="70" class="node level1" />
+  <text x="640" y="515" class="text-node text-level1">Conseils pratiques</text>
+  <path d="M 640,430 L 640,480" class="connector" />
+  <!-- Feuilles pour Conseils pratiques -->
+<text x="450" y="600" class="text-leaf">🔄 Commencer simple et itérer</text>
+<path d="M 600,550 Q 550,580 450,600" class="connector" />
+<text x="450" y="640" class="text-leaf">📊 Bien préparer ses données</text>
+<path d="M 600,550 Q 550,600 450,640" class="connector" />
+<text x="800" y="600" class="text-leaf">📈 Surveiller l'entraînement</text>
+<path d="M 680,550 Q 730,580 800,600" class="connector" />
+<text x="800" y="640" class="text-leaf">🧪 Tester sur données variées</text>
+<path d="M 680,550 Q 730,600 800,640" class="connector" />
+</svg>

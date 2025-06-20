@@ -1,0 +1,28 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Titre -->
+  <text x="400" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold">Quantification des poids du réseau</text>
+  
+  <!-- Modèle original (Float32) -->
+  <rect x="100" y="100" width="200" height="200" fill="#4285F4" rx="10" ry="10" />
+  <text x="200" y="160" font-family="Arial" font-size="18" text-anchor="middle" fill="white">Modèle Original</text>
+  <text x="200" y="190" font-family="Arial" font-size="16" text-anchor="middle" fill="white">Float32</text>
+  <text x="200" y="220" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Poids: 32 bits</text>
+  <text x="200" y="250" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Taille: 100 Mo</text>
+  <text x="200" y="280" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Précision: 96%</text>
+  
+  <!-- Flèche de transition -->
+  <line x1="320" y1="200" x2="480" y2="200" stroke="#333" stroke-width="3" />
+  <polygon points="470,190 490,200 470,210" fill="#333" />
+  <text x="400" y="180" font-family="Arial" font-size="16" text-anchor="middle">Quantification</text>
+  
+  <!-- Modèle quantifié (Int8) -->
+  <rect x="500" y="100" width="200" height="200" fill="#0F9D58" rx="10" ry="10" />
+  <text x="600" y="160" font-family="Arial" font-size="18" text-anchor="middle" fill="white">Modèle Quantifié</text>
+  <text x="600" y="190" font-family="Arial" font-size="16" text-anchor="middle" fill="white">Int8</text>
+  <text x="600" y="220" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Poids: 8 bits</text>
+  <text x="600" y="250" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Taille: 25 Mo</text>
+  <text x="600" y="280" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Précision: 94%</text>
+  
+  <!-- Avantages -->
+  <text x="400" y="340" font-family="Arial" font-size="18" text-anchor="middle" font-weight="bold">Avantages: 4× plus petit, 2-4× plus rapide, consommation énergétique réduite</text>
+</svg>

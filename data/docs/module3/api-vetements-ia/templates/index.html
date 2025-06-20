@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche visuelle de vêtements</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Recherche visuelle de vêtements</h1>
+            <p>Prenez une photo ou chargez une image d'un vêtement pour trouver des articles similaires</p>
+        </header>
+        
+        <div class="upload-container">
+            <div class="image-preview">
+                <img id="preview-image" src="{{ url_for('static', filename='images/examples/placeholder.png') }}" alt="Aperçu">
+            </div>
+            
+            <div class="upload-controls">
+                <label for="image-input" class="custom-file-upload">
+                    <i class="fa fa-cloud-upload"></i> Sélectionner une image
+                </label>
+                <input id="image-input" type="file" accept="image/*">
+                
+                <button id="camera-button" class="btn">
+                    <i class="fa fa-camera"></i> Prendre une photo
+                </button>
+                
+                <button id="analyze-button" class="btn primary">
+                    <i class="fa fa-search"></i> Analyser
+                </button>
+            </div>
+            
+            <!-- Zone de prise de photo (cachée par défaut) -->
+            <div id="camera-container" class="camera-container" style="display: none;">
+                <video id="camera-feed" autoplay></video>
+                <button id="capture-button" class="btn">Capturer</button>
+                <button id="cancel-button" class="btn">Annuler</button>
+            </div>
+        </div>
+        
+        <div id="results-container" class="results-container" style="display: none;">
+            <h2>Résultats de l'analyse</h2>
+            
+            <div id="loading-indicator" class="loading-indicator">
+                <div class="spinner"></div>
+                <p>Analyse en cours...</p>
+            </div>
+            
+            <div id="prediction-results" class="prediction-results">
+                <!-- Les résultats seront insérés ici via JavaScript -->
+            </div>
+            
+            <div class="timing">
+                <p>Temps de traitement: <span id="processing-time">0</span> ms</p>
+            </div>
+        </div>
+        
+        <div class="example-section">
+            <h3>Exemples</h3>
+            <div class="examples">
+                <div class="example-item" data-image="tshirt.jpg">
+                    <img src="{{ url_for('static', filename='images/examples/tshirt.jpg') }}" alt="T-shirt">
+                    <p>T-shirt</p>
+                </div>
+                <div class="example-item" data-image="pants.jpg">
+                    <img src="{{ url_for('static', filename='images/examples/pants.jpg') }}" alt="Pantalon">
+                    <p>Pantalon</p>
+                </div>
+                <div class="example-item" data-image="dress.jpg">
+                    <img src="{{ url_for('static', filename='images/examples/dress.jpg') }}" alt="Robe">
+                    <p>Robe</p>
+                </div>
+                <div class="example-item" data-image="shoes.jpg">
+                    <img src="{{ url_for('static', filename='images/examples/shoes.jpg') }}" alt="Chaussures">
+                    <p>Chaussures</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Projet de recherche visuelle | BTS SIO 2025</p>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

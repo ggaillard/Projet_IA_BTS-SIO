@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Fond -->
+  <rect width="800" height="400" fill="white"/>
+  
+  <!-- Titre -->
+  <text x="400" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold" fill="#333">Processus d'entraînement d'un réseau de neurones</text>
+  
+  <!-- Grille de fond pour les graphiques -->
+  <g opacity="0.2">
+    <!-- Lignes horizontales -->
+    <line x1="100" y1="100" x2="700" y2="100" stroke="#999" stroke-width="1"/>
+    <line x1="100" y1="150" x2="700" y2="150" stroke="#999" stroke-width="1"/>
+    <line x1="100" y1="200" x2="700" y2="200" stroke="#999" stroke-width="1"/>
+    <line x1="100" y1="250" x2="700" y2="250" stroke="#999" stroke-width="1"/>
+    <line x1="100" y1="300" x2="700" y2="300" stroke="#999" stroke-width="1"/>
+    <line x1="100" y1="350" x2="700" y2="350" stroke="#999" stroke-width="1"/>
+    
+    <!-- Lignes verticales -->
+    <line x1="160" y1="100" x2="160" y2="350" stroke="#999" stroke-width="1"/>
+    <line x1="220" y1="100" x2="220" y2="350" stroke="#999" stroke-width="1"/>
+    <line x1="280" y1="100" x2="280" y2="350" stroke="#999" stroke-width="1"/>
+    <line x1="340" y1="100" x2="340" y2="350" stroke="#999" stroke-width="1"/>
+    <line x1="400" y1="100" x2="400" y2="350" stroke="#999" stroke-width="1"/>
+    <line x1="460" y1="100" x2="460" y2="350" stroke="#999" stroke-width="1"/>
+    <line x1="520" y1="100" x2="520" y2="350" stroke="#999" stroke-width="1"/>
+    <line x1="580" y1="100" x2="580" y2="350" stroke="#999" stroke-width="1"/>
+    <line x1="640" y1="100" x2="640" y2="350" stroke="#999" stroke-width="1"/>
+    <line x1="700" y1="100" x2="700" y2="350" stroke="#999" stroke-width="1"/>
+  </g>
+  
+  <!-- Axes -->
+  <line x1="100" y1="350" x2="700" y2="350" stroke="#000" stroke-width="2"/>
+  <line x1="100" y1="100" x2="100" y2="350" stroke="#000" stroke-width="2"/>
+  
+  <!-- Légende des axes -->
+  <text x="400" y="380" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">Époques d'entraînement</text>
+  <text x="60" y="225" font-family="Arial" font-size="16" text-anchor="middle" transform="rotate(-90, 60, 225)" fill="#333">Performance / Erreur</text>
+  
+  <!-- Étiquettes des époques -->
+  <text x="100" y="365" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">0</text>
+  <text x="160" y="365" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">1</text>
+  <text x="220" y="365" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">2</text>
+  <text x="280" y="365" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">3</text>
+  <text x="340" y="365" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">4</text>
+  <text x="400" y="365" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">5</text>
+  <text x="460" y="365" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">6</text>
+  <text x="520" y="365" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">7</text>
+  <text x="580" y="365" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">8</text>
+  <text x="640" y="365" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">9</text>
+  <text x="700" y="365" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">10</text>
+  
+  <!-- Étiquettes des valeurs -->
+  <text x="90" y="350" font-family="Arial" font-size="12" text-anchor="end" fill="#333">0%</text>
+  <text x="90" y="300" font-family="Arial" font-size="12" text-anchor="end" fill="#333">20%</text>
+  <text x="90" y="250" font-family="Arial" font-size="12" text-anchor="end" fill="#333">40%</text>
+  <text x="90" y="200" font-family="Arial" font-size="12" text-anchor="end" fill="#333">60%</text>
+  <text x="90" y="150" font-family="Arial" font-size="12" text-anchor="end" fill="#333">80%</text>
+  <text x="90" y="100" font-family="Arial" font-size="12" text-anchor="end" fill="#333">100%</text>
+  
+  <!-- Courbe d'erreur d'entraînement -->
+  <polyline 
+    points="
+      100,280
+      160,260
+      220,230
+      280,210
+      340,190
+      400,170
+      460,160
+      520,155
+      580,153
+      640,152
+      700,150
+    " 
+    fill="none" 
+    stroke="#FF6347" 
+    stroke-width="3"
+  />
+  <!-- Étiquette de la courbe d'erreur -->
+  <circle cx="720" cy="150" r="5" fill="#FF6347"/>
+  <text x="740" y="155" font-family="Arial" font-size="14" fill="#FF6347">Erreur</text>
+  
+  <!-- Courbe de précision d'entraînement -->
+  <polyline 
+    points="
+      100,240
+      160,220
+      220,190
+      280,170
+      340,150
+      400,130
+      460,120
+      520,115
+      580,113
+      640,112
+      700,110
+    " 
+    fill="none" 
+    stroke="#4169E1" 
+    stroke-width="3"
+  />
+  <!-- Étiquette de la courbe de précision -->
+  <circle cx="720" y="110" r="5" fill="#4169E1"/>
+  <text x="740" y="115" font-family="Arial" font-size="14" fill="#4169E1">Précision (train)</text>
+  
+  <!-- Courbe de précision de validation -->
+  <polyline 
+    points="
+      100,240
+      160,225
+      220,200
+      280,185
+      340,175
+      400,170
+      460,168
+      520,167
+      580,167
+      640,167
+      700,168
+    " 
+    fill="none" 
+    stroke="#32CD32" 
+    stroke-width="3"
+    stroke-dasharray="5,5"
+  />
+  <!-- Étiquette de la courbe de précision de validation -->
+  <circle cx="720" y="170" r="5" fill="#32CD32"/>
+  <text x="740" y="175" font-family="Arial" font-size="14" fill="#32CD32">Précision (val)</text>
+  
+  <!-- Phases d'entraînement -->
+  <g>
+    <!-- Phase 1: Apprentissage rapide -->
+    <rect x="100" y="60" width="180" height="20" fill="#FFD700" opacity="0.5"/>
+    <text x="190" y="75" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">Apprentissage rapide</text>
+    
+    <!-- Phase 2: Amélioration graduelle -->
+    <rect x="280" y="60" width="240" height="20" fill="#98FB98" opacity="0.5"/>
+    <text x="400" y="75" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">Amélioration graduelle</text>
+    
+    <!-- Phase 3: Convergence -->
+    <rect x="520" y="60" width="180" height="20" fill="#B0C4DE" opacity="0.5"/>
+    <text x="610" y="75" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">Convergence</text>
+  </g>
+  
+  <!-- Flèches indiquant des points critiques -->
+  <!-- Début potentiel d'overfitting -->
+  <line x1="520" y1="167" x2="520" y2="115" stroke="#FF0000" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="530" y="90" font-family="Arial" font-size="12" fill="#FF0000" transform="rotate(-15, 530, 90)">Début potentiel de surapprentissage</text>
+  
+  <!-- Indications sur la descente de gradient -->
+  <g transform="translate(140, 220)">
+    <circle cx="0" cy="0" r="5" fill="#FF6347"/>
+    <line x1="0" y1="0" x2="15" y2="-15" stroke="#000" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="20" y="-20" font-family="Arial" font-size="10" fill="#333">Direction de la descente</text>
+  </g>
+  
+  <!-- Définition des marqueurs de flèches -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000"/>
+    </marker>
+  </defs>
+  
+  <!-- Éléments mathématiques du deep learning -->
+  <g transform="translate(400, 330)" opacity="0.15">
+    <text font-family="Arial" font-size="10" fill="#333">w := w - α∇J(w)</text>
+    <text x="100" font-family="Arial" font-size="10" fill="#333">J(w) = -1/m Σ y log(ŷ)</text>
+  </g>
+</svg>

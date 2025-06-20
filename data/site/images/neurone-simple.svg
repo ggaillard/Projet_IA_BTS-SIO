@@ -1,0 +1,36 @@
+<svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Entrées -->
+  <circle cx="50" cy="80" r="20" fill="#6495ED" />
+  <circle cx="50" cy="150" r="20" fill="#6495ED" />
+  <circle cx="50" cy="220" r="20" fill="#6495ED" />
+  
+  <text x="50" y="85" text-anchor="middle" fill="white" font-weight="bold">x₁</text>
+  <text x="50" y="155" text-anchor="middle" fill="white" font-weight="bold">x₂</text>
+  <text x="50" y="225" text-anchor="middle" fill="white" font-weight="bold">x₃</text>
+  
+  <!-- Connexions avec poids -->
+  <line x1="70" y1="80" x2="250" y2="150" stroke="#333" stroke-width="2" />
+  <line x1="70" y1="150" x2="250" y2="150" stroke="#333" stroke-width="4" />
+  <line x1="70" y1="220" x2="250" y2="150" stroke="#333" stroke-width="3" />
+  
+  <text x="130" y="95" transform="rotate(-12, 130, 95)" fill="#333" font-size="14">w₁ = 0.5</text>
+  <text x="160" y="145" fill="#333" font-size="14">w₂ = 1.2</text>
+  <text x="130" y="195" transform="rotate(12, 130, 195)" fill="#333" font-size="14">w₃ = 0.8</text>
+  
+  <!-- Le neurone -->
+  <circle cx="280" cy="150" r="40" fill="#FF7F50" />
+  <text x="280" y="155" text-anchor="middle" fill="white" font-weight="bold">Σ + f</text>
+  
+  <!-- Biais -->
+  <text x="280" y="205" text-anchor="middle" fill="#333" font-size="14">Biais = 0.3</text>
+  
+  <!-- Sortie -->
+  <line x1="320" y1="150" x2="500" y2="150" stroke="#333" stroke-width="3" />
+  <circle cx="550" cy="150" r="20" fill="#32CD32" />
+  <text x="550" y="155" text-anchor="middle" fill="white" font-weight="bold">y</text>
+  <text x="430" y="140" fill="#333" font-size="14">Activation</text>
+  
+  <!-- Étapes du processus -->
+  <rect x="50" y="250" width="500" height="40" rx="10" fill="#f0f0f0" stroke="#ccc" />
+  <text x="70" y="275" fill="#333" font-size="14">1. Entrées → 2. Pondération → 3. Somme → 4. Biais → 5. Activation → Sortie</text>
+</svg>

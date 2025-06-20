@@ -1,0 +1,123 @@
+site_name: Atelier Deep Learning
+site_description: Cours de Deep Learning pour le BTS SIO
+site_author: G.GAILLARD
+copyright: "© 2025 Atelier-deeplearning"
+# site_url: https://ggaillard.github.io/Atelier-deeplearning/  
+# repo_url: https://github.com/ggaillard/Atelier-deeplearning  
+repo_name: ggaillard/Atelier-deeplearning
+
+theme:
+  name: material
+  language: fr
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - content.code.copy
+    - content.tabs.link
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Passer au mode sombre
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Passer au mode clair
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - attr_list
+  - md_in_html
+  - pymdownx.arithmatex
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.magiclink
+  - pymdownx.highlight
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+  - mkdocs-jupyter
+  - mermaid2
+
+nav:
+  - Accueil: index.md
+  
+  - Module 1 - Fondamentaux:
+      - Vue d'ensemble: module1/index.md
+      - 1 - Introduction pratique: module1/introduction-pratique.md
+      - 2 - Concepts fondamentaux: module1/concepts-fondamentaux.md
+      - 3 - Mini-projet individuel: module1/mini-projet.md
+      - Auto-évaluation: module1/qcm-evaluation-module1.md
+      - Ressources: 
+        - Glossaire: module1/ressources/glossaire-dl.md  
+        - Guide Colab: module1/ressources/guide-colab.md 
+        - Synthèse: module1/ressources/synthese-module1.md    
+  - Module 2 - Architectures:
+      - Vue d'ensemble: module2/index.md
+      - 1 - Réseaux convolutifs (CNN): module2/reseaux-convolutifs.md
+      - 2 - Réseaux récurrents (RNN): module2/reseaux-recurrents.md
+      - Auto-évaluation: module2/qcm-evaluation-module2.md
+      - Ressources: 
+        - Glossaire: module1/ressources/glossaire-dl.md
+        - Synthèse: module2/ressources/synthese-module2.md  
+  - Module 3 - Applications:
+      - Vue d'ensemble: module3/index.md
+      - 1 - Système de tickets intelligent: module3/systeme-tickets.md
+      - 2 - Assistant de documentation: module3/assistant-documentation.md
+      - Auto-évaluation: module3/qcm-evaluation-module3.md
+      - Ressources: 
+        - Base de connaissances: ressources/base-connaissances.md
+        - API Mistral: ressources/api-mistral.md
+        - Fiche d'observations: module3/ressources/fiche-observations.md
+        - Synthèse: module3/ressources/synthese-module3.md
+        
+  - Module 4 - Projet Sécurisé:
+      - Vue d'ensemble: module4/index.md
+      - Phases:
+        - 0 - Analyse des risques: module4/phases/phase0-analyse-risques.md
+        - 1 - Développement sécurisé: module4/phases/phase1-developpement-securise.md
+        - 2 - Audit de sécurité: module4/phases/phase2-audit-securite.md
+        - 3 - Présentation sécurisée: module4/phases/phase3-presentation-securisee.md
+      - Auto-évaluation: module4/qcm-evaluation-module4-securite.md
+      - Ressources: 
+        - Kit d'analyse sécuritaire:
+          - Scénarios d'attaques: module4/ressources/kit-analyse-securitaire/scenarios-attaques.md
+          - Outils de validation: module4/ressources/kit-analyse-securitaire/outils-validation.md
+          - Templates d'audit: module4/ressources/kit-analyse-securitaire/templates-audit.md
+        - Livrables:
+          - Template rapport d'analyse: module4/livrables/rapport-analyse-risques-template.md
+          - Template audit complet: module4/livrables/audit-securite-complet-template.md
+        - Synthèse: module4/ressources/synthese-module4.md
+        
+  - Évaluation et Suivi:
+      - Critères d'évaluation: evaluation/criteres-evaluation.md
+      - Suivi de progression: suivi-progression.md
+      - Formulaire de feedback: feedback.md
+     
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/votre-repo/chatbot-deeplearning
+extra_javascript:
+  - javascripts/progress.js
+extra_css:
+  - stylesheets/progress.css
+  - stylesheets/extra.css
+ 

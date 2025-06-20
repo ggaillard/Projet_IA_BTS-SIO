@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300">
+  <!-- Fond dégradé -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0D47A1" />
+      <stop offset="100%" stop-color="#1E88E5" />
+    </linearGradient>
+    
+    <!-- Motif de réseau de neurones pour le fond -->
+    <pattern id="neural-pattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.3)"/>
+      <circle cx="60" cy="20" r="2" fill="rgba(255,255,255,0.3)"/>
+      <circle cx="20" cy="60" r="2" fill="rgba(255,255,255,0.3)"/>
+      <circle cx="60" cy="60" r="2" fill="rgba(255,255,255,0.3)"/>
+      <line x1="20" y1="20" x2="60" y2="20" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <line x1="20" y1="20" x2="20" y2="60" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <line x1="20" y1="20" x2="60" y2="60" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <line x1="60" y1="20" x2="60" y2="60" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <line x1="60" y1="20" x2="20" y2="60" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <line x1="20" y1="60" x2="60" y2="60" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  
+  <!-- Arrière-plan -->
+  <rect width="1200" height="300" fill="url(#bg-gradient)"/>
+  <rect width="1200" height="300" fill="url(#neural-pattern)"/>
+  
+  <!-- Overlay semi-transparent pour améliorer la lisibilité du texte -->
+  <rect width="1200" height="300" fill="rgba(13, 71, 161, 0.2)"/>
+  
+  <!-- Titre principal avec effet d'ombre -->
+  <g>
+    <text x="50" y="140" font-family="Arial" font-size="56" font-weight="bold" fill="white" filter="url(#shadow)">
+      Introduction au Deep Learning
+    </text>
+    <text x="50" y="190" font-family="Arial" font-size="28" fill="white" filter="url(#shadow)">
+      Fondamentaux, concepts et applications pratiques
+    </text>
+  </g>
+  
+  <!-- Effet d'ombre pour le texte -->
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Représentation visuelle du Deep Learning à droite -->
+  <g transform="translate(900, 150) scale(0.9)">
+    <!-- Cerveaux stylisés avec circuits -->
+    <path d="M50,0 C75,-20 125,-20 150,0 C175,20 175,60 150,80 C125,100 75,100 50,80 C25,60 25,20 50,0 Z" 
+          fill="none" stroke="white" stroke-width="2.5" opacity="0.8"/>
+    
+    <!-- Circuits internes -->
+    <circle cx="80" cy="20" r="3" fill="white" opacity="0.9"/>
+    <circle cx="120" cy="20" r="3" fill="white" opacity="0.9"/>
+    <circle cx="100" cy="50" r="3" fill="white" opacity="0.9"/>
+    <circle cx="70" cy="60" r="3" fill="white" opacity="0.9"/>
+    <circle cx="130" cy="60" r="3" fill="white" opacity="0.9"/>
+    
+    <line x1="80" y1="20" x2="120" y2="20" stroke="white" stroke-width="1.5" opacity="0.7"/>
+    <line x1="80" y1="20" x2="100" y2="50" stroke="white" stroke-width="1.5" opacity="0.7"/>
+    <line x1="120" y1="20" x2="100" y2="50" stroke="white" stroke-width="1.5" opacity="0.7"/>
+    <line x1="100" y1="50" x2="70" y2="60" stroke="white" stroke-width="1.5" opacity="0.7"/>
+    <line x1="100" y1="50" x2="130" y2="60" stroke="white" stroke-width="1.5" opacity="0.7"/>
+  </g>
+  
+  <!-- Représentation d'un réseau de neurones stylisé à gauche -->
+  <g transform="translate(350, 230)">
+    <!-- Couche d'entrée -->
+    <circle cx="-150" cy="-80" r="6" fill="rgba(255,255,255,0.9)"/>
+    <circle cx="-150" cy="-40" r="6" fill="rgba(255,255,255,0.9)"/>
+    <circle cx="-150" cy="0" r="6" fill="rgba(255,255,255,0.9)"/>
+    
+    <!-- Couche cachée 1 -->
+    <circle cx="-75" cy="-100" r="6" fill="rgba(255,255,255,0.9)"/>
+    <circle cx="-75" cy="-60" r="6" fill="rgba(255,255,255,0.9)"/>
+    <circle cx="-75" cy="-20" r="6" fill="rgba(255,255,255,0.9)"/>
+    <circle cx="-75" cy="20" r="6" fill="rgba(255,255,255,0.9)"/>
+    
+    <!-- Couche cachée 2 -->
+    <circle cx="0" cy="-80" r="6" fill="rgba(255,255,255,0.9)"/>
+    <circle cx="0" cy="-40" r="6" fill="rgba(255,255,255,0.9)"/>
+    <circle cx="0" cy="0" r="6" fill="rgba(255,255,255,0.9)"/>
+    
+    <!-- Couche de sortie -->
+    <circle cx="75" cy="-60" r="6" fill="rgba(255,255,255,0.9)"/>
+    <circle cx="75" cy="-20" r="6" fill="rgba(255,255,255,0.9)"/>
+    
+    <!-- Connexions entre les couches -->
+    <g stroke="rgba(255,255,255,0.6)" stroke-width="1">
+      <!-- Entrée vers cachée 1 -->
+      <line x1="-150" y1="-80" x2="-75" y2="-100"/>
+      <line x1="-150" y1="-80" x2="-75" y2="-60"/>
+      <line x1="-150" y1="-80" x2="-75" y2="-20"/>
+      <line x1="-150" y1="-80" x2="-75" y2="20"/>
+      
+      <line x1="-150" y1="-40" x2="-75" y2="-100"/>
+      <line x1="-150" y1="-40" x2="-75" y2="-60"/>
+      <line x1="-150" y1="-40" x2="-75" y2="-20"/>
+      <line x1="-150" y1="-40" x2="-75" y2="20"/>
+      
+      <line x1="-150" y1="0" x2="-75" y2="-100"/>
+      <line x1="-150" y1="0" x2="-75" y2="-60"/>
+      <line x1="-150" y1="0" x2="-75" y2="-20"/>
+      <line x1="-150" y1="0" x2="-75" y2="20"/>
+      
+      <!-- Cachée 1 vers cachée 2 -->
+      <line x1="-75" y1="-100" x2="0" y2="-80"/>
+      <line x1="-75" y1="-100" x2="0" y2="-40"/>
+      <line x1="-75" y1="-100" x2="0" y2="0"/>
+      
+      <line x1="-75" y1="-60" x2="0" y2="-80"/>
+      <line x1="-75" y1="-60" x2="0" y2="-40"/>
+      <line x1="-75" y1="-60" x2="0" y2="0"/>
+      
+      <line x1="-75" y1="-20" x2="0" y2="-80"/>
+      <line x1="-75" y1="-20" x2="0" y2="-40"/>
+      <line x1="-75" y1="-20" x2="0" y2="0"/>
+      
+      <line x1="-75" y1="20" x2="0" y2="-80"/>
+      <line x1="-75" y1="20" x2="0" y2="-40"/>
+      <line x1="-75" y1="20" x2="0" y2="0"/>
+      
+      <!-- Cachée 2 vers sortie -->
+      <line x1="0" y1="-80" x2="75" y2="-60"/>
+      <line x1="0" y1="-80" x2="75" y2="-20"/>
+      
+      <line x1="0" y1="-40" x2="75" y2="-60"/>
+      <line x1="0" y1="-40" x2="75" y2="-20"/>
+      
+      <line x1="0" y1="0" x2="75" y2="-60"/>
+      <line x1="0" y1="0" x2="75" y2="-20"/>
+    </g>
+  </g>
+  
+  <!-- Icônes d'application en bas -->
+  <g transform="translate(600, 250)">
+    <g transform="translate(-300, 0)">
+      <circle cx="0" cy="0" r="15" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1"/>
+      <text x="0" y="5" font-family="Arial" font-size="16" text-anchor="middle" fill="white">CV</text>
+    </g>
+    
+    <g transform="translate(-200, 0)">
+      <circle cx="0" cy="0" r="15" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1"/>
+      <text x="0" y="5" font-family="Arial" font-size="16" text-anchor="middle" fill="white">NLP</text>
+    </g>
+    
+    <g transform="translate(-100, 0)">
+      <circle cx="0" cy="0" r="15" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1"/>
+      <text x="0" y="5" font-family="Arial" font-size="16" text-anchor="middle" fill="white">RL</text>
+    </g>
+    
+    <g transform="translate(0, 0)">
+      <circle cx="0" cy="0" r="15" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1"/>
+      <text x="0" y="5" font-family="Arial" font-size="16" text-anchor="middle" fill="white">GAN</text>
+    </g>
+    
+    <g transform="translate(100, 0)">
+      <circle cx="0" cy="0" r="15" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1"/>
+      <text x="0" y="5" font-family="Arial" font-size="16" text-anchor="middle" fill="white">CNN</text>
+    </g>
+    
+    <g transform="translate(200, 0)">
+      <circle cx="0" cy="0" r="15" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1"/>
+      <text x="0" y="5" font-family="Arial" font-size="16" text-anchor="middle" fill="white">RNN</text>
+    </g>
+    
+    <g transform="translate(300, 0)">
+      <circle cx="0" cy="0" r="15" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1"/>
+      <text x="0" y="5" font-family="Arial" font-size="16" text-anchor="middle" fill="white">ML</text>
+    </g>
+  </g>
+</svg>

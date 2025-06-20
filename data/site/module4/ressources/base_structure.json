@@ -1,0 +1,71 @@
+{
+    "concepts": [
+      {
+        "id": "neural_network",
+        "title": "Réseau de neurones",
+        "description": "Un modèle de calcul qui s'inspire du fonctionnement des neurones biologiques du cerveau humain.",
+        "levels": {
+          "beginner": "Un réseau de neurones est comme un système qui apprend à reconnaître des motifs en s'inspirant du cerveau humain. Il prend des données en entrée, les traite à travers plusieurs couches de calcul et produit une sortie (comme une prédiction ou une classification).",
+          
+          "intermediate": "Un réseau de neurones artificiels est un modèle mathématique composé de neurones organisés en couches. Chaque neurone reçoit des signaux pondérés, leur applique une fonction d'activation et transmet le résultat aux neurones suivants. Pendant l'apprentissage, les poids sont ajustés pour minimiser l'erreur entre les prédictions et les résultats attendus.",
+          
+          "advanced": "Un réseau de neurones est un modèle paramétrique organisé en couches successives, où chaque couche applique une transformation non-linéaire aux données. Formellement, chaque neurone calcule une combinaison linéaire de ses entrées, y ajoute un biais, puis applique une fonction d'activation non-linéaire. L'apprentissage s'effectue par descente de gradient pour optimiser une fonction de perte, via l'algorithme de rétropropagation qui calcule les gradients par différentiation en chaîne."
+        },
+        "examples": [
+          {
+            "title": "Reconnaissance d'images",
+            "description": "Un réseau de neurones peut être entraîné à reconnaître des chiffres manuscrits dans le dataset MNIST avec plus de 99% de précision."
+          },
+          {
+            "title": "Traduction automatique",
+            "description": "Les systèmes de traduction comme Google Translate utilisent des réseaux de neurones pour traduire du texte d'une langue à une autre."
+          }
+        ],
+        "exercises": [
+          {
+            "question": "Quel est le rôle principal de la fonction d'activation dans un neurone artificiel?",
+            "options": [
+              "Amplifier le signal d'entrée",
+              "Introduire de la non-linéarité dans le modèle",
+              "Réduire la complexité du réseau",
+              "Accélérer le temps d'entraînement"
+            ],
+            "correct_answer": 1,
+            "explanation": "La fonction d'activation introduit de la non-linéarité dans le réseau, ce qui est essentiel pour lui permettre d'apprendre des relations complexes dans les données. Sans cette non-linéarité, un réseau multicouche serait équivalent à un simple modèle linéaire."
+          }
+        ],
+        "related_concepts": ["perceptron", "deep_learning", "backpropagation"]
+      },
+      
+      {
+        "id": "TODO_CONCEPT_ID",
+        "title": "TODO: Titre du concept",
+        "description": "TODO: Description générale du concept",
+        "levels": {
+          "beginner": "TODO: Explication simple avec analogies",
+          "intermediate": "TODO: Explication de niveau intermédiaire",
+          "advanced": "TODO: Explication technique avancée"
+        },
+        "examples": [
+          {
+            "title": "TODO: Titre de l'exemple",
+            "description": "TODO: Description détaillée de l'exemple"
+          }
+        ],
+        "exercises": [
+          {
+            "question": "TODO: Question sur ce concept",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "correct_answer": 0,
+            "explanation": "TODO: Explication de la réponse correcte"
+          }
+        ],
+        "related_concepts": ["TODO", "concept", "ids"]
+      }
+    ]
+  }

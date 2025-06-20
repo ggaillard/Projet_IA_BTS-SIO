@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Fond -->
+  <rect width="800" height="500" fill="#f0f0f0"/>
+  
+  <!-- Titre -->
+  <text x="400" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold" fill="#333">Détection d'objets en temps réel</text>
+  
+  <!-- Arrière-plan de l'image "capturée" -->
+  <rect x="100" y="80" width="600" height="350" fill="#d9d9d9" stroke="#999" stroke-width="2"/>
+  
+  <!-- Scène avec des objets -->
+  
+  <!-- Ciel -->
+  <rect x="100" y="80" width="600" height="170" fill="#87CEEB"/>
+  
+  <!-- Sol/route -->
+  <rect x="100" y="250" width="600" height="180" fill="#555"/>
+  
+  <!-- Soleil -->
+  <circle cx="180" cy="130" r="30" fill="#FFD700"/>
+  
+  <!-- Bâtiments au fond -->
+  <rect x="250" y="150" width="70" height="100" fill="#708090"/>
+  <rect x="320" y="130" width="60" height="120" fill="#4682B4"/>
+  <rect x="380" y="160" width="80" height="90" fill="#708090"/>
+  <rect x="460" y="140" width="50" height="110" fill="#4682B4"/>
+  <rect x="510" y="170" width="90" height="80" fill="#708090"/>
+  
+  <!-- Voiture 1 avec rectangle de détection -->
+  <g>
+    <!-- Corps de la voiture -->
+    <rect x="150" y="300" width="120" height="40" rx="5" fill="#FF4500"/>
+    <!-- Fenêtres -->
+    <rect x="170" y="280" width="80" height="20" rx="3" fill="#B0C4DE"/>
+    <!-- Roues -->
+    <circle cx="170" cy="340" r="15" fill="#333"/>
+    <circle cx="250" cy="340" r="15" fill="#333"/>
+    
+    <!-- Rectangle de détection -->
+    <rect x="140" y="270" width="140" height="90" fill="none" stroke="#FF0000" stroke-width="3" stroke-dasharray="10,5"/>
+    
+    <!-- Étiquette avec score -->
+    <rect x="140" y="255" width="80" height="25" rx="5" fill="rgba(255,0,0,0.7)"/>
+    <text x="180" y="273" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Voiture 96%</text>
+  </g>
+  
+  <!-- Personne avec rectangle de détection -->
+  <g>
+    <!-- Corps -->
+    <circle cx="400" cy="290" r="15" fill="#8A2BE2"/>
+    <rect x="390" y="305" width="20" height="40" fill="#8A2BE2"/>
+    <!-- Jambes -->
+    <rect x="390" y="345" width="8" height="30" fill="#8A2BE2"/>
+    <rect x="402" y="345" width="8" height="30" fill="#8A2BE2"/>
+    <!-- Bras -->
+    <rect x="375" y="310" width="15" height="7" fill="#8A2BE2"/>
+    <rect x="410" y="310" width="15" height="7" fill="#8A2BE2"/>
+    
+    <!-- Rectangle de détection -->
+    <rect x="370" y="270" width="60" height="110" fill="none" stroke="#00FF00" stroke-width="3" stroke-dasharray="10,5"/>
+    
+    <!-- Étiquette avec score -->
+    <rect x="370" y="255" width="90" height="25" rx="5" fill="rgba(0,255,0,0.7)"/>
+    <text x="415" y="273" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Personne 98%</text>
+  </g>
+  
+  <!-- Vélo avec rectangle de détection -->
+  <g>
+    <!-- Roue arrière -->
+    <circle cx="530" cy="340" r="20" fill="none" stroke="#333" stroke-width="2"/>
+    <!-- Roue avant -->
+    <circle cx="590" cy="340" r="20" fill="none" stroke="#333" stroke-width="2"/>
+    <!-- Cadre -->
+    <line x1="530" y1="340" x2="560" y2="310" stroke="#1E90FF" stroke-width="3"/>
+    <line x1="560" y1="310" x2="590" y2="340" stroke="#1E90FF" stroke-width="3"/>
+    <line x1="560" y1="310" x2="550" y2="290" stroke="#1E90FF" stroke-width="3"/>
+    <!-- Guidon -->
+    <line x1="590" y1="340" x2="595" y2="300" stroke="#1E90FF" stroke-width="3"/>
+    <line x1="595" y1="300" x2="580" y2="300" stroke="#1E90FF" stroke-width="2"/>
+    <line x1="595" y1="300" x2="610" y2="300" stroke="#1E90FF" stroke-width="2"/>
+    
+    <!-- Rectangle de détection -->
+    <rect x="510" y="270" width="110" height="100" fill="none" stroke="#0000FF" stroke-width="3" stroke-dasharray="10,5"/>
+    
+    <!-- Étiquette avec score -->
+    <rect x="510" y="255" width="70" height="25" rx="5" fill="rgba(0,0,255,0.7)"/>
+    <text x="545" y="273" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Vélo 89%</text>
+  </g>
+  
+  <!-- Panneau de signalisation avec rectangle de détection -->
+  <g>
+    <!-- Poteau -->
+    <rect x="650" y="220" width="5" height="110" fill="#A9A9A9"/>
+    <!-- Panneau triangulaire -->
+    <polygon points="630,220 675,220 652.5,180" fill="#FFFF00" stroke="#000" stroke-width="2"/>
+    <!-- Point d'exclamation -->
+    <text x="652.5" y="210" font-family="Arial" font-size="20" text-anchor="middle" font-weight="bold" fill="#000">!</text>
+    
+    <!-- Rectangle de détection -->
+    <rect x="620" y="170" width="65" height="60" fill="none" stroke="#FFA500" stroke-width="3" stroke-dasharray="10,5"/>
+    
+    <!-- Étiquette avec score -->
+    <rect x="620" y="155" width="90" height="25" rx="5" fill="rgba(255,165,0,0.7)"/>
+    <text x="665" y="173" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Panneau 92%</text>
+  </g>
+  
+  <!-- Interface de la caméra -->
+  <!-- Indicateurs en haut à gauche -->
+  <rect x="110" y="90" width="120" height="20" rx="3" fill="rgba(0,0,0,0.5)"/>
+  <circle cx="125" cy="100" r="7" fill="#FF0000"/>
+  <text x="160" y="105" font-family="Arial" font-size="14" text-anchor="middle" fill="white">REC</text>
+  
+  <!-- FPS et infos en bas à droite -->
+  <rect x="580" y="400" width="110" height="20" rx="3" fill="rgba(0,0,0,0.5)"/>
+  <text x="635" y="415" font-family="Arial" font-size="14" text-anchor="middle" fill="white">30 FPS</text>
+  
+  <!-- Légende -->
+  <text x="400" y="460" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">Détection en temps réel avec Deep Learning - 4 objets identifiés</text>
+</svg>

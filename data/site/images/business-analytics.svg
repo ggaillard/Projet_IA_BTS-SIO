@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+  <!-- Background -->
+  <rect width="800" height="300" fill="#f8f9fa" rx="10" ry="10"/>
+  
+  <!-- Header section with title -->
+  <text x="30" y="40" font-family="Arial" font-size="24" font-weight="bold" fill="#2c3e50">Business Analytics Dashboard</text>
+  
+  <!-- Line chart background -->
+  <rect x="30" y="60" width="440" height="220" fill="white" stroke="#ddd" stroke-width="1" rx="5" ry="5"/>
+  
+  <!-- Line chart title -->
+  <text x="40" y="80" font-family="Arial" font-size="14" fill="#34495e">Sales Performance Trends</text>
+  
+  <!-- X and Y axes -->
+  <line x1="50" y1="250" x2="450" y2="250" stroke="#7f8c8d" stroke-width="2"/>
+  <line x1="50" y1="90" x2="50" y2="250" stroke="#7f8c8d" stroke-width="2"/>
+  
+  <!-- X-axis labels -->
+  <text x="70" y="265" font-family="Arial" font-size="10" fill="#7f8c8d">Jan</text>
+  <text x="130" y="265" font-family="Arial" font-size="10" fill="#7f8c8d">Feb</text>
+  <text x="190" y="265" font-family="Arial" font-size="10" fill="#7f8c8d">Mar</text>
+  <text x="250" y="265" font-family="Arial" font-size="10" fill="#7f8c8d">Apr</text>
+  <text x="310" y="265" font-family="Arial" font-size="10" fill="#7f8c8d">May</text>
+  <text x="370" y="265" font-family="Arial" font-size="10" fill="#7f8c8d">Jun</text>
+  <text x="430" y="265" font-family="Arial" font-size="10" fill="#7f8c8d">Jul</text>
+  
+  <!-- Y-axis labels -->
+  <text x="35" y="250" font-family="Arial" font-size="10" fill="#7f8c8d">0</text>
+  <text x="35" y="210" font-family="Arial" font-size="10" fill="#7f8c8d">25</text>
+  <text x="35" y="170" font-family="Arial" font-size="10" fill="#7f8c8d">50</text>
+  <text x="35" y="130" font-family="Arial" font-size="10" fill="#7f8c8d">75</text>
+  <text x="30" y="90" font-family="Arial" font-size="10" fill="#7f8c8d">100</text>
+  
+  <!-- Grid lines -->
+  <line x1="50" y1="210" x2="450" y2="210" stroke="#ecf0f1" stroke-width="1"/>
+  <line x1="50" y1="170" x2="450" y2="170" stroke="#ecf0f1" stroke-width="1"/>
+  <line x1="50" y1="130" x2="450" y2="130" stroke="#ecf0f1" stroke-width="1"/>
+  <line x1="50" y1="90" x2="450" y2="90" stroke="#ecf0f1" stroke-width="1"/>
+  
+  <!-- Actual sales line (blue) -->
+  <polyline 
+    points="70,210 130,190 190,170 250,140 310,150 370,120 430,100" 
+    fill="none" 
+    stroke="#3498db" 
+    stroke-width="3"
+  />
+  
+  <!-- Predicted sales line (dashed, orange) -->
+  <polyline 
+    points="70,210 130,200 190,180 250,150 310,140 370,130 430,90" 
+    fill="none" 
+    stroke="#e67e22" 
+    stroke-width="2"
+    stroke-dasharray="5,5"
+  />
+  
+  <!-- Line chart legend -->
+  <rect x="300" y="75" width="12" height="3" fill="#3498db"/>
+  <text x="315" y="80" font-family="Arial" font-size="10" fill="#34495e">Actual Sales</text>
+  <rect x="380" y="75" width="12" height="3" fill="#e67e22" stroke-dasharray="5,5"/>
+  <text x="395" y="80" font-family="Arial" font-size="10" fill="#34495e">Predicted Sales</text>
+  
+  <!-- Pie chart background -->
+  <rect x="490" y="60" width="280" height="100" fill="white" stroke="#ddd" stroke-width="1" rx="5" ry="5"/>
+  
+  <!-- Pie chart title -->
+  <text x="500" y="80" font-family="Arial" font-size="14" fill="#34495e">Sales Distribution</text>
+  
+  <!-- Pie chart -->
+  <circle cx="550" cy="120" r="40" fill="white" stroke="#ddd" stroke-width="1"/>
+  <path d="M550,120 L550,80 A40,40 0 0,1 586,105 z" fill="#3498db"/>
+  <path d="M550,120 L586,105 A40,40 0 0,1 575,155 z" fill="#2ecc71"/>
+  <path d="M550,120 L575,155 A40,40 0 0,1 520,155 z" fill="#e74c3c"/>
+  <path d="M550,120 L520,155 A40,40 0 0,1 515,105 z" fill="#f1c40f"/>
+  <path d="M550,120 L515,105 A40,40 0 0,1 550,80 z" fill="#9b59b6"/>
+  
+  <!-- Pie chart legend -->
+  <rect x="610" y="95" width="10" height="10" fill="#3498db"/>
+  <text x="625" y="105" font-family="Arial" font-size="12" fill="#34495e">Electronics (35%)</text>
+  <rect x="610" y="115" width="10" height="10" fill="#2ecc71"/>
+  <text x="625" y="125" font-family="Arial" font-size="12" fill="#34495e">Fashion (25%)</text>
+  <rect x="610" y="135" width="10" height="10" fill="#e74c3c"/>
+  <text x="625" y="145" font-family="Arial" font-size="12" fill="#34495e">Home (20%)</text>
+  <rect x="720" y="95" width="10" height="10" fill="#f1c40f"/>
+  <text x="735" y="105" font-family="Arial" font-size="12" fill="#34495e">Books (15%)</text>
+  <rect x="720" y="115" width="10" height="10" fill="#9b59b6"/>
+  <text x="735" y="125" font-family="Arial" font-size="12" fill="#34495e">Other (5%)</text>
+  
+  <!-- Bar chart background -->
+  <rect x="490" y="180" width="280" height="100" fill="white" stroke="#ddd" stroke-width="1" rx="5" ry="5"/>
+  
+  <!-- Bar chart title -->
+  <text x="500" y="200" font-family="Arial" font-size="14" fill="#34495e">Forecast Accuracy</text>
+  
+  <!-- Bars -->
+  <rect x="520" y="210" width="30" height="50" fill="#3498db"/>
+  <rect x="560" y="220" width="30" height="40" fill="#3498db"/>
+  <rect x="600" y="225" width="30" height="35" fill="#3498db"/>
+  <rect x="640" y="215" width="30" height="45" fill="#3498db"/>
+  <rect x="680" y="205" width="30" height="55" fill="#3498db"/>
+  
+  <!-- Bar chart labels -->
+  <text x="525" y="270" font-family="Arial" font-size="10" fill="#7f8c8d">Day</text>
+  <text x="563" y="270" font-family="Arial" font-size="10" fill="#7f8c8d">Week</text>
+  <text x="598" y="270" font-family="Arial" font-size="10" fill="#7f8c8d">Month</text>
+  <text x="642" y="270" font-family="Arial" font-size="10" fill="#7f8c8d">Quarter</text>
+  <text x="682" y="270" font-family="Arial" font-size="10" fill="#7f8c8d">Year</text>
+  
+  <!-- Accuracy percentages -->
+  <text x="530" y="205" font-family="Arial" font-size="10" fill="white">95%</text>
+  <text x="570" y="215" font-family="Arial" font-size="10" fill="white">90%</text>
+  <text x="610" y="220" font-family="Arial" font-size="10" fill="white">88%</text>
+  <text x="650" y="210" font-family="Arial" font-size="10" fill="white">93%</text>
+  <text x="690" y="200" font-family="Arial" font-size="10" fill="white">97%</text>
+</svg>

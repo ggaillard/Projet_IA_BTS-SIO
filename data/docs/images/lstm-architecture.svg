@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Background with grid -->
+  <rect width="800" height="400" fill="#f8f9fa" />
+  <g stroke="#ddd" stroke-width="1">
+    <line x1="0" y1="50" x2="800" y2="50" />
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="150" x2="800" y2="150" />
+    <line x1="0" y1="200" x2="800" y2="200" />
+    <line x1="0" y1="250" x2="800" y2="250" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="350" x2="800" y2="350" />
+    
+    <line x1="100" y1="0" x2="100" y2="400" />
+    <line x1="200" y1="0" x2="200" y2="400" />
+    <line x1="300" y1="0" x2="300" y2="400" />
+    <line x1="400" y1="0" x2="400" y2="400" />
+    <line x1="500" y1="0" x2="500" y2="400" />
+    <line x1="600" y1="0" x2="600" y2="400" />
+    <line x1="700" y1="0" x2="700" y2="400" />
+  </g>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial" font-size="24" text-anchor="middle" fill="#333">Architecture d'une cellule LSTM</text>
+  
+  <!-- LSTM Cell Container -->
+  <rect x="150" y="70" width="500" height="260" rx="10" fill="#e1f5fe" stroke="#29b6f6" stroke-width="2" />
+  
+  <!-- Cell State Line (top horizontal line) -->
+  <line x1="150" y1="120" x2="650" y2="120" stroke="#f06292" stroke-width="4" />
+  <circle cx="200" cy="120" r="10" fill="#f06292" />
+  <circle cx="600" cy="120" r="10" fill="#f06292" />
+  <text x="180" y="100" font-family="Arial" font-size="16" fill="#d81b60">C(t-1)</text>
+  <text x="620" y="100" font-family="Arial" font-size="16" fill="#d81b60">C(t)</text>
+  
+  <!-- Hidden State Line (bottom horizontal line) -->
+  <line x1="150" y1="280" x2="650" y2="280" stroke="#8e24aa" stroke-width="4" />
+  <circle cx="200" cy="280" r="10" fill="#8e24aa" />
+  <circle cx="600" cy="280" r="10" fill="#8e24aa" />
+  <text x="180" y="310" font-family="Arial" font-size="16" fill="#8e24aa">h(t-1)</text>
+  <text x="620" y="310" font-family="Arial" font-size="16" fill="#8e24aa">h(t)</text>
+  
+  <!-- Input -->
+  <circle cx="325" cy="350" r="10" fill="#43a047" />
+  <line x1="325" y1="350" x2="325" y2="280" stroke="#43a047" stroke-width="2" />
+  <text x="325" y="380" font-family="Arial" font-size="16" fill="#43a047" text-anchor="middle">x(t)</text>
+  
+  <!-- Forget Gate -->
+  <rect x="250" y="180" width="60" height="60" rx="5" fill="#ffca28" stroke="#ff8f00" stroke-width="2" />
+  <text x="280" y="215" font-family="Arial" font-size="20" text-anchor="middle" fill="#ff8f00">σ</text>
+  <text x="280" y="160" font-family="Arial" font-size="14" text-anchor="middle" fill="#ff8f00">Forget Gate</text>
+  
+  <!-- Input Gate -->
+  <rect x="350" y="180" width="60" height="60" rx="5" fill="#66bb6a" stroke="#388e3c" stroke-width="2" />
+  <text x="380" y="215" font-family="Arial" font-size="20" text-anchor="middle" fill="#388e3c">σ</text>
+  <text x="380" y="160" font-family="Arial" font-size="14" text-anchor="middle" fill="#388e3c">Input Gate</text>
+  
+  <!-- Cell Update -->
+  <rect x="450" y="180" width="60" height="60" rx="5" fill="#42a5f5" stroke="#1976d2" stroke-width="2" />
+  <text x="480" y="215" font-family="Arial" font-size="20" text-anchor="middle" fill="#1976d2">tanh</text>
+  <text x="480" y="160" font-family="Arial" font-size="14" text-anchor="middle" fill="#1976d2">Cell Update</text>
+  
+  <!-- Output Gate -->
+  <rect x="550" y="180" width="60" height="60" rx="5" fill="#ef5350" stroke="#c62828" stroke-width="2" />
+  <text x="580" y="215" font-family="Arial" font-size="20" text-anchor="middle" fill="#c62828">σ</text>
+  <text x="580" y="160" font-family="Arial" font-size="14" text-anchor="middle" fill="#c62828">Output Gate</text>
+  
+  <!-- Multiplication Points -->
+  <circle cx="280" cy="120" r="8" fill="#fdd835" stroke="#f57f17" stroke-width="2" />
+  <text x="280" y="120" font-family="Arial" font-size="14" text-anchor="middle" fill="#f57f17">×</text>
+  
+  <circle cx="430" cy="120" r="8" fill="#7cb342" stroke="#33691e" stroke-width="2" />
+  <text x="430" y="120" font-family="Arial" font-size="14" text-anchor="middle" fill="#33691e">×</text>
+  
+  <circle cx="530" cy="280" r="8" fill="#f44336" stroke="#b71c1c" stroke-width="2" />
+  <text x="530" y="280" font-family="Arial" font-size="14" text-anchor="middle" fill="#b71c1c">×</text>
+  
+  <!-- Addition Point -->
+  <circle cx="480" cy="120" r="8" fill="#78909c" stroke="#37474f" stroke-width="2" />
+  <text x="480" y="120" font-family="Arial" font-size="14" text-anchor="middle" fill="#37474f">+</text>
+  
+  <!-- tanh Activation -->
+  <circle cx="530" cy="200" r="8" fill="#3949ab" stroke="#1a237e" stroke-width="2" />
+  <text x="530" y="200" font-family="Arial" font-size="12" text-anchor="middle" fill="#1a237e">tanh</text>
+  
+  <!-- Connecting Lines (simplified) -->
+  <!-- Forget gate connections -->
+  <line x1="280" y1="180" x2="280" y2="128" stroke="#ff8f00" stroke-width="2" />
+  
+  <!-- Input gate connections -->
+  <line x1="380" y1="180" x2="380" y2="150" stroke="#388e3c" stroke-width="2" />
+  <line x1="380" y1="150" x2="430" y2="150" stroke="#388e3c" stroke-width="2" />
+  <line x1="430" y1="150" x2="430" y2="128" stroke="#388e3c" stroke-width="2" />
+  
+  <!-- Cell update connections -->
+  <line x1="480" y1="180" x2="480" y2="150" stroke="#1976d2" stroke-width="2" />
+  <line x1="480" y1="150" x2="430" y2="150" stroke="#1976d2" stroke-width="2" />
+  
+  <!-- Output gate connections -->
+  <line x1="580" y1="240" x2="580" y2="280" stroke="#c62828" stroke-width="2" />
+  <line x1="480" y1="120" x2="530" y2="120" stroke="#d81b60" stroke-width="2" />
+  <line x1="530" y1="120" x2="530" y2="192" stroke="#d81b60" stroke-width="2" />
+  <line x1="530" y1="208" x2="530" y2="272" stroke="#1a237e" stroke-width="2" />
+  
+  <!-- Legend -->
+  <text x="720" y="390" font-family="Arial" font-size="12" text-anchor="end" fill="#666">σ: Sigmoid</text>
+</svg>

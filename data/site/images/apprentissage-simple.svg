@@ -1,0 +1,57 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond -->
+  <rect x="0" y="0" width="800" height="400" fill="white" />
+  
+  <!-- Étape 1: Prédiction -->
+  <circle cx="150" cy="200" r="100" fill="#f0f0f0" stroke="#ccc" stroke-width="2" />
+  <text x="150" y="140" text-anchor="middle" fill="#333" font-size="20" font-weight="bold">1. Prédiction</text>
+  
+  <rect x="110" y="170" width="80" height="60" rx="5" fill="#6495ED" stroke="#333" />
+  <text x="150" y="205" text-anchor="middle" fill="white" font-size="16">Réseau de</text>
+  <text x="150" y="225" text-anchor="middle" fill="white" font-size="16">neurones</text>
+  
+  <text x="70" y="205" text-anchor="middle" fill="#333" font-size="16">Entrée</text>
+  <text x="230" y="205" text-anchor="middle" fill="#333" font-size="16">Prédiction</text>
+  
+  <path d="M 90 200 L 110 200" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 190 200 L 210 200" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- Étape 2: Mesure de l'erreur -->
+  <circle cx="400" cy="200" r="100" fill="#f0f0f0" stroke="#ccc" stroke-width="2" />
+  <text x="400" y="140" text-anchor="middle" fill="#333" font-size="20" font-weight="bold">2. Mesure de l'erreur</text>
+  
+  <rect x="370" y="170" width="60" height="60" rx="5" fill="#FF7F50" stroke="#333" />
+  <text x="400" y="205" text-anchor="middle" fill="white" font-size="26">-</text>
+  
+  <text x="330" y="185" text-anchor="middle" fill="#333" font-size="16">Prédiction</text>
+  <text x="470" y="185" text-anchor="middle" fill="#333" font-size="16">Valeur</text>
+  <text x="470" y="205" text-anchor="middle" fill="#333" font-size="16">réelle</text>
+  
+  <text x="400" y="265" text-anchor="middle" fill="#333" font-size="16">Erreur</text>
+  
+  <path d="M 340 200 L 370 200" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 430 200 L 460 200" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 400 230 L 400 250" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- Étape 3: Ajustement des poids -->
+  <circle cx="650" cy="200" r="100" fill="#f0f0f0" stroke="#ccc" stroke-width="2" />
+  <text x="650" y="140" text-anchor="middle" fill="#333" font-size="20" font-weight="bold">3. Ajustement</text>
+  <text x="650" y="165" text-anchor="middle" fill="#333" font-size="20" font-weight="bold">des poids</text>
+  
+  <path d="M 610 190 C 630 170, 640 210, 650 190 C 660 170, 670 210, 690 190" stroke="#32CD32" stroke-width="3" fill="none" />
+  <text x="650" y="220" text-anchor="middle" fill="#333" font-size="16">Descente</text>
+  <text x="650" y="240" text-anchor="middle" fill="#333" font-size="16">de gradient</text>
+  
+  <path d="M 500 200 L 550 200" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- Flèche de retour -->
+  <path d="M 700 200 C 750 200, 750 350, 400 350 C 50 350, 50 200, 100 200" stroke="#333" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrow)" />
+  <text x="400" y="330" text-anchor="middle" fill="#333" font-size="16">Répéter jusqu'à convergence</text>
+  
+  <!-- Définition des marqueurs de flèche -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333" />
+    </marker>
+  </defs>
+</svg>

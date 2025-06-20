@@ -1,0 +1,349 @@
+/* 🎨 Styles pour le chatbot de démonstration */
+/* ⚠️  Contient des éléments de style pour les vulnérabilités */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+/* 🚨 Styles pour les informations de debug (vulnérabilité) */
+.debug-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 11px !important;
+    color: #ffeb3b !important;
+    border: 1px dashed #ffeb3b;
+    margin: 10px auto;
+    max-width: 600px;
+}
+
+/* Chat Container */
+.chat-container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 500px;
+    background: #f8f9fa;
+}
+
+.message {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-message {
+    align-items: flex-end;
+}
+
+.bot-message {
+    align-items: flex-start;
+}
+
+.message-content {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 18px;
+    word-wrap: break-word;
+}
+
+.user-message .message-content {
+    background: #007bff;
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.bot-message .message-content {
+    background: #e9ecef;
+    color: #333;
+    border-bottom-left-radius: 4px;
+}
+
+.error-message .message-content {
+    background: #dc3545;
+    color: white;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    white-space: pre-wrap;
+    max-width: 95%;
+}
+
+.message-time {
+    font-size: 11px;
+    color: #6c757d;
+    margin-top: 4px;
+    padding: 0 16px;
+}
+
+/* 🚨 Styles pour les messages de debug (vulnérabilité) */
+.debug-message {
+    margin: 10px 0;
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.debug-message details {
+    cursor: pointer;
+}
+
+.debug-message summary {
+    color: #856404;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.debug-message pre {
+    background: #2d3748;
+    color: #e2e8f0;
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+/* Chat Input */
+.chat-input-container {
+    padding: 20px;
+    background: white;
+    border-top: 1px solid #e9ecef;
+}
+
+.user-info {
+    margin-bottom: 15px;
+}
+
+.user-info input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.user-info input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.user-info small {
+    color: #6c757d;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+#user-message {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    resize: vertical;
+    min-height: 50px;
+    font-family: inherit;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+#user-message:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+#send-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    min-width: 100px;
+}
+
+#send-btn:hover {
+    background: #0056b3;
+    transform: translateY(-1px);
+}
+
+#send-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    text-align: center;
+    color: white;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ffeb3b;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.footer-links a:hover {
+    background-color: rgba(255, 235, 59, 0.2);
+    text-decoration: underline;
+}
+
+/* 🚨 Styles pour les informations système exposées (vulnérabilité) */
+.system-info {
+    background: rgba(220, 53, 69, 0.1);
+    border: 1px dashed #dc3545;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin: 10px auto;
+    max-width: 700px;
+}
+
+.system-info small {
+    color: #ffcdd2;
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .chat-messages {
+        max-height: 400px;
+    }
+    
+    .message-content {
+        max-width: 95%;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    #send-btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+/* 🚨 Styles pour les éléments de sécurité (à des fins pédagogiques) */
+.vulnerability-highlight {
+    background: #fff3cd !important;
+    border: 2px dashed #ffc107 !important;
+    position: relative;
+}
+
+.vulnerability-highlight::before {
+    content: "⚠️ VULNÉRABILITÉ";
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background: #ffc107;
+    color: #212529;
+    padding: 2px 8px;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.loading {
+    animation: pulse 1.5s infinite;
+}
+
+/* Scrollbar personnalisée */
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}

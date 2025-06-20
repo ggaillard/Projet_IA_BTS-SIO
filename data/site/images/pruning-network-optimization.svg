@@ -1,0 +1,88 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Titre -->
+  <text x="400" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold">Élagage (Pruning) du réseau</text>
+  
+  <!-- Réseau de neurones original -->
+  <circle cx="150" cy="100" r="20" fill="#DB4437" />
+  <circle cx="150" cy="180" r="20" fill="#DB4437" />
+  <circle cx="150" cy="260" r="20" fill="#DB4437" />
+  
+  <circle cx="300" cy="80" r="20" fill="#4285F4" />
+  <circle cx="300" cy="160" r="20" fill="#4285F4" />
+  <circle cx="300" cy="240" r="20" fill="#4285F4" />
+  <circle cx="300" cy="320" r="20" fill="#4285F4" />
+  
+  <circle cx="450" cy="140" r="20" fill="#0F9D58" />
+  <circle cx="450" cy="240" r="20" fill="#0F9D58" />
+  
+  <!-- Connexions originales -->
+  <line x1="150" y1="100" x2="300" y2="80" stroke="#333" stroke-width="2" />
+  <line x1="150" y1="100" x2="300" y2="160" stroke="#333" stroke-width="2" />
+  <line x1="150" y1="100" x2="300" y2="240" stroke="#333" stroke-width="0.5" />
+  <line x1="150" y1="100" x2="300" y2="320" stroke="#333" stroke-width="2" />
+  
+  <line x1="150" y1="180" x2="300" y2="80" stroke="#333" stroke-width="0.5" />
+  <line x1="150" y1="180" x2="300" y2="160" stroke="#333" stroke-width="2" />
+  <line x1="150" y1="180" x2="300" y2="240" stroke="#333" stroke-width="2" />
+  <line x1="150" y1="180" x2="300" y2="320" stroke="#333" stroke-width="0.5" />
+  
+  <line x1="150" y1="260" x2="300" y2="80" stroke="#333" stroke-width="2" />
+  <line x1="150" y1="260" x2="300" y2="160" stroke="#333" stroke-width="0.5" />
+  <line x1="150" y1="260" x2="300" y2="240" stroke="#333" stroke-width="2" />
+  <line x1="150" y1="260" x2="300" y2="320" stroke="#333" stroke-width="2" />
+  
+  <line x1="300" y1="80" x2="450" y2="140" stroke="#333" stroke-width="2" />
+  <line x1="300" y1="80" x2="450" y2="240" stroke="#333" stroke-width="0.5" />
+  
+  <line x1="300" y1="160" x2="450" y2="140" stroke="#333" stroke-width="2" />
+  <line x1="300" y1="160" x2="450" y2="240" stroke="#333" stroke-width="2" />
+  
+  <line x1="300" y1="240" x2="450" y2="140" stroke="#333" stroke-width="0.5" />
+  <line x1="300" y1="240" x2="450" y2="240" stroke="#333" stroke-width="2" />
+  
+  <line x1="300" y1="320" x2="450" y2="140" stroke="#333" stroke-width="2" />
+  <line x1="300" y1="320" x2="450" y2="240" stroke="#333" stroke-width="2" />
+  
+  <!-- Flèche de transition -->
+  <line x1="500" y1="200" x2="550" y2="200" stroke="#333" stroke-width="3" />
+  <polygon points="540,190 560,200 540,210" fill="#333" />
+  <text x="525" y="180" font-family="Arial" font-size="16" text-anchor="middle">Élagage</text>
+  
+  <!-- Réseau de neurones élagué -->
+  <circle cx="600" cy="100" r="20" fill="#DB4437" />
+  <circle cx="600" cy="180" r="20" fill="#DB4437" />
+  <circle cx="600" cy="260" r="20" fill="#DB4437" />
+  
+  <circle cx="700" cy="80" r="20" fill="#4285F4" />
+  <circle cx="700" cy="160" r="20" fill="#4285F4" />
+  <circle cx="700" cy="240" r="20" fill="#4285F4" />
+  <circle cx="700" cy="320" r="20" fill="#4285F4" />
+  
+  <circle cx="800" cy="140" r="20" fill="#0F9D58" />
+  <circle cx="800" cy="240" r="20" fill="#0F9D58" />
+  
+  <!-- Connexions après élagage (seulement les connexions importantes) -->
+  <line x1="600" y1="100" x2="700" y2="80" stroke="#333" stroke-width="2" />
+  <line x1="600" y1="100" x2="700" y2="160" stroke="#333" stroke-width="2" />
+  <line x1="600" y1="100" x2="700" y2="320" stroke="#333" stroke-width="2" />
+  
+  <line x1="600" y1="180" x2="700" y2="160" stroke="#333" stroke-width="2" />
+  <line x1="600" y1="180" x2="700" y2="240" stroke="#333" stroke-width="2" />
+  
+  <line x1="600" y1="260" x2="700" y2="80" stroke="#333" stroke-width="2" />
+  <line x1="600" y1="260" x2="700" y2="240" stroke="#333" stroke-width="2" />
+  <line x1="600" y1="260" x2="700" y2="320" stroke="#333" stroke-width="2" />
+  
+  <line x1="700" y1="80" x2="800" y2="140" stroke="#333" stroke-width="2" />
+  
+  <line x1="700" y1="160" x2="800" y2="140" stroke="#333" stroke-width="2" />
+  <line x1="700" y1="160" x2="800" y2="240" stroke="#333" stroke-width="2" />
+  
+  <line x1="700" y1="240" x2="800" y2="240" stroke="#333" stroke-width="2" />
+  
+  <line x1="700" y1="320" x2="800" y2="140" stroke="#333" stroke-width="2" />
+  <line x1="700" y1="320" x2="800" y2="240" stroke="#333" stroke-width="2" />
+  
+  <!-- Avantages -->
+  <text x="400" y="380" font-family="Arial" font-size="18" text-anchor="middle" font-weight="bold">Avantages: 75-90% de réduction de la taille avec peu de perte de précision</text>
+</svg>

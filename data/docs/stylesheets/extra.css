@@ -1,0 +1,14 @@
+.md-content img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  
+  .md-content img[src$=".svg"] {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .md-content img[src$=".svg"]:hover {
+    transform: scale(1.02);
+  }

@@ -1,7 +1,6 @@
 import os
 from typing import Dict, List, Optional, Tuple
 from langchain.chat_models import ChatOpenAI
-from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
@@ -13,10 +12,10 @@ from app.config import (
     MISTRAL_API_KEY, 
     MISTRAL_API_BASE,
     OPENAI_API_KEY,
-    EMBEDDING_MODEL,
     MAX_RESULTS,
     SIMILARITY_THRESHOLD,
-    get_model_config
+    get_model_config,
+    get_embeddings
 )
 
 class SimpleQAChain:
@@ -32,10 +31,8 @@ class SimpleQAChain:
             if not os.path.exists(self.vectorstore_path):
                 return False
             
-            embeddings = OpenAIEmbeddings(
-                openai_api_key=OPENAI_API_KEY,
-                model=EMBEDDING_MODEL
-            )
+            # Utiliser la même configuration d'embeddings que lors de la création
+            embeddings = get_embeddings()
             
             self.vectorstore = FAISS.load_local(self.vectorstore_path, embeddings)
             return True

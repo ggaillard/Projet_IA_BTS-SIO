@@ -1,0 +1,69 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Couche d'entrée -->
+  <circle cx="100" cy="100" r="20" fill="#6495ED" />
+  <circle cx="100" cy="200" r="20" fill="#6495ED" />
+  <circle cx="100" cy="300" r="20" fill="#6495ED" />
+  
+  <text x="100" y="105" text-anchor="middle" fill="white" font-weight="bold">x₁</text>
+  <text x="100" y="205" text-anchor="middle" fill="white" font-weight="bold">x₂</text>
+  <text x="100" y="305" text-anchor="middle" fill="white" font-weight="bold">x₃</text>
+  
+  <!-- Première couche cachée -->
+  <circle cx="300" cy="80" r="25" fill="#FF7F50" />
+  <circle cx="300" cy="200" r="25" fill="#FF7F50" />
+  <circle cx="300" cy="320" r="25" fill="#FF7F50" />
+  
+  <text x="300" y="85" text-anchor="middle" fill="white" font-weight="bold">h₁₁</text>
+  <text x="300" y="205" text-anchor="middle" fill="white" font-weight="bold">h₁₂</text>
+  <text x="300" y="325" text-anchor="middle" fill="white" font-weight="bold">h₁₃</text>
+  
+  <!-- Deuxième couche cachée -->
+  <circle cx="500" cy="130" r="25" fill="#FF7F50" />
+  <circle cx="500" cy="270" r="25" fill="#FF7F50" />
+  
+  <text x="500" y="135" text-anchor="middle" fill="white" font-weight="bold">h₂₁</text>
+  <text x="500" y="275" text-anchor="middle" fill="white" font-weight="bold">h₂₂</text>
+  
+  <!-- Couche de sortie -->
+  <circle cx="700" cy="200" r="25" fill="#32CD32" />
+  <text x="700" y="205" text-anchor="middle" fill="white" font-weight="bold">y</text>
+  
+  <!-- Connexions de la couche d'entrée à la première couche cachée -->
+  <line x1="120" y1="100" x2="275" y2="80" stroke="#333" stroke-width="1" />
+  <line x1="120" y1="100" x2="275" y2="200" stroke="#333" stroke-width="1" />
+  <line x1="120" y1="100" x2="275" y2="320" stroke="#333" stroke-width="1" />
+  
+  <line x1="120" y1="200" x2="275" y2="80" stroke="#333" stroke-width="1" />
+  <line x1="120" y1="200" x2="275" y2="200" stroke="#333" stroke-width="1" />
+  <line x1="120" y1="200" x2="275" y2="320" stroke="#333" stroke-width="1" />
+  
+  <line x1="120" y1="300" x2="275" y2="80" stroke="#333" stroke-width="1" />
+  <line x1="120" y1="300" x2="275" y2="200" stroke="#333" stroke-width="1" />
+  <line x1="120" y1="300" x2="275" y2="320" stroke="#333" stroke-width="1" />
+  
+  <!-- Connexions de la première couche cachée à la deuxième -->
+  <line x1="325" y1="80" x2="475" y2="130" stroke="#333" stroke-width="1" />
+  <line x1="325" y1="80" x2="475" y2="270" stroke="#333" stroke-width="1" />
+  
+  <line x1="325" y1="200" x2="475" y2="130" stroke="#333" stroke-width="1" />
+  <line x1="325" y1="200" x2="475" y2="270" stroke="#333" stroke-width="1" />
+  
+  <line x1="325" y1="320" x2="475" y2="130" stroke="#333" stroke-width="1" />
+  <line x1="325" y1="320" x2="475" y2="270" stroke="#333" stroke-width="1" />
+  
+  <!-- Connexions de la deuxième couche cachée à la sortie -->
+  <line x1="525" y1="130" x2="675" y2="200" stroke="#333" stroke-width="1" />
+  <line x1="525" y1="270" x2="675" y2="200" stroke="#333" stroke-width="1" />
+  
+  <!-- Labels des couches -->
+  <text x="100" y="370" text-anchor="middle" fill="#333" font-size="20" font-weight="bold">Couche d'entrée</text>
+  <text x="300" y="370" text-anchor="middle" fill="#333" font-size="20" font-weight="bold">Couche cachée 1</text>
+  <text x="500" y="370" text-anchor="middle" fill="#333" font-size="20" font-weight="bold">Couche cachée 2</text>
+  <text x="700" y="370" text-anchor="middle" fill="#333" font-size="20" font-weight="bold">Couche de sortie</text>
+  
+  <!-- Niveaux d'abstraction -->
+  <text x="100" y="40" text-anchor="middle" fill="#666" font-size="16">Données brutes</text>
+  <text x="300" y="40" text-anchor="middle" fill="#666" font-size="16">Caractéristiques simples</text>
+  <text x="500" y="40" text-anchor="middle" fill="#666" font-size="16">Caractéristiques complexes</text>
+  <text x="700" y="40" text-anchor="middle" fill="#666" font-size="16">Prédiction</text>
+</svg>

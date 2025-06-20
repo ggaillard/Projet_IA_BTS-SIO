@@ -1,0 +1,98 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fonction de coût -->
+  <defs>
+    <path id="costFunction" d="M 100 300 
+                             C 150 320, 200 280, 250 350
+                             C 300 420, 350 280, 400 200
+                             C 450 120, 500 150, 550 250
+                             C 600 350, 650 320, 700 280" />
+  </defs>
+  
+  <!-- Courbe de la fonction de coût -->
+  <path d="M 100 300 
+           C 150 320, 200 280, 250 350
+           C 300 420, 350 280, 400 200
+           C 450 120, 500 150, 550 250
+           C 600 350, 650 320, 700 280" 
+        fill="none" stroke="#333" stroke-width="3" />
+  
+  <!-- Axes -->
+  <line x1="50" y1="350" x2="750" y2="350" stroke="#333" stroke-width="2" />
+  <line x1="50" y1="50" x2="50" y2="350" stroke="#333" stroke-width="2" />
+  
+  <!-- Étiquettes des axes -->
+  <text x="400" y="380" text-anchor="middle" fill="#333" font-size="18">Paramètres</text>
+  <text x="20" y="200" text-anchor="middle" fill="#333" font-size="18" transform="rotate(-90, 20, 200)">Erreur</text>
+  
+  <!-- Point minimum -->
+  <circle cx="400" cy="200" r="8" fill="#FF0000" stroke="#333" />
+  <text x="420" y="180" fill="#333" font-size="16">Minimum</text>
+  
+  <!-- Chemin avec taux d'apprentissage trop petit -->
+  <circle cx="200" cy="290" r="6" fill="#6495ED" stroke="#333" />
+  <circle cx="220" cy="285" r="6" fill="#6495ED" stroke="#333" />
+  <circle cx="240" cy="280" r="6" fill="#6495ED" stroke="#333" />
+  <circle cx="260" cy="285" r="6" fill="#6495ED" stroke="#333" />
+  <circle cx="280" cy="290" r="6" fill="#6495ED" stroke="#333" />
+  <circle cx="300" cy="310" r="6" fill="#6495ED" stroke="#333" />
+  <circle cx="320" cy="300" r="6" fill="#6495ED" stroke="#333" />
+  <circle cx="340" cy="280" r="6" fill="#6495ED" stroke="#333" />
+  <circle cx="360" cy="250" r="6" fill="#6495ED" stroke="#333" />
+  <circle cx="380" cy="220" r="6" fill="#6495ED" stroke="#333" />
+  
+  <path d="M 200 290 L 220 285 L 240 280 L 260 285 L 280 290 L 300 310 L 320 300 L 340 280 L 360 250 L 380 220" 
+        fill="none" stroke="#6495ED" stroke-width="2" marker-end="url(#arrowMarker)" />
+  
+  <text x="290" y="340" fill="#6495ED" font-size="16">Taux trop petit</text>
+  <text x="290" y="360" fill="#6495ED" font-size="12">(converge lentement)</text>
+  
+  <!-- Chemin avec taux d'apprentissage trop grand -->
+  <circle cx="600" cy="250" r="6" fill="#FF7F50" stroke="#333" />
+  <circle cx="500" cy="150" r="6" fill="#FF7F50" stroke="#333" />
+  <circle cx="650" cy="320" r="6" fill="#FF7F50" stroke="#333" />
+  <circle cx="400" cy="200" r="6" fill="#FF7F50" stroke="#333" />
+  <circle cx="700" cy="280" r="6" fill="#FF7F50" stroke="#333" />
+  
+  <path d="M 600 250 L 500 150 L 650 320 L 400 200 L 700 280" 
+        fill="none" stroke="#FF7F50" stroke-width="2" marker-end="url(#arrowMarker)" />
+  
+  <text x="575" y="140" fill="#FF7F50" font-size="16">Taux trop grand</text>
+  <text x="575" y="160" fill="#FF7F50" font-size="12">(diverge, oscille)</text>
+  
+  <!-- Chemin avec taux d'apprentissage optimal -->
+  <circle cx="550" cy="250" r="6" fill="#32CD32" stroke="#333" />
+  <circle cx="500" cy="220" r="6" fill="#32CD32" stroke="#333" />
+  <circle cx="450" cy="210" r="6" fill="#32CD32" stroke="#333" />
+  <circle cx="425" cy="205" r="6" fill="#32CD32" stroke="#333" />
+  <circle cx="410" cy="202" r="6" fill="#32CD32" stroke="#333" />
+  <circle cx="400" cy="200" r="6" fill="#32CD32" stroke="#333" />
+  
+  <path d="M 550 250 L 500 220 L 450 210 L 425 205 L 410 202 L 400 200" 
+        fill="none" stroke="#32CD32" stroke-width="2" marker-end="url(#arrowMarker)" />
+  
+  <text x="460" y="250" fill="#32CD32" font-size="16">Taux optimal</text>
+  <text x="460" y="270" fill="#32CD32" font-size="12">(converge rapidement)</text>
+  
+  <!-- Légende -->
+  <rect x="50" y="50" width="200" height="90" rx="10" fill="white" stroke="#ccc" stroke-width="1" />
+  <text x="60" y="70" fill="#333" font-size="14" font-weight="bold">Taux d'apprentissage</text>
+  
+  <line x1="60" y1="90" x2="80" y2="90" stroke="#6495ED" stroke-width="2" />
+  <circle cx="70" cy="90" r="4" fill="#6495ED" />
+  <text x="90" y="95" fill="#333" font-size="14">Trop petit (0.01)</text>
+  
+  <line x1="60" y1="115" x2="80" y2="115" stroke="#32CD32" stroke-width="2" />
+  <circle cx="70" cy="115" r="4" fill="#32CD32" />
+  <text x="90" y="120" fill="#333" font-size="14">Optimal (0.1)</text>
+  
+  <line x1="60" y1="140" x2="80" y2="140" stroke="#FF7F50" stroke-width="2" />
+  <circle cx="70" cy="140" r="4" fill="#FF7F50" />
+  <text x="90" y="145" fill="#333" font-size="14">Trop grand (1.0)</text>
+  
+  <!-- Définition du marqueur de flèche -->
+  <defs>
+    <marker id="arrowMarker" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333" />
+    </marker>
+  </defs>
+</svg>

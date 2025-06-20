@@ -1,228 +1,202 @@
 # 📚 Chatbot IA avec Base Documentaire
 
-Un chatbot intelligent utilisant RAG (Retrieval-Augmented Generation) pour analyser et répondre aux questions basées sur vos documents.
+[![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://python.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red.svg)](https://streamlit.io)
+[![LangChain](https://img.shields.io/badge/LangChain-0.1+-green.svg)](https://langchain.com)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+> **Projet BTS SIO SLAM** - Assistant intelligent utilisant RAG (Retrieval-Augmented Generation) pour analyser et répondre aux questions basées sur vos documents personnels.
 
 ## ✨ Fonctionnalités
 
-### 🔍 Analyse de Documents
-- **Formats supportés** : TXT, MD, PDF, Python, JavaScript, HTML, CSS, JSON, XML
-- **Sources multiples** : Repository Git, upload de fichiers, dossiers locaux
-- **Indexation intelligente** : Découpage automatique et embeddings vectoriels
+🤖 **IA Conversationnelle** - Chat intelligent avec historique contextuel  
+📄 **Multi-formats** - Support TXT, MD, PDF, code source  
+🔍 **Recherche sémantique** - Indexation vectorielle avec FAISS  
+🎯 **Sources traçables** - Références exactes aux documents utilisés  
+⚙️ **Multi-providers** - Compatible OpenAI et Mistral AI  
+🌐 **Interface moderne** - Dashboard Streamlit responsive  
 
-### 💬 Conversation Avancée
-- **Historique contextuel** : Maintien du contexte sur plusieurs échanges
-- **Sources tracées** : Références précises aux documents utilisés
-- **Score de confiance** : Évaluation de la fiabilité des réponses
+## 🚀 Démarrage rapide
 
-### 🛠️ Interface Complète
-- **Interface Streamlit moderne** : Design responsive et intuitif
-- **Recherche de documents** : Exploration directe de la base vectorielle
-- **Export de conversations** : Sauvegarde en format Markdown
-- **Statistiques détaillées** : Métriques de performance et d'usage
-
-### 🔧 Configuration Flexible
-- **Multi-providers** : Support OpenAI et Mistral AI
-- **Paramètres ajustables** : Taille des chunks, seuils de similarité
-- **Variables d'environnement** : Configuration sécurisée
-
-## 🚀 Installation
-
-### Prérequis
-- Python 3.11+
-- Git
-- Clé API OpenAI ou Mistral AI
-
-### Étapes d'installation
-
-1. **Cloner le repository**
+### Installation
 ```bash
-git clone https://github.com/votre-username/chatbot-ia.git
-cd chatbot-ia
-```
+# Cloner le projet
+git clone https://github.com/votre-username/Projet_IA_BTS-SIO.git
+cd Projet_IA_BTS-SIO
 
-2. **Installer les dépendances**
-```bash
+# Installer les dépendances
 pip install -r requirements.txt
-```
 
-3. **Configuration**
-```bash
+# Configuration
 cp .env.example .env
-# Éditer le fichier .env avec vos clés API
+# Éditer .env avec vos clés API
 ```
 
-4. **Lancer l'application**
+### Lancement
 ```bash
 streamlit run app/main.py
 ```
+📱 L'application s'ouvre sur `http://localhost:8501`
 
-## ⚙️ Configuration
+## ⚡ Utilisation
 
-### Variables d'environnement principales
+### 1️⃣ Indexer vos documents
+- **Repository Git** : Cloner automatiquement un repo de documentation
+- **Upload fichiers** : Glisser-déposer vos documents locaux
 
-| Variable | Description | Valeur par défaut |
-|----------|-------------|-------------------|
-| `PROVIDER` | Provider LLM (openai/mistral) | `openai` |
-| `OPENAI_API_KEY` | Clé API OpenAI | Obligatoire si provider=openai |
-| `MISTRAL_API_KEY` | Clé API Mistral | Obligatoire si provider=mistral |
-| `MODEL_NAME` | Nom du modèle | `gpt-3.5-turbo` |
-| `CHUNK_SIZE` | Taille des chunks | `1000` |
-| `MAX_RESULTS` | Nombre max de résultats | `4` |
+### 2️⃣ Converser avec l'IA
+- Poser des questions sur vos documents
+- Explorer les sources des réponses
+- Maintenir un historique contextuel
 
-### Configuration avancée
+### 3️⃣ Analyser les résultats
+- Consulter les scores de confiance
+- Rechercher dans la base documentaire
+- Exporter les conversations
 
+## 🛠️ Technologies
+
+| Catégorie | Technologies |
+|-----------|-------------|
+| **Backend** | Python 3.11+, LangChain, FAISS |
+| **Frontend** | Streamlit, HTML/CSS |
+| **IA/ML** | OpenAI GPT, Mistral AI, Embeddings |
+| **Documents** | PyMuPDF, python-docx, GitPython |
+| **Déploiement** | GitHub Codespaces, Docker |
+
+## 📊 Démonstration
+
+### Interface principale
+```
+┌─────────────────────────────────────────────────────────────┐
+│  📚 Chatbot IA - Base documentaire                         │
+├─────────────────────────┬───────────────────────────────────┤
+│  💬 Conversation        │  🔍 Outils d'analyse            │
+│                         │                                   │
+│  👤 Comment installer   │  📁 Gestion documents            │
+│      les dépendances ?  │  ├── Repository Git              │
+│                         │  ├── Upload fichiers             │
+│  🤖 Pour installer les  │  └── Statistiques               │
+│      dépendances, utili-│                                   │
+│      sez la commande :  │  💡 Questions suggérées          │
+│      pip install -r...  │  ├── Objectif du projet ?        │
+│                         │  ├── Étapes d'utilisation ?      │
+│  📋 Sources utilisées:  │  └── Fichiers importants ?       │
+│  • requirements.txt    │                                   │
+│  • README.md           │  📄 Export conversation          │
+│                         │                                   │
+│  Confiance: Élevée (0.9)│  📊 Session: 3 questions        │
+└─────────────────────────┴───────────────────────────────────┘
+```
+
+## 🎯 Cas d'usage
+
+### 🎓 Éducation
+- Analyser des cours et supports pédagogiques
+- Créer des assistants de révision personnalisés
+- Explorer de la documentation technique
+
+### 💼 Entreprise
+- Centraliser les connaissances internes
+- Assistant pour la documentation produit
+- Support client automatisé
+
+### 🔬 Recherche
+- Analyser des publications scientifiques
+- Synthétiser des rapports de recherche
+- Explorer des bases de données documentaires
+
+## 📈 Configuration avancée
+
+### Variables d'environnement
 ```bash
-# Embeddings
-EMBEDDING_MODEL=text-embedding-ada-002
+# Provider IA (openai ou mistral)
+PROVIDER=mistral
+MISTRAL_API_KEY=votre_cle_ici
 
-# Découpage de documents
-CHUNK_SIZE=1000
-CHUNK_OVERLAP=200
-
-# Recherche vectorielle
-MAX_RESULTS=4
-SIMILARITY_THRESHOLD=0.7
+# Paramètres d'optimisation
+CHUNK_SIZE=1000          # Taille des segments
+MAX_RESULTS=4            # Nombre de résultats
+SIMILARITY_THRESHOLD=0.7 # Seuil de pertinence
 ```
 
-## 📖 Utilisation
-
-### 1. Indexation de documents
-
-#### Via Repository Git
-1. Dans la sidebar, onglet "Repository"
-2. Entrer l'URL du repository Git
-3. Cliquer sur "Cloner et indexer"
-
-#### Via Upload de fichiers
-1. Dans la sidebar, onglet "Upload"
-2. Sélectionner les fichiers à analyser
-3. Cliquer sur "Uploader et indexer"
-
-### 2. Poser des questions
-
-- Utiliser la zone de chat principale
-- Activer l'historique contextuel si désiré
-- Explorer les questions suggérées
-
-### 3. Analyser les résultats
-
-- **Sources** : Consulter les documents utilisés
-- **Confiance** : Évaluer la fiabilité
-- **Recherche** : Explorer la base documentaire
-
-### 4. Export et sauvegarde
-
-- Exporter les conversations en Markdown
-- Consulter les statistiques de session
-- Effacer l'historique si nécessaire
-
-## 🏗️ Architecture
-
-```
-app/
-├── __init__.py          # Package principal
-├── config.py            # Configuration et validation
-├── ingest.py            # Ingestion et indexation des documents
-├── qa_chain.py          # Chaîne QA et logique de conversation
-└── main.py              # Interface Streamlit
-
-data/                    # Documents sources (auto-généré)
-vectorstore/            # Base vectorielle FAISS (auto-généré)
-.devcontainer/          # Configuration pour GitHub Codespaces
-```
-
-### Flux de données
-
-1. **Ingestion** : Documents → Chunks → Embeddings → FAISS
-2. **Requête** : Question → Recherche vectorielle → Contexte
-3. **Génération** : LLM + Contexte → Réponse + Sources
-
-## 🛡️ Sécurité et Bonnes Pratiques
-
-### Gestion des clés API
-- Utiliser des variables d'environnement
-- Ne jamais commiter les fichiers `.env`
-- Rotation régulière des clés
-
-### Optimisation des coûts
-- Ajuster `CHUNK_SIZE` selon le budget
-- Limiter `MAX_RESULTS` pour réduire les tokens
-- Utiliser des modèles moins coûteux pour les tests
-
-### Performance
-- Indexer uniquement les documents nécessaires
-- Nettoyer régulièrement le vectorstore
-- Monitorer les métriques de confiance
+### Formats supportés
+- **Texte** : `.txt`, `.md`
+- **Code** : `.py`, `.js`, `.html`, `.css`, `.json`
+- **Documents** : `.pdf` (version avancée)
 
 ## 🔧 Développement
 
-### Structure de développement
+### Structure du projet
+```
+app/
+├── config.py      # Configuration et variables
+├── ingest.py      # Ingestion des documents  
+├── qa_chain.py    # Logique IA et conversation
+└── main.py        # Interface Streamlit
+```
+
+### Tests et qualité
 ```bash
 # Tests
 pytest tests/
 
-# Formatage du code
+# Formatage
 black app/
 
-# Linting
+# Linting  
 flake8 app/
 ```
 
-### Ajout de nouvelles fonctionnalités
+## 🚀 Déploiement
 
-1. **Nouveaux formats de documents** : Étendre `DocumentIngestor`
-2. **Nouveaux providers LLM** : Modifier `AdvancedQAChain`
-3. **Interface utilisateur** : Personnaliser `main.py`
+### GitHub Codespaces (recommandé)
+1. Fork ce repository
+2. Créer un Codespace
+3. Configuration automatique
+4. Lancer l'application
 
-### Variables de session Streamlit
+### Docker
+```bash
+docker build -t chatbot-ia .
+docker run -p 8501:8501 chatbot-ia
+```
 
-| Variable | Usage |
-|----------|-------|
-| `st.session_state.qa_chain` | Instance principale QA |
-| `st.session_state.messages` | Historique de chat |
+### Streamlit Cloud
+1. Connecter votre repository
+2. Configurer les variables d'environnement
+3. Déploiement automatique
 
-## 📊 Métriques et Monitoring
+## 📚 Documentation
 
-### Métriques automatiques
-- Nombre de documents indexés
-- Confiance moyenne des réponses
-- Nombre d'interactions par session
+- **[DOCUMENTATION.md](DOCUMENTATION.md)** - Guide complet et technique
+- **[Installation détaillée](DOCUMENTATION.md#installation)** - Toutes les options
+- **[API Reference](DOCUMENTATION.md#api)** - Classes et méthodes
+- **[Dépannage](DOCUMENTATION.md#dépannage)** - Solutions aux problèmes courants
 
-### Métriques personnalisées
-- Temps de réponse
-- Utilisation des tokens
-- Satisfaction utilisateur
+## 🎓 Projet BTS SIO
+
+### Compétences développées
+- **Développement d'applications** - Architecture modulaire Python
+- **Intelligence artificielle** - Intégration LLMs et RAG
+- **Interface utilisateur** - Dashboard interactif Streamlit
+- **Gestion de données** - Bases vectorielles et embeddings
+- **Déploiement** - Cloud et conteneurisation
+
+### Contexte pédagogique
+Ce projet illustre l'application pratique des technologies d'IA modernes dans le développement d'solutions métier, en mettant l'accent sur l'architecture logicielle et l'expérience utilisateur.
 
 ## 🤝 Contribution
 
-1. Fork le repository
-2. Créer une branche pour votre fonctionnalité
-3. Ajouter des tests si nécessaire
-4. Soumettre une Pull Request
+Les contributions sont les bienvenues ! Consultez [DOCUMENTATION.md](DOCUMENTATION.md#développement) pour les guidelines.
 
-## 📝 Licence
+## 📄 Licence
 
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+Ce projet est sous licence MIT. Voir [LICENSE](LICENSE) pour plus de détails.
 
-## 🆘 Support
+## 👨‍💻 Auteur
 
-### FAQ
-
-**Q: Comment ajouter support pour d'autres formats ?**
-R: Étendre la classe `DocumentIngestor` avec de nouveaux loaders LangChain.
-
-**Q: Peut-on utiliser d'autres bases vectorielles ?**
-R: Oui, remplacer FAISS par Chroma, Pinecone, etc. dans `qa_chain.py`.
-
-**Q: Comment optimiser la qualité des réponses ?**
-R: Ajuster les prompts, la taille des chunks, et le seuil de similarité.
-
-### Problèmes courants
-
-- **Erreur de clé API** : Vérifier le fichier `.env`
-- **Documents non trouvés** : Réindexer avec le bon format
-- **Réponses de faible qualité** : Ajuster les paramètres de recherche
-
+**[G.G]**  
 ---
 
-Développé pour G.G - Projet d'intelligence artificielle appliquée
+⭐ **N'hésitez pas à mettre une étoile si ce projet vous aide !**

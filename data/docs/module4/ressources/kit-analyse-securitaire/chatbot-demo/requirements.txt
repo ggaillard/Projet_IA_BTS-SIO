@@ -1,0 +1,46 @@
+# 🚨 CHATBOT DE DÉMONSTRATION POUR AUDIT DE SÉCURITÉ
+# ⚠️  ATTENTION: Ces dépendances sont pour un environnement d'audit uniquement
+# 🔒 Ne JAMAIS utiliser ces versions en production
+
+# Framework web
+Flask==2.3.3
+
+# Client HTTP pour l'API Mistral
+requests==2.31.0
+
+# Base de données SQLite (intégrée à Python)
+# sqlite3 est inclus dans Python par défaut
+
+# Outils de logging et debugging
+colorama==0.4.6
+
+# Gestion des variables d'environnement
+python-dotenv==1.0.0
+
+# Outils de sécurité pour les tests (optionnel)
+bandit==1.7.5
+
+# Utilitaires pour les tests de charge (optionnel)
+# requests[security]==2.31.0
+
+# 📝 NOTES POUR L'INSTALLATION:
+# 
+# 1. Créer un environnement virtuel:
+#    python -m venv venv
+#    source venv/bin/activate  # Linux/Mac
+#    venv\Scripts\activate     # Windows
+#
+# 2. Installer les dépendances:
+#    pip install -r requirements.txt
+#
+# 3. Configuration:
+#    Copier .env.example vers .env
+#    Modifier les variables selon vos besoins
+#
+# 4. Lancement:
+#    python app.py
+#    Ouvrir http://localhost:5000
+#
+# ⚠️  IMPORTANT: Ce chatbot contient des vulnérabilités INTENTIONNELLES
+#    Il est conçu pour l'apprentissage de l'audit de sécurité
+#    Ne JAMAIS l'exposer sur Internet ou l'utiliser en production!

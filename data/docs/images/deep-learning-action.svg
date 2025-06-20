@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Fond -->
+  <rect width="800" height="400" fill="#f5f5f5"/>
+  
+  <!-- Titre -->
+  <text x="400" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold" fill="#333">Applications du Deep Learning</text>
+  
+  <!-- Section 1: Vision par ordinateur -->
+  <g>
+    <!-- Cadre -->
+    <rect x="50" y="80" width="200" height="270" rx="10" ry="10" fill="white" stroke="#ddd" stroke-width="2"/>
+    
+    <!-- Titre de la section -->
+    <text x="150" y="110" font-family="Arial" font-size="18" text-anchor="middle" font-weight="bold" fill="#333">Vision par ordinateur</text>
+    
+    <!-- Illustration de la vision par ordinateur -->
+    <!-- Cadre d'une "photo" -->
+    <rect x="70" y="130" width="160" height="120" fill="#e0e0e0" stroke="#999" stroke-width="1"/>
+    
+    <!-- Éléments détectés avec des boîtes -->
+    <rect x="90" y="150" width="50" height="40" fill="none" stroke="#FF5722" stroke-width="2"/>
+    <text x="115" y="145" font-family="Arial" font-size="10" text-anchor="middle" fill="#FF5722">Chien</text>
+    
+    <rect x="160" y="170" width="30" height="50" fill="none" stroke="#4CAF50" stroke-width="2"/>
+    <text x="175" y="165" font-family="Arial" font-size="10" text-anchor="middle" fill="#4CAF50">Personne</text>
+    
+    <rect x="120" y="200" width="70" height="25" fill="none" stroke="#2196F3" stroke-width="2"/>
+    <text x="155" y="195" font-family="Arial" font-size="10" text-anchor="middle" fill="#2196F3">Voiture</text>
+    
+    <!-- Texte explicatif -->
+    <text x="150" y="280" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">• Reconnaissance d'objets</text>
+    <text x="150" y="305" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">• Classification d'images</text>
+    <text x="150" y="330" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">• Segmentation</text>
+  </g>
+  
+  <!-- Section 2: Traitement du langage naturel -->
+  <g>
+    <!-- Cadre -->
+    <rect x="300" y="80" width="200" height="270" rx="10" ry="10" fill="white" stroke="#ddd" stroke-width="2"/>
+    
+    <!-- Titre de la section -->
+    <text x="400" y="110" font-family="Arial" font-size="18" text-anchor="middle" font-weight="bold" fill="#333">NLP</text>
+    
+    <!-- Illustration du traitement du langage -->
+    <rect x="320" y="130" width="160" height="120" fill="#e0e0e0" stroke="#999" stroke-width="1"/>
+    
+    <!-- Texte généré -->
+    <text x="330" y="150" font-family="Arial" font-size="10" fill="#333">Le Deep Learning permet</text>
+    <text x="330" y="165" font-family="Arial" font-size="10" fill="#333">d'analyser et de générer du</text>
+    <text x="330" y="180" font-family="Arial" font-size="10" fill="#333">texte de manière avancée.</text>
+    <text x="330" y="195" font-family="Arial" font-size="10" fill="#333">Les modèles peuvent</text>
+    <text x="330" y="210" font-family="Arial" font-size="10" fill="#333">comprendre le contexte et</text>
+    <text x="330" y="225" font-family="Arial" font-size="10" fill="#333">produire des réponses</text>
+    <text x="330" y="240" font-family="Arial" font-size="10" fill="#333">cohérentes.</text>
+    
+    <!-- Texte explicatif -->
+    <text x="400" y="280" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">• Génération de texte</text>
+    <text x="400" y="305" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">• Traduction automatique</text>
+    <text x="400" y="330" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">• Analyse de sentiments</text>
+  </g>
+  
+  <!-- Section 3: Programmation assistée -->
+  <g>
+    <!-- Cadre -->
+    <rect x="550" y="80" width="200" height="270" rx="10" ry="10" fill="white" stroke="#ddd" stroke-width="2"/>
+    
+    <!-- Titre de la section -->
+    <text x="650" y="110" font-family="Arial" font-size="18" text-anchor="middle" font-weight="bold" fill="#333">Coding assisté</text>
+    
+    <!-- Illustration du code assisté -->
+    <rect x="570" y="130" width="160" height="120" fill="#e0e0e0" stroke="#999" stroke-width="1"/>
+    
+    <!-- Éditeur de code stylisé -->
+    <rect x="570" y="130" width="160" height="15" fill="#333"/>
+    <circle cx="580" cy="137" r="3" fill="#ff5f56"/>
+    <circle cx="590" cy="137" r="3" fill="#ffbd2e"/>
+    <circle cx="600" cy="137" r="3" fill="#27c93f"/>
+    
+    <!-- Code -->
+    <text x="575" y="160" font-family="Courier New" font-size="10" fill="#333">def hello_world():</text>
+    <text x="575" y="175" font-family="Courier New" font-size="10" fill="#333">    # Copilot</text>
+    <text x="575" y="190" font-family="Courier New" font-size="10" fill="#333">    print("Hello,</text>
+    <text x="575" y="205" font-family="Courier New" font-size="10" fill="#333">           World!")</text>
+    <text x="575" y="220" font-family="Courier New" font-size="10" fill="#333">    return True</text>
+    <text x="575" y="235" font-family="Courier New" font-size="10" fill="#333">```</text>
+    
+    <!-- Texte explicatif -->
+    <text x="650" y="280" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">• Completion de code</text>
+    <text x="650" y="305" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">• Génération de fonctions</text>
+    <text x="650" y="330" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">• Debugging intelligent</text>
+  </g>
+</svg>

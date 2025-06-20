@@ -1,0 +1,2001 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours de Deep Learning pour le BTS SIO">
+      
+      
+        <meta name="author" content="G.GAILLARD">
+      
+      
+      
+        <link rel="prev" href="../reseaux-convolutifs/">
+      
+      
+        <link rel="next" href="../qcm-evaluation-module2/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>2 - Réseaux récurrents (RNN) - Atelier Deep Learning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/progress.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#phase-2-mini-projet-rnn-pour-le-traitement-du-langage" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Atelier Deep Learning" class="md-header__button md-logo" aria-label="Atelier Deep Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Atelier Deep Learning
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2 - Réseaux récurrents (RNN)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer au mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer au mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../module1/" class="md-tabs__link">
+          
+  
+  Module 1 - Fondamentaux
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Module 2 - Architectures
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../module3/" class="md-tabs__link">
+          
+  
+  Module 3 - Applications
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../module4/" class="md-tabs__link">
+          
+  
+  Module 4 - Projet
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Atelier Deep Learning" class="md-nav__button md-logo" aria-label="Atelier Deep Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Atelier Deep Learning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Module 1 - Fondamentaux
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Module 1 - Fondamentaux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vue d'ensemble
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module1/introduction-pratique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Introduction pratique
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module1/concepts-fondamentaux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Concepts fondamentaux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module1/mini-projet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Mini-projet individuel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module1/qcm-evaluation-module1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auto-évaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ressources
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ressources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module1/ressources/glossaire-dl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossaire
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module1/ressources/guide-colab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guide Colab
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module1/ressources/synthese-visuelle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Synthèse visuelle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Module 2 - Architectures
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Module 2 - Architectures
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vue d'ensemble
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reseaux-convolutifs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Réseaux convolutifs (CNN)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2 - Réseaux récurrents (RNN)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2 - Réseaux récurrents (RNN)
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectifs-de-la-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯Objectifs de la phase
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partie-1-principes-des-rnn-20-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Partie 1: Principes des RNN (20 min)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧩 Partie 1: Principes des RNN (20 min)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture-et-fonctionnement-des-rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Architecture et fonctionnement des RNN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problematique-pourquoi-les-rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problématique : Pourquoi les RNN ?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-rnn-explique-avec-lanalogie-du-carnet-de-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le RNN expliqué avec l'analogie du carnet de notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-lstm-long-short-term-memory-en-langage-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les LSTM (Long Short-Term Memory) en langage simple
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les LSTM (Long Short-Term Memory) en langage simple">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solution-au-probleme-de-memoire" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution au problème de mémoire
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-portes-gates-expliquees-simplement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les portes (gates) expliquées simplement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications-pour-les-etudiants-bts-sio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications pour les étudiants BTS SIO
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partie-2-implementation-dun-lstm-pour-lanalyse-de-sentiment-40-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partie 2: Implémentation d'un LSTM pour l'analyse de sentiment (40 min)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Partie 2: Implémentation d&#39;un LSTM pour l&#39;analyse de sentiment (40 min)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instructions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#points-cles-a-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Points clés à explorer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#livrable-attendu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Livrable attendu
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion-et-transition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion et transition
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qcm-evaluation-module2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auto-évaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Ressources
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Ressources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module1/ressources/glossaire-dl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossaire
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Module 3 - Applications
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Module 3 - Applications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vue d'ensemble
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module3/frameworks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Frameworks et bonnes pratiques
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module3/integration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Intégration et optimisation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module3/preparation-projet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Préparation au projet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module3/qcm-evaluation-module3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auto-évaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ressources
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ressources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ressources/base-connaissances/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Base de connaissances
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module3/pratique-tensorflow-keras.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TensorFlow pour débutants
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ressources/api-mistral/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Mistral
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Module 4 - Projet
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Module 4 - Projet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vue d'ensemble
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module4/projet-chatbot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cahier des charges
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module4/partie1-developpement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Développement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module4/partie2-finalisation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Finalisation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module4/partie3-presentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Présentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module4/qcm-evaluation-module4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auto-évaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ressources
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            Ressources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ressources/base-connaissances/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Base de connaissances
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ressources/json-schemas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structure JSON
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectifs-de-la-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯Objectifs de la phase
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partie-1-principes-des-rnn-20-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Partie 1: Principes des RNN (20 min)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧩 Partie 1: Principes des RNN (20 min)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture-et-fonctionnement-des-rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Architecture et fonctionnement des RNN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problematique-pourquoi-les-rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problématique : Pourquoi les RNN ?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-rnn-explique-avec-lanalogie-du-carnet-de-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le RNN expliqué avec l'analogie du carnet de notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-lstm-long-short-term-memory-en-langage-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les LSTM (Long Short-Term Memory) en langage simple
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les LSTM (Long Short-Term Memory) en langage simple">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solution-au-probleme-de-memoire" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution au problème de mémoire
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-portes-gates-expliquees-simplement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les portes (gates) expliquées simplement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications-pour-les-etudiants-bts-sio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications pour les étudiants BTS SIO
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partie-2-implementation-dun-lstm-pour-lanalyse-de-sentiment-40-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partie 2: Implémentation d'un LSTM pour l'analyse de sentiment (40 min)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Partie 2: Implémentation d&#39;un LSTM pour l&#39;analyse de sentiment (40 min)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instructions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#points-cles-a-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Points clés à explorer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#livrable-attendu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Livrable attendu
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion-et-transition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion et transition
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="phase-2-mini-projet-rnn-pour-le-traitement-du-langage">🔍 Phase 2 : Mini-projet RNN pour le traitement du langage</h1>
+<p><img alt="RNN Architecture" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&amp;fit=crop&amp;q=80&amp;w=1000&amp;h=300" /></p>
+<h2 id="objectifs-de-la-phase">🎯Objectifs de la phase</h2>
+<p>Dans cette phase, vous allez :</p>
+<ul>
+<li>Comprendre les principes des réseaux récurrents (RNN) et de leurs variantes (LSTM, GRU)</li>
+<li>Implémenter un modèle LSTM pour l'analyse de sentiment</li>
+<li>Visualiser et interpréter le fonctionnement interne d'un RNN</li>
+</ul>
+<h2 id="partie-1-principes-des-rnn-20-min">🧩 Partie 1: Principes des RNN (20 min)</h2>
+<h3 id="architecture-et-fonctionnement-des-rnn">📊 Architecture et fonctionnement des RNN</h3>
+<p>Les réseaux de neurones récurrents (RNN) sont conçus spécifiquement pour traiter des données séquentielles comme le texte, les séries temporelles ou les données audio. Contrairement aux réseaux classiques qui traitent chaque entrée indépendamment, les RNN maintiennent un "état interne" qui leur permet de se souvenir des informations précédentes.</p>
+<h3 id="problematique-pourquoi-les-rnn">Problématique : Pourquoi les RNN ?</h3>
+<p>Imaginons que vous surveillez des logs de sécurité :
+- Un réseau classique ne verrait que des entrées isolées, sans comprendre leur séquence
+- Un RNN, lui, se souvient des événements précédents pour détecter des patterns suspects</p>
+<h3 id="le-rnn-explique-avec-lanalogie-du-carnet-de-notes">Le RNN expliqué avec l'analogie du carnet de notes</h3>
+<p><strong>Analogie du carnet de notes</strong> :
+1. Vous analysez un rapport d'incident et prenez des notes importantes
+2. À chaque nouvelle section du rapport, vous :
+   - Lisez le nouveau contenu (nouvelle entrée)
+   - Consultez vos notes précédentes (état caché / mémoire)
+   - Mettez à jour vos notes avec les informations les plus pertinentes
+   - Utilisez la combinaison de la nouvelle section et de vos notes pour comprendre l'incident</p>
+<p><strong>Dans un RNN</strong> :
+1. Le réseau traite les données séquentiellement (mot par mot, événement par événement)
+2. À chaque étape, il combine :
+   - L'entrée actuelle (ex : le mot actuel)
+   - Son "état de mémoire" (ce qu'il a retenu des mots précédents)
+3. Il produit :
+   - Une sortie pour l'étape actuelle (ex: prédiction partielle)
+   - Un nouvel état de mémoire pour l'étape suivante</p>
+<p>Avantages pour un développeur d'applications :
+- Traitement de séquences de longueur variable
+- Capacité à "mémoriser" des informations importantes
+- Applications diverses : analyse de texte, traduction, génération de contenu</p>
+<h2 id="les-lstm-long-short-term-memory-en-langage-simple">Les LSTM (Long Short-Term Memory) en langage simple</h2>
+<h3 id="solution-au-probleme-de-memoire">Solution au problème de mémoire</h3>
+<p>Les RNN classiques ont du mal à retenir les informations sur de longues séquences - c'est le problème du "gradient qui s'évanouit". Les cellules LSTM ont été conçues pour résoudre ce problème.</p>
+<p><strong>Analogie du rapport de sécurité avec système de marquage</strong> :
+- Vous avez maintenant un système pour marquer les informations importantes dans votre rapport
+- Vous pouvez décider explicitement quelles informations :
+  * Méritent d'être conservées pour l'analyse finale
+  * Doivent être mises à jour avec de nouvelles données
+  * Sont pertinentes pour l'incident en cours</p>
+<h3 id="les-portes-gates-expliquees-simplement">Les portes (gates) expliquées simplement</h3>
+<p>Au lieu d'une explication mathématique complexe, voici le fonctionnement en langage simple :</p>
+<ol>
+<li>
+<p><strong>Porte d'oubli</strong> (Forget gate) : </p>
+<ul>
+<li>Comme un tri dans votre rapport : "Quelles informations passées ne sont plus utiles ?"</li>
+<li>Exemple SIO : Si un nouvel utilisateur se connecte, vous pouvez "oublier" certains détails des sessions précédentes</li>
+</ul>
+</li>
+<li>
+<p><strong>Porte d'entrée</strong> (Input gate) :</p>
+<ul>
+<li>Filtre les nouvelles informations : "Quelles nouvelles informations sont importantes ?"</li>
+<li>Exemple SIO : Dans un log "Tentative d'accès admin échouée 5 fois", le nombre de tentatives est plus important que l'heure exacte</li>
+</ul>
+</li>
+<li>
+<p><strong>Porte de sortie</strong> (Output gate) :</p>
+<ul>
+<li>Décide quelles informations partager : "Quelles parties de ma mémoire sont pertinentes maintenant ?"</li>
+<li>Exemple SIO : Si vous analysez une faille de sécurité, vous vous concentrez sur les logs d'authentification, pas sur les mises à jour système</li>
+</ul>
+</li>
+</ol>
+<h3 id="applications-pour-les-etudiants-bts-sio">Applications pour les étudiants BTS SIO</h3>
+<p>Voici des applications concrètes des RNN/LSTM dans votre domaine :</p>
+<ol>
+<li>
+<p><strong>Détection d'intrusion réseau</strong> :</p>
+<ul>
+<li>Les RNN/LSTM analysent les séquences de logs pour détecter des comportements anormaux</li>
+<li>L'ordre chronologique des événements est crucial (d'où l'intérêt des RNN)</li>
+</ul>
+</li>
+<li>
+<p><strong>Prédiction de pannes systèmes</strong> :</p>
+<ul>
+<li>Les LSTM peuvent analyser les historiques de performance serveur</li>
+<li>Ils détectent les signes précurseurs de problèmes potentiels</li>
+</ul>
+</li>
+<li>
+<p><strong>Chatbots d'assistance technique</strong> :</p>
+<ul>
+<li>Les RNN/LSTM permettent de comprendre le contexte d'une conversation de support</li>
+<li>Ils maintiennent la cohérence dans les réponses du chatbot d'aide</li>
+</ul>
+</li>
+<li>
+<p><strong>Analyse de logs de sécurité</strong> :</p>
+<ul>
+<li>Les LSTM peuvent identifier des patterns d'attaque complexes s'étendant sur de longues périodes</li>
+<li>Ils peuvent corréler des événements apparemment sans lien</li>
+</ul>
+</li>
+</ol>
+<h2 id="partie-2-implementation-dun-lstm-pour-lanalyse-de-sentiment-40-min">Partie 2: Implémentation d'un LSTM pour l'analyse de sentiment (40 min)</h2>
+<h3 id="instructions">Instructions</h3>
+<p>Pour cette partie pratique, vous allez explorer l'analyse de sentiment avec un modèle LSTM. Cette activité vous permettra de comprendre comment les réseaux récurrents traitent et "comprennent" le texte.</p>
+<ol>
+<li>Ouvrez le notebook Jupyter <a href="../ressources/rnn-sequence/">rnn-sequence.ipynb</a> dans Google Colab</li>
+<li>Suivez les instructions étape par étape pour implémenter un modèle LSTM pour l'analyse de sentiment</li>
+<li>Exécutez chaque cellule et observez les résultats</li>
+<li>
+<p>Portez une attention particulière aux sections suivantes :</p>
+<ul>
+<li>Prétraitement du texte (tokenisation)</li>
+<li>Architecture du modèle LSTM</li>
+<li>Visualisation des embeddings de mots</li>
+<li>Analyse des performances et des erreurs</li>
+</ul>
+</li>
+</ol>
+<h3 id="points-cles-a-explorer">Points clés à explorer</h3>
+<p>Pendant que vous travaillez sur ce notebook, réfléchissez aux questions suivantes qui feront l'objet d'une discussion en classe et d'une documentation à produire :</p>
+<ul>
+<li>
+<p><strong>Comment le texte est-il transformé en entrées numériques pour le réseau ?</strong>
+  Observez le processus de tokenisation, la création du vocabulaire et la conversion en séquences d'indices.</p>
+</li>
+<li>
+<p><strong>Comment les cellules LSTM gèrent-elles l'information à long terme ?</strong>
+  Analysez l'architecture des cellules LSTM et leur capacité à mémoriser les informations pertinentes.</p>
+</li>
+<li>
+<p><strong>Quelle est la différence entre les embeddings de mots positifs et négatifs ?</strong>
+  Examinez la visualisation des embeddings et comment les mots de sentiments similaires se regroupent.</p>
+</li>
+<li>
+<p><strong>Comment le modèle LSTM peut-il comprendre le contexte d'une phrase ?</strong>
+  Réfléchissez à la manière dont l'ordre des mots et leurs relations sont capturés par le modèle.</p>
+</li>
+<li>
+<p><strong>Quelles sont les limitations de cette approche pour l'analyse de sentiment ?</strong>
+  Identifiez les cas où le modèle échoue et pourquoi (ironie, sarcasme, expressions idiomatiques).</p>
+</li>
+<li>
+<p><strong>Comment pourriez-vous améliorer ce modèle pour des tâches plus complexes ?</strong>
+  Proposez des modifications architecturales ou des techniques d'amélioration des données.</p>
+</li>
+</ul>
+<h3 id="livrable-attendu">Livrable attendu</h3>
+<p>À la fin de cette activité, vous devrez produire une documentation synthétique (1-2 pages) répondant aux questions ci-dessus. Ce document servira de référence pour votre compréhension des RNN/LSTM et pourra être intégré dans la base de connaissances de votre chatbot pédagogique.</p>
+<p>Un document de référence complet sur ces concepts est disponible <a href="../ressources/lstm-sentiment-analyse/">ici</a> pour vous aider à approfondir votre compréhension.</p>
+<h2 id="conclusion-et-transition">Conclusion et transition</h2>
+<p>Cette section sur les réseaux récurrents vous a permis de comprendre une autre architecture fondamentale du Deep Learning, particulièrement adaptée aux données séquentielles comme le texte ou les séries temporelles. </p>
+<p>Vous avez appris à:</p>
+<ul>
+<li>Reconnaître les situations où les RNN/LSTM sont particulièrement adaptés</li>
+<li>Comprendre les mécanismes de mémoire qui font la force de ces architectures</li>
+<li>Implémenter un modèle LSTM pour l'analyse de sentiment de texte</li>
+<li>Visualiser et interpréter les représentations internes du modèle</li>
+</ul>
+<p>Ces connaissances constitueront une base essentielle pour le développement de votre projet de chatbot pédagogique dans les prochains modules.</p>
+<p><a class="md-button" href="../">Retour à la vue d'ensemble du Module 2</a>
+<a class="md-button md-button--primary" href="../../module3/">Continuer vers le Module 3</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2025 Atelier-deeplearning
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/votre-repo/chatbot-deeplearning" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../javascripts/progress.js"></script>
+      
+    
+  </body>
+</html>

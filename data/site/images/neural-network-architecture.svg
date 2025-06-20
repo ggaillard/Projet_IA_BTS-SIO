@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Fond -->
+  <rect width="800" height="400" fill="white"/>
+  
+  <!-- Titres des couches -->
+  <text x="90" y="30" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">Couche d'entrée</text>
+  <text x="300" y="30" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">Couches cachées</text>
+  <text x="650" y="30" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">Couche de sortie</text>
+  
+  <!-- Neurones de la couche d'entrée -->
+  <circle cx="90" cy="100" r="20" fill="#6FA1D4" stroke="#333" stroke-width="2"/>
+  <circle cx="90" cy="170" r="20" fill="#6FA1D4" stroke="#333" stroke-width="2"/>
+  <circle cx="90" cy="240" r="20" fill="#6FA1D4" stroke="#333" stroke-width="2"/>
+  <circle cx="90" cy="310" r="20" fill="#6FA1D4" stroke="#333" stroke-width="2"/>
+  
+  <!-- Neurones de la première couche cachée -->
+  <circle cx="240" cy="80" r="20" fill="#FFB347" stroke="#333" stroke-width="2"/>
+  <circle cx="240" cy="150" r="20" fill="#FFB347" stroke="#333" stroke-width="2"/>
+  <circle cx="240" cy="220" r="20" fill="#FFB347" stroke="#333" stroke-width="2"/>
+  <circle cx="240" cy="290" r="20" fill="#FFB347" stroke="#333" stroke-width="2"/>
+  <circle cx="240" cy="360" r="20" fill="#FFB347" stroke="#333" stroke-width="2"/>
+  
+  <!-- Neurones de la deuxième couche cachée -->
+  <circle cx="390" cy="100" r="20" fill="#77DD77" stroke="#333" stroke-width="2"/>
+  <circle cx="390" cy="170" r="20" fill="#77DD77" stroke="#333" stroke-width="2"/>
+  <circle cx="390" cy="240" r="20" fill="#77DD77" stroke="#333" stroke-width="2"/>
+  <circle cx="390" cy="310" r="20" fill="#77DD77" stroke="#333" stroke-width="2"/>
+  
+  <!-- Neurones de la troisième couche cachée -->
+  <circle cx="540" cy="120" r="20" fill="#AEC6CF" stroke="#333" stroke-width="2"/>
+  <circle cx="540" cy="200" r="20" fill="#AEC6CF" stroke="#333" stroke-width="2"/>
+  <circle cx="540" cy="280" r="20" fill="#AEC6CF" stroke="#333" stroke-width="2"/>
+  
+  <!-- Neurones de la couche de sortie -->
+  <circle cx="650" cy="170" r="20" fill="#FF6961" stroke="#333" stroke-width="2"/>
+  <circle cx="650" cy="240" r="20" fill="#FF6961" stroke="#333" stroke-width="2"/>
+  
+  <!-- Connexions entre la couche d'entrée et la première couche cachée -->
+  <!-- De chaque neurone de la couche d'entrée à chaque neurone de la première couche cachée -->
+  <g stroke="#999" stroke-width="1">
+    <!-- Du premier neurone d'entrée -->
+    <line x1="110" y1="100" x2="220" y2="80" opacity="0.5"/>
+    <line x1="110" y1="100" x2="220" y2="150" opacity="0.5"/>
+    <line x1="110" y1="100" x2="220" y2="220" opacity="0.5"/>
+    <line x1="110" y1="100" x2="220" y2="290" opacity="0.5"/>
+    <line x1="110" y1="100" x2="220" y2="360" opacity="0.5"/>
+    
+    <!-- Du deuxième neurone d'entrée -->
+    <line x1="110" y1="170" x2="220" y2="80" opacity="0.5"/>
+    <line x1="110" y1="170" x2="220" y2="150" opacity="0.5"/>
+    <line x1="110" y1="170" x2="220" y2="220" opacity="0.5"/>
+    <line x1="110" y1="170" x2="220" y2="290" opacity="0.5"/>
+    <line x1="110" y1="170" x2="220" y2="360" opacity="0.5"/>
+    
+    <!-- Du troisième neurone d'entrée -->
+    <line x1="110" y1="240" x2="220" y2="80" opacity="0.5"/>
+    <line x1="110" y1="240" x2="220" y2="150" opacity="0.5"/>
+    <line x1="110" y1="240" x2="220" y2="220" opacity="0.5"/>
+    <line x1="110" y1="240" x2="220" y2="290" opacity="0.5"/>
+    <line x1="110" y1="240" x2="220" y2="360" opacity="0.5"/>
+    
+    <!-- Du quatrième neurone d'entrée -->
+    <line x1="110" y1="310" x2="220" y2="80" opacity="0.5"/>
+    <line x1="110" y1="310" x2="220" y2="150" opacity="0.5"/>
+    <line x1="110" y1="310" x2="220" y2="220" opacity="0.5"/>
+    <line x1="110" y1="310" x2="220" y2="290" opacity="0.5"/>
+    <line x1="110" y1="310" x2="220" y2="360" opacity="0.5"/>
+  </g>
+  
+  <!-- Connexions entre la première et la deuxième couche cachée -->
+  <g stroke="#999" stroke-width="1">
+    <!-- Premier à deuxième couches cachées -->
+    <line x1="260" y1="80" x2="370" y2="100" opacity="0.5"/>
+    <line x1="260" y1="80" x2="370" y2="170" opacity="0.5"/>
+    <line x1="260" y1="80" x2="370" y2="240" opacity="0.5"/>
+    <line x1="260" y1="80" x2="370" y2="310" opacity="0.5"/>
+    
+    <line x1="260" y1="150" x2="370" y2="100" opacity="0.5"/>
+    <line x1="260" y1="150" x2="370" y2="170" opacity="0.5"/>
+    <line x1="260" y1="150" x2="370" y2="240" opacity="0.5"/>
+    <line x1="260" y1="150" x2="370" y2="310" opacity="0.5"/>
+    
+    <line x1="260" y1="220" x2="370" y2="100" opacity="0.5"/>
+    <line x1="260" y1="220" x2="370" y2="170" opacity="0.5"/>
+    <line x1="260" y1="220" x2="370" y2="240" opacity="0.5"/>
+    <line x1="260" y1="220" x2="370" y2="310" opacity="0.5"/>
+    
+    <line x1="260" y1="290" x2="370" y2="100" opacity="0.5"/>
+    <line x1="260" y1="290" x2="370" y2="170" opacity="0.5"/>
+    <line x1="260" y1="290" x2="370" y2="240" opacity="0.5"/>
+    <line x1="260" y1="290" x2="370" y2="310" opacity="0.5"/>
+    
+    <line x1="260" y1="360" x2="370" y2="100" opacity="0.5"/>
+    <line x1="260" y1="360" x2="370" y2="170" opacity="0.5"/>
+    <line x1="260" y1="360" x2="370" y2="240" opacity="0.5"/>
+    <line x1="260" y1="360" x2="370" y2="310" opacity="0.5"/>
+  </g>
+  
+  <!-- Connexions entre la deuxième et la troisième couche cachée -->
+  <g stroke="#999" stroke-width="1">
+    <line x1="410" y1="100" x2="520" y2="120" opacity="0.5"/>
+    <line x1="410" y1="100" x2="520" y2="200" opacity="0.5"/>
+    <line x1="410" y1="100" x2="520" y2="280" opacity="0.5"/>
+    
+    <line x1="410" y1="170" x2="520" y2="120" opacity="0.5"/>
+    <line x1="410" y1="170" x2="520" y2="200" opacity="0.5"/>
+    <line x1="410" y1="170" x2="520" y2="280" opacity="0.5"/>
+    
+    <line x1="410" y1="240" x2="520" y2="120" opacity="0.5"/>
+    <line x1="410" y1="240" x2="520" y2="200" opacity="0.5"/>
+    <line x1="410" y1="240" x2="520" y2="280" opacity="0.5"/>
+    
+    <line x1="410" y1="310" x2="520" y2="120" opacity="0.5"/>
+    <line x1="410" y1="310" x2="520" y2="200" opacity="0.5"/>
+    <line x1="410" y1="310" x2="520" y2="280" opacity="0.5"/>
+  </g>
+  
+  <!-- Connexions entre la troisième couche cachée et la couche de sortie -->
+  <g stroke="#999" stroke-width="1">
+    <line x1="560" y1="120" x2="630" y2="170" opacity="0.5"/>
+    <line x1="560" y1="120" x2="630" y2="240" opacity="0.5"/>
+    
+    <line x1="560" y1="200" x2="630" y2="170" opacity="0.5"/>
+    <line x1="560" y1="200" x2="630" y2="240" opacity="0.5"/>
+    
+    <line x1="560" y1="280" x2="630" y2="170" opacity="0.5"/>
+    <line x1="560" y1="280" x2="630" y2="240" opacity="0.5"/>
+  </g>
+  
+  <!-- Annotations des couches -->
+  <text x="90" y="50" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">(Input)</text>
+  <text x="240" y="50" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">(Hidden 1)</text>
+  <text x="390" y="50" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">(Hidden 2)</text>
+  <text x="540" y="50" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">(Hidden 3)</text>
+  <text x="650" y="50" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">(Output)</text>
+</svg>

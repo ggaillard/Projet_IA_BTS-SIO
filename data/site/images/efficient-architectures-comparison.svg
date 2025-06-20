@@ -1,0 +1,58 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Titre -->
+  <text x="400" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold">Architectures efficientes</text>
+  
+  <!-- Légende -->
+  <rect x="620" y="80" width="20" height="20" fill="#4285F4" />
+  <text x="650" y="95" font-family="Arial" font-size="14" text-anchor="start">Précision</text>
+  
+  <rect x="620" y="110" width="20" height="20" fill="#DB4437" />
+  <text x="650" y="125" font-family="Arial" font-size="14" text-anchor="start">Taille du modèle</text>
+  
+  <rect x="620" y="140" width="20" height="20" fill="#0F9D58" />
+  <text x="650" y="155" font-family="Arial" font-size="14" text-anchor="start">Vitesse (FPS)</text>
+  
+  <!-- Axe X -->
+  <line x1="100" y1="300" x2="600" y2="300" stroke="#333" stroke-width="2" />
+  <text x="350" y="330" font-family="Arial" font-size="16" text-anchor="middle">Modèles de Deep Learning</text>
+  
+  <!-- Étiquettes des modèles -->
+  <text x="150" y="320" font-family="Arial" font-size="14" text-anchor="middle">ResNet</text>
+  <text x="250" y="320" font-family="Arial" font-size="14" text-anchor="middle">EfficientNet</text>
+  <text x="350" y="320" font-family="Arial" font-size="14" text-anchor="middle">MobileNet</text>
+  <text x="450" y="320" font-family="Arial" font-size="14" text-anchor="middle">SqueezeNet</text>
+  <text x="550" y="320" font-family="Arial" font-size="14" text-anchor="middle">MobileNetV3</text>
+  
+  <!-- Barres de précision (bleues) -->
+  <rect x="130" y="120" width="40" height="180" fill="#4285F4" />
+  <rect x="230" y="140" width="40" height="160" fill="#4285F4" />
+  <rect x="330" y="160" width="40" height="140" fill="#4285F4" />
+  <rect x="430" y="180" width="40" height="120" fill="#4285F4" />
+  <rect x="530" y="150" width="40" height="150" fill="#4285F4" />
+  
+  <!-- Barres de taille de modèle (rouges) - Inversées pour montrer que plus petit = meilleur -->
+  <rect x="130" y="80" width="40" height="220" fill="#DB4437" />
+  <rect x="230" y="130" width="40" height="170" fill="#DB4437" />
+  <rect x="330" y="190" width="40" height="110" fill="#DB4437" />
+  <rect x="430" y="220" width="40" height="80" fill="#DB4437" />
+  <rect x="530" y="210" width="40" height="90" fill="#DB4437" />
+  
+  <!-- Barres de vitesse (vertes) -->
+  <rect x="130" y="230" width="40" height="70" fill="#0F9D58" />
+  <rect x="230" y="200" width="40" height="100" fill="#0F9D58" />
+  <rect x="330" y="150" width="40" height="150" fill="#0F9D58" />
+  <rect x="430" y="130" width="40" height="170" fill="#0F9D58" />
+  <rect x="530" y="110" width="40" height="190" fill="#0F9D58" />
+  
+  <!-- Ligne de compromis -->
+  <path d="M150 230 Q 250 190 350 170 Q 450 160 550 150" fill="none" stroke="#333" stroke-width="2" stroke-dasharray="5,5" />
+  <text x="350" y="100" font-family="Arial" font-size="16" text-anchor="middle" font-style="italic">Compromis taille/précision/vitesse</text>
+  
+  <!-- Caractéristiques spéciales -->
+  <text x="150" y="100" font-family="Arial" font-size="12" text-anchor="middle">Grande précision</text>
+  <text x="350" y="370" font-family="Arial" font-size="12" text-anchor="middle">Convolutions séparables</text>
+  <text x="550" y="90" font-family="Arial" font-size="12" text-anchor="middle">Optimisé pour mobile</text>
+  
+  <!-- Avantages -->
+  <text x="400" y="380" font-family="Arial" font-size="18" text-anchor="middle" font-weight="bold">Choisir la bonne architecture = meilleur compromis performance/ressources</text>
+</svg>

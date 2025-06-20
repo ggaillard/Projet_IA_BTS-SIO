@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Pédagogique - Deep Learning Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+    <!-- 🚨 VULNÉRABILITÉ: Informations sensibles dans les commentaires HTML -->
+    <!-- 
+    Configuration serveur:
+    - API Key: sk-abc123def456ghi789jkl012mno345pqr678stu901vwx234yzab567cde890fgh
+    - Database: chatbot.db 
+    - Server: chatbot-prod-01.internal.edu
+    - Admin panel: /admin (no auth required)
+    -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 Assistant IA pour le Deep Learning</h1>
+            <p class="subtitle">Votre compagnon pédagogique pour apprendre l'intelligence artificielle</p>
+            
+            <!-- 🚨 VULNÉRABILITÉ: Informations de debug visibles -->
+            <div class="debug-info" style="font-size: 10px; color: #666; margin-top: 10px;">
+                Debug: Server=chatbot-prod-01 | DB=chatbot.db | Version=1.0-dev | API=Mistral-tiny
+            </div>
+        </header>
+
+        <div class="chat-container">
+            <div id="chat-messages" class="chat-messages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <strong>🤖 Assistant IA:</strong> Bonjour ! Je suis votre assistant pédagogique spécialisé en Deep Learning. 
+                        Posez-moi vos questions sur les réseaux de neurones, CNN, RNN, et bien plus !
+                    </div>
+                    <div class="message-time">Système initialisé</div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <form id="chat-form">
+                    <!-- 🚨 VULNÉRABILITÉ: Collecte d'email sans justification claire -->
+                    <div class="user-info">
+                        <input type="email" id="user-email" placeholder="Votre email (obligatoire)" required>
+                        <small>📧 Pour personnaliser vos réponses et sauvegarder l'historique</small>
+                    </div>
+                    
+                    <div class="input-group">
+                        <textarea id="user-message" placeholder="Tapez votre question sur le Deep Learning..." 
+                                rows="3" maxlength="2000"></textarea>
+                        <button type="submit" id="send-btn">
+                            <span>Envoyer</span>
+                            <span class="loading" style="display: none;">⏳</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- 🚨 VULNÉRABILITÉ: Liens vers des sections sensibles -->
+        <footer>
+            <div class="footer-links">
+                <a href="/admin">👨‍💼 Administration</a> |
+                <a href="/health">🔍 État du système</a> |
+                <a href="/logs">📋 Logs système</a>
+            </div>
+            
+            <!-- 🚨 VULNÉRABILITÉ: Informations système exposées -->
+            <div class="system-info">
+                <small>
+                    Serveur: chatbot-prod-01.internal.edu | 
+                    Base de données: chatbot.db | 
+                    API: Mistral AI | 
+                    Version: 1.0-dev-unsafe
+                </small>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // 🚨 VULNÉRABILITÉ: Configuration sensible côté client
+        const CONFIG = {
+            apiKey: 'sk-abc123def456ghi789jkl012mno345pqr678stu901vwx234yzab567cde890fgh',
+            serverEndpoint: '/chat',
+            adminPanel: '/admin',
+            debugMode: true,
+            database: 'chatbot.db'
+        };
+
+        const chatForm = document.getElementById('chat-form');
+        const chatMessages = document.getElementById('chat-messages');
+        const userMessageInput = document.getElementById('user-message');
+        const userEmailInput = document.getElementById('user-email');
+        const sendBtn = document.getElementById('send-btn');
+
+        // 🚨 VULNÉRABILITÉ: Pas de validation côté client
+        chatForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const userMessage = userMessageInput.value.trim();
+            const userEmail = userEmailInput.value.trim();
+            
+            if (!userMessage) return;
+
+            // Afficher le message utilisateur
+            addMessage(userMessage, 'user', userEmail);
+            
+            // Vider l'input et montrer le loading
+            userMessageInput.value = '';
+            showLoading(true);
+
+            try {
+                // 🚨 VULNÉRABILITÉ: Données sensibles envoyées sans chiffrement
+                const requestData = {
+                    message: userMessage,
+                    email: userEmail,
+                    timestamp: new Date().toISOString(),
+                    browser: navigator.userAgent,
+                    url: window.location.href,
+                    sessionId: generateSessionId()
+                };
+
+                console.log('Envoi des données:', requestData); // 🚨 Logging côté client
+
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(requestData)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    // Afficher la réponse de l'IA
+                    addMessage(data.response, 'bot');
+                    
+                    // 🚨 VULNÉRABILITÉ: Affichage d'informations de debug
+                    if (data.debug_info && CONFIG.debugMode) {
+                        console.log('Debug info reçue:', data.debug_info);
+                        addDebugInfo(data.debug_info);
+                    }
+                } else {
+                    // 🚨 VULNÉRABILITÉ: Affichage complet des erreurs
+                    addMessage(`❌ Erreur: ${JSON.stringify(data.error, null, 2)}`, 'error');
+                    console.error('Erreur complète:', data);
+                }
+            } catch (error) {
+                // 🚨 VULNÉRABILITÉ: Exposition d'erreurs techniques
+                addMessage(`❌ Erreur de connexion: ${error.message}`, 'error');
+                console.error('Erreur réseau:', error);
+            } finally {
+                showLoading(false);
+            }
+        });
+
+        function addMessage(content, type, email = '') {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}-message`;
+            
+            const now = new Date().toLocaleTimeString();
+            const sender = type === 'user' ? `👤 ${email}` : '🤖 Assistant IA';
+            
+            messageDiv.innerHTML = `
+                <div class="message-content">
+                    <strong>${sender}:</strong> ${content}
+                </div>
+                <div class="message-time">${now}</div>
+            `;
+            
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // 🚨 VULNÉRABILITÉ: Fonction d'affichage des informations de debug
+        function addDebugInfo(debugInfo) {
+            const debugDiv = document.createElement('div');
+            debugDiv.className = 'debug-message';
+            debugDiv.innerHTML = `
+                <details>
+                    <summary>🔍 Informations de debug (ne pas partager!)</summary>
+                    <pre>${JSON.stringify(debugInfo, null, 2)}</pre>
+                </details>
+            `;
+            chatMessages.appendChild(debugDiv);
+        }
+
+        function showLoading(show) {
+            const sendSpan = sendBtn.querySelector('span:not(.loading)');
+            const loadingSpan = sendBtn.querySelector('.loading');
+            
+            if (show) {
+                sendSpan.style.display = 'none';
+                loadingSpan.style.display = 'inline';
+                sendBtn.disabled = true;
+            } else {
+                sendSpan.style.display = 'inline';
+                loadingSpan.style.display = 'none';
+                sendBtn.disabled = false;
+            }
+        }
+
+        // 🚨 VULNÉRABILITÉ: Génération d'ID de session prévisible
+        function generateSessionId() {
+            return 'session_' + Date.now() + '_' + Math.floor(Math.random() * 1000);
+        }
+
+        // 🚨 VULNÉRABILITÉ: Auto-remplissage d'email pour les tests
+        document.addEventListener('DOMContentLoaded', () => {
+            // Auto-remplir avec un email de test pour faciliter les tests
+            if (CONFIG.debugMode) {
+                userEmailInput.value = 'test.student@universite.fr';
+            }
+        });
+
+        // 🚨 VULNÉRABILITÉ: Raccourcis clavier exposant des fonctions admin
+        document.addEventListener('keydown', (e) => {
+            // Ctrl+Shift+A = Accès admin direct
+            if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+                window.open('/admin', '_blank');
+            }
+            
+            // Ctrl+Shift+L = Affichage des logs
+            if (e.ctrlKey && e.shiftKey && e.key === 'L') {
+                window.open('/logs', '_blank');
+            }
+            
+            // Ctrl+Shift+H = Health check
+            if (e.ctrlKey && e.shiftKey && e.key === 'H') {
+                window.open('/health', '_blank');
+            }
+        });
+    </script>
+</body>
+</html>

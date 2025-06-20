@@ -2,6 +2,10 @@
 openai>=1.0.0
 mistralai>=0.4.0
 
+# Embeddings gratuits (HuggingFace)
+sentence-transformers>=2.2.0
+torch>=1.9.0
+
 # Vector Store et Search
 faiss-cpu>=1.7.4
 langchain>=0.1.13
@@ -25,10 +29,7 @@ tiktoken>=0.5.0
 nltk>=3.8.1
 textstat>=0.7.3
 
-# Développement et tests
+# Développement et tests (optionnel)
 pytest>=7.4.0
 black>=23.0.0
 flake8>=6.0.0
-
-# Sécurité
-cryptography>=41.0.0

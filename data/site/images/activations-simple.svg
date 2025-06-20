@@ -1,0 +1,52 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Grille -->
+  <line x1="50" y1="200" x2="750" y2="200" stroke="#ddd" stroke-width="1" />
+  <line x1="400" y1="50" x2="400" y2="350" stroke="#ddd" stroke-width="1" />
+  
+  <!-- Axes -->
+  <line x1="50" y1="350" x2="750" y2="350" stroke="#333" stroke-width="2" />
+  <line x1="50" y1="50" x2="50" y2="350" stroke="#333" stroke-width="2" />
+  
+  <!-- Labels des axes -->
+  <text x="400" y="380" text-anchor="middle" fill="#333" font-size="18">Entrée (z)</text>
+  <text x="20" y="200" text-anchor="middle" fill="#333" font-size="18" transform="rotate(-90, 20, 200)">Sortie (a)</text>
+  
+  <!-- Origine -->
+  <text x="40" y="370" text-anchor="middle" fill="#333" font-size="16">0</text>
+  
+  <!-- ReLU -->
+  <path d="M 50 350 L 400 350 L 750 50" stroke="#FF6347" stroke-width="3" fill="none" />
+  <text x="150" y="100" fill="#FF6347" font-size="24" font-weight="bold">ReLU</text>
+  <text x="150" y="130" fill="#333" font-size="16">f(z) = max(0, z)</text>
+  
+  <!-- Sigmoid -->
+  <path d="M 50 320 
+           Q 200 320, 300 290 
+           Q 350 270, 400 200 
+           Q 450 130, 500 110 
+           Q 600 80, 750 80" 
+        stroke="#4682B4" stroke-width="3" fill="none" />
+  <text x="600" y="150" fill="#4682B4" font-size="24" font-weight="bold">Sigmoid</text>
+  <text x="600" y="180" fill="#333" font-size="16">f(z) = 1/(1+e^(-z))</text>
+  
+  <!-- Points clés -->
+  <circle cx="400" cy="200" r="6" fill="#333" />
+  <text x="410" y="220" fill="#333" font-size="14">(0, 0.5)</text>
+  
+  <circle cx="400" cy="350" r="6" fill="#FF6347" />
+  <text x="410" y="340" fill="#FF6347" font-size="14">(0, 0)</text>
+  
+  <circle cx="750" cy="50" r="6" fill="#FF6347" />
+  <text x="730" y="40" fill="#FF6347" font-size="14">(X, X)</text>
+  
+  <circle cx="750" cy="80" r="6" fill="#4682B4" />
+  <text x="730" y="70" fill="#4682B4" font-size="14">(X, 1)</text>
+  
+  <circle cx="50" cy="320" r="6" fill="#4682B4" />
+  <text x="70" y="320" fill="#4682B4" font-size="14">(-X, 0)</text>
+  
+  <!-- Zone de décision dans Sigmoid -->
+  <line x1="400" y1="50" x2="400" y2="350" stroke="#4682B4" stroke-width="1" stroke-dasharray="5,5" />
+  <path d="M 370 230 L 430 230 M 400 200 L 400 260" stroke="#4682B4" stroke-width="2" />
+  <text x="450" y="240" fill="#4682B4" font-size="14">Point de décision</text>
+</svg>

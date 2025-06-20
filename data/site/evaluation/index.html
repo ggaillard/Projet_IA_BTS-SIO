@@ -1,0 +1,1887 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours de Deep Learning pour le BTS SIO">
+      
+      
+        <meta name="author" content="G.GAILLARD">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Évaluation du parcours Deep Learning - Atelier Deep Learning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/progress.css">
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#evaluation-du-parcours-deep-learning" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href=".." title="Atelier Deep Learning" class="md-header__button md-logo" aria-label="Atelier Deep Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Atelier Deep Learning
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Évaluation du parcours Deep Learning
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer au mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer au mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../module1/" class="md-tabs__link">
+          
+  
+  Module 1 - Fondamentaux
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../module2/" class="md-tabs__link">
+          
+  
+  Module 2 - Architectures
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../module3/" class="md-tabs__link">
+          
+  
+  Module 3 - Applications
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../module4/" class="md-tabs__link">
+          
+  
+  Module 4 - Projet
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Atelier Deep Learning" class="md-nav__button md-logo" aria-label="Atelier Deep Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Atelier Deep Learning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Module 1 - Fondamentaux
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Module 1 - Fondamentaux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vue d'ensemble
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module1/introduction-pratique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Introduction pratique
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module1/concepts-fondamentaux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Concepts fondamentaux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module1/mini-projet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Mini-projet individuel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module1/qcm-evaluation-module1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auto-évaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ressources
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ressources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module1/ressources/glossaire-dl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossaire
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module1/ressources/guide-colab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guide Colab
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module1/ressources/synthese-visuelle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Synthèse visuelle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Module 2 - Architectures
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Module 2 - Architectures
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vue d'ensemble
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module2/reseaux-convolutifs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Réseaux convolutifs (CNN)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module2/reseaux-recurrents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Réseaux récurrents (RNN)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module2/qcm-evaluation-module2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auto-évaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ressources
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Ressources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module1/ressources/glossaire-dl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossaire
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Module 3 - Applications
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Module 3 - Applications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vue d'ensemble
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module3/frameworks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Frameworks et bonnes pratiques
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module3/integration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Intégration et optimisation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module3/preparation-projet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Préparation au projet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module3/qcm-evaluation-module3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auto-évaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ressources
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ressources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ressources/base-connaissances/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Base de connaissances
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module3/pratique-tensorflow-keras.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TensorFlow pour débutants
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ressources/api-mistral/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Mistral
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Module 4 - Projet
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Module 4 - Projet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vue d'ensemble
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module4/projet-chatbot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cahier des charges
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module4/partie1-developpement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Développement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module4/partie2-finalisation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Finalisation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module4/partie3-presentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Présentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module4/qcm-evaluation-module4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auto-évaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ressources
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            Ressources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ressources/base-connaissances/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Base de connaissances
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ressources/json-schemas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structure JSON
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#presentation-du-systeme-devaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Présentation du système d'évaluation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectifs-de-levaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectifs de l'évaluation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repartition-globale-de-levaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Répartition globale de l'évaluation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documents-devaluation-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documents d'évaluation disponibles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documents d&#39;évaluation disponibles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criteres-devaluation-detailles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Critères d'évaluation détaillés
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grille-de-repartition-des-taches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grille de répartition des tâches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fiche-devaluation-finale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fiche d'évaluation finale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checklist-dauto-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checklist d'auto-évaluation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-projets-evalues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini-projets évalués
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mini-projets évalués">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mini-projet-cnn-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini-projet CNN (10%)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mini-projet-rnn-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini-projet RNN (10%)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#projet-damelioration-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Projet d'amélioration (10%)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation-du-projet-final" class="md-nav__link">
+    <span class="md-ellipsis">
+      Évaluation du projet final
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Évaluation du projet final">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#produit-final-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      Produit final (30%)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processus-de-developpement-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Processus de développement (15%)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#presentation-et-documentation-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Présentation et documentation (15%)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calendrier-devaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calendrier d'évaluation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conseils-pour-reussir" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conseils pour réussir
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auto-évaluation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ressources-supplementaires" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ressources supplémentaires
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="evaluation-du-parcours-deep-learning">Évaluation du parcours Deep Learning</h1>
+<p><img alt="Évaluation" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;q=80&amp;w=1000&amp;h=300" /></p>
+<h2 id="presentation-du-systeme-devaluation">Présentation du système d'évaluation</h2>
+<p>Cette section détaille les modalités d'évaluation du parcours sur le Deep Learning et du projet de chatbot pédagogique. Elle vous permettra de comprendre clairement les attentes, les critères d'évaluation et les livrables requis.</p>
+<h2 id="objectifs-de-levaluation">Objectifs de l'évaluation</h2>
+<p>L'évaluation de ce parcours vise plusieurs objectifs :</p>
+<ol>
+<li><strong>Mesurer votre compréhension</strong> des concepts fondamentaux du Deep Learning</li>
+<li><strong>Évaluer votre capacité</strong> à appliquer ces concepts dans un projet concret</li>
+<li><strong>Valoriser le travail d'équipe</strong> et la répartition efficace des tâches</li>
+<li><strong>Préparer aux situations professionnelles</strong> en simulant un projet réel d'entreprise</li>
+<li><strong>Fournir un feedback constructif</strong> pour votre progression personnelle</li>
+</ol>
+<h2 id="repartition-globale-de-levaluation">Répartition globale de l'évaluation</h2>
+<p>L'évaluation globale du parcours se décompose comme suit :</p>
+<table>
+<thead>
+<tr>
+<th>Composante</th>
+<th>Pondération</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Participation active</td>
+<td>10%</td>
+<td>Engagement dans les activités, pertinence des contributions</td>
+</tr>
+<tr>
+<td>Mini-projets</td>
+<td>30%</td>
+<td>Qualité des livrables des séances 2 et 3</td>
+</tr>
+<tr>
+<td>Projet final - Produit</td>
+<td>30%</td>
+<td>Fonctionnalité et qualité technique du chatbot</td>
+</tr>
+<tr>
+<td>Projet final - Processus</td>
+<td>15%</td>
+<td>Organisation, méthodologie, répartition des tâches</td>
+</tr>
+<tr>
+<td>Projet final - Présentation</td>
+<td>15%</td>
+<td>Qualité de la présentation et de la documentation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="documents-devaluation-disponibles">Documents d'évaluation disponibles</h2>
+<h3 id="criteres-devaluation-detailles"><a href="criteres-evaluation/">Critères d'évaluation détaillés</a></h3>
+<p>Ce document présente en détail tous les critères utilisés pour l'évaluation de chaque composante du parcours :
+     - Description précise de chaque critère
+     - Barème de notation et pondération
+     - Exemples de livrables attendus pour chaque niveau de performance
+     - Conseils pour maximiser votre score</p>
+<h3 id="grille-de-repartition-des-taches"><a href="grille-repartition-taches/">Grille de répartition des tâches</a></h3>
+<p>Cette grille vous aide à organiser efficacement le travail au sein de votre équipe :</p>
+<div class="codehilite"><pre><span></span><code> - Identification des rôles et responsabilités
+ - Planning des jalons intermédiaires
+ - Suivi de l&#39;avancement des tâches
+ - Gestion des risques et plan de contingence
+</code></pre></div>
+
+<h3 id="fiche-devaluation-finale"><a href="criteres-evaluation-seance4.md">Fiche d'évaluation finale</a></h3>
+<p>La fiche utilisée lors de l'évaluation finale du projet de chatbot pédagogique :</p>
+<div class="codehilite"><pre><span></span><code> - Critères spécifiques pour chaque aspect du projet
+ - Barème de notation détaillé
+ - Espace pour les commentaires et feedback
+ - Auto-évaluation préalable à remplir par l&#39;équipe
+</code></pre></div>
+
+<h3 id="checklist-dauto-evaluation"><a href="checklist-auto-evaluation/">Checklist d'auto-évaluation</a></h3>
+<p>Cette checklist vous permet de vérifier que votre projet répond à tous les critères avant la soumission finale:</p>
+<ul>
+<li>Liste complète des fonctionnalités à implémenter</li>
+<li>Points techniques à vérifier</li>
+<li>Aspects de documentation à ne pas oublier</li>
+<li>Conseils pour la présentation finale</li>
+</ul>
+<h2 id="mini-projets-evalues">Mini-projets évalués</h2>
+<p>Les mini-projets des séances 2 et 3 font partie intégrante de l'évaluation continue :</p>
+<h3 id="mini-projet-cnn-10">Mini-projet CNN (10%)</h3>
+<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">Implémentation</span><span class="w"> </span><span class="nx">d</span><span class="err">&#39;</span><span class="nx">un</span><span class="w"> </span><span class="nx">réseau</span><span class="w"> </span><span class="nx">convolutif</span><span class="w"> </span><span class="nx">pour</span><span class="w"> </span><span class="nx">la</span><span class="w"> </span><span class="nx">classification</span><span class="w"> </span><span class="nx">d</span><span class="err">&#39;</span><span class="nx">images</span>
+<span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">Visualisation</span><span class="w"> </span><span class="nx">et</span><span class="w"> </span><span class="nx">interprétation</span><span class="w"> </span><span class="nx">des</span><span class="w"> </span><span class="nx">filtres</span><span class="w"> </span><span class="nx">et</span><span class="w"> </span><span class="nx">feature</span><span class="w"> </span><span class="nx">maps</span>
+<span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">Intégration</span><span class="w"> </span><span class="nx">dans</span><span class="w"> </span><span class="nx">une</span><span class="w"> </span><span class="nx">application</span><span class="w"> </span><span class="nx">web</span><span class="w"> </span><span class="nx">simple</span>
+<span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">Évaluation</span><span class="w"> </span><span class="nx">des</span><span class="w"> </span><span class="nx">performances</span><span class="w"> </span><span class="nx">sur</span><span class="w"> </span><span class="nx">différents</span><span class="w"> </span><span class="nx">jeux</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">données</span>
+</code></pre></div>
+
+<h3 id="mini-projet-rnn-10">Mini-projet RNN (10%)</h3>
+<div class="codehilite"><pre><span></span><code> - Implémentation d&#39;un modèle LSTM pour l&#39;analyse de sentiment
+ - Expérimentation avec l&#39;API Mistral AI pour le traitement du langage
+ - Comparaison entre approche par réseau de neurones et API de modèle de langage
+ - Documentation des résultats et limitations
+</code></pre></div>
+
+<h3 id="projet-damelioration-10">Projet d'amélioration (10%)</h3>
+<div class="codehilite"><pre><span></span><code> - Diagnostic des problèmes d&#39;un modèle de prévision des ventes sous-optimal
+ - Application de techniques d&#39;amélioration ciblées
+ - Mesure et analyse comparative des performances
+ - Documentation des expérimentations et conclusions
+</code></pre></div>
+
+<h2 id="evaluation-du-projet-final">Évaluation du projet final</h2>
+<p>Le projet final de chatbot pédagogique constitue la partie la plus importante de l'évaluation (60% au total) :</p>
+<h3 id="produit-final-30">Produit final (30%)</h3>
+<div class="codehilite"><pre><span></span><code> - Interface conversationnelle fonctionnelle et intuitive
+ - Intégration avancée avec l&#39;API Mistral AI
+ - Base de connaissances complète et structurée sur le Deep Learning
+ - Fonctionnalités pédagogiques (explications, exemples, exercices)
+ - Performances techniques (temps de réponse, gestion des erreurs)
+</code></pre></div>
+
+<h3 id="processus-de-developpement-15">Processus de développement (15%)</h3>
+<div class="codehilite"><pre><span></span><code> - Organisation de l&#39;équipe et répartition des tâches
+ - Respect des jalons intermédiaires
+ - Tests fonctionnels et validation des performances
+ - Adaptation aux difficultés techniques rencontrées
+</code></pre></div>
+
+<h3 id="presentation-et-documentation-15">Présentation et documentation (15%)</h3>
+<div class="codehilite"><pre><span></span><code> - Présentation claire et démonstration convaincante
+ - Documentation technique détaillée
+ - Guide utilisateur complet
+ - Explication des choix techniques et architecture
+</code></pre></div>
+
+<h2 id="calendrier-devaluation">Calendrier d'évaluation</h2>
+<table>
+<thead>
+<tr>
+<th>Séance</th>
+<th>Évaluation</th>
+<th>Livrables attendus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Séance 2</td>
+<td>Mini-projets CNN et RNN</td>
+<td>Modèles fonctionnels et rapports d'analyse</td>
+</tr>
+<tr>
+<td>Séance 3</td>
+<td>Projet d'amélioration</td>
+<td>Modèle optimisé et documentation</td>
+</tr>
+<tr>
+<td>Séance 3</td>
+<td>Préparation du projet</td>
+<td>Document de conception du chatbot</td>
+</tr>
+<tr>
+<td>Séance 4</td>
+<td>Développement</td>
+<td>Chatbot fonctionnel et documentation</td>
+</tr>
+<tr>
+<td>Séance 4</td>
+<td>Présentation finale</td>
+<td>Démonstration et défense du projet</td>
+</tr>
+</tbody>
+</table>
+<h2 id="conseils-pour-reussir">Conseils pour réussir</h2>
+<ol>
+<li><strong>Commencez par l'essentiel</strong> - Assurez-vous que les fonctionnalités de base sont solides avant d'ajouter des éléments avancés</li>
+<li><strong>Documentez au fur et à mesure</strong> - Ne laissez pas la documentation pour la fin</li>
+<li><strong>Testez régulièrement</strong> - Identifiez et corrigez les problèmes tôt</li>
+<li><strong>Répartissez équitablement les tâches</strong> - Utilisez la grille de répartition pour organiser le travail</li>
+<li><strong>Préparez soigneusement votre démonstration</strong> - Prévoyez un scénario qui met en valeur les points forts de votre solution</li>
+<li><strong>Gérez efficacement le temps</strong> - Respectez les jalons intermédiaires pour éviter le stress de dernière minute</li>
+<li><strong>Communiquez avec l'enseignant</strong> - Demandez de l'aide si vous rencontrez des difficultés</li>
+</ol>
+<h2 id="auto-evaluation">Auto-évaluation</h2>
+<p>Avant chaque remise, nous vous encourageons à réaliser une auto-évaluation à l'aide des grilles fournies. Cette pratique vous permettra de :</p>
+<div class="codehilite"><pre><span></span><code> - Identifier les points forts et axes d&#39;amélioration de votre travail
+ - Vérifier que tous les critères sont bien pris en compte
+ - Prioriser les aspects à finaliser ou améliorer
+ - Préparer votre argumentaire pour la présentation
+</code></pre></div>
+
+<h2 id="ressources-supplementaires">Ressources supplémentaires</h2>
+<ul>
+<li><a href="../ressources/guide-etudiant/">Guide de bonnes pratiques pour la documentation technique</a></li>
+<li><a href="../seance4/partie3-presentation.md">Conseils pour une présentation efficace</a></li>
+<li><a href="../seance3/ressources/competences-stage-sio.md">Compétences recherchées en stage BTS SIO</a></li>
+</ul>
+<hr />
+<p>L'évaluation est conçue comme un outil pédagogique pour vous guider et vous motiver tout au long de ce parcours d'apprentissage. Gardez à l'esprit que l'objectif principal est d'acquérir des compétences pratiques en Deep Learning que vous pourrez valoriser dans votre parcours professionnel.</p>
+<p>[</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2025 Atelier-deeplearning
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/votre-repo/chatbot-deeplearning" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../javascripts/progress.js"></script>
+      
+    
+  </body>
+</html>

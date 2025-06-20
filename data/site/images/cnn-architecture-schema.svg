@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <!-- Background -->
+  <rect width="800" height="450" fill="#f8f9fa" rx="10" ry="10" />
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial" font-size="20" text-anchor="middle" font-weight="bold">Schéma d'architecture CNN à compléter</text>
+  
+  <!-- Input Image -->
+  <rect x="50" y="100" width="100" height="100" fill="#ffffff" stroke="#333333" stroke-width="2" />
+  <text x="100" y="90" font-family="Arial" font-size="14" text-anchor="middle">Image d'entrée</text>
+  <text x="100" y="155" font-family="Arial" font-size="30" text-anchor="middle">7</text>
+  
+  <!-- Arrows -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+  
+  <path d="M160 150 L200 150" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  <path d="M310 150 L350 150" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  <path d="M460 150 L500 150" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  <path d="M610 150 L650 150" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Couche 1: Convolution - with question mark for student to identify -->
+  <rect x="210" y="80" width="90" height="140" fill="#e1f5fe" stroke="#0288d1" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="255" y="90" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Couche ?</text>
+  <text x="255" y="150" font-family="Arial" font-size="40" text-anchor="middle" fill="#0288d1">?</text>
+  <rect x="210" y="230" width="90" height="60" fill="#ffffff" stroke="#333333" stroke-width="1" />
+  <text x="255" y="255" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">Fonction:</text>
+  <text x="255" y="275" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">____________</text>
+  
+  <!-- Couche 2: Pooling - with question mark for student to identify -->
+  <rect x="360" y="95" width="90" height="110" fill="#e8f5e9" stroke="#388e3c" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="405" y="90" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Couche ?</text>
+  <text x="405" y="150" font-family="Arial" font-size="40" text-anchor="middle" fill="#388e3c">?</text>
+  <rect x="360" y="230" width="90" height="60" fill="#ffffff" stroke="#333333" stroke-width="1" />
+  <text x="405" y="255" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">Fonction:</text>
+  <text x="405" y="275" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">____________</text>
+  
+  <!-- Couche 3: Fully Connected - with question mark for student to identify -->
+  <rect x="510" y="80" width="90" height="140" fill="#fff3e0" stroke="#f57c00" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="555" y="90" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Couche ?</text>
+  <text x="555" y="150" font-family="Arial" font-size="40" text-anchor="middle" fill="#f57c00">?</text>
+  <rect x="510" y="230" width="90" height="60" fill="#ffffff" stroke="#333333" stroke-width="1" />
+  <text x="555" y="255" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">Fonction:</text>
+  <text x="555" y="275" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">____________</text>
+  
+  <!-- Output: Classification -->
+  <rect x="660" y="100" width="90" height="100" fill="#ffffff" stroke="#333333" stroke-width="2" />
+  <text x="705" y="90" font-family="Arial" font-size="14" text-anchor="middle">Sortie</text>
+  <text x="705" y="130" font-family="Arial" font-size="14" text-anchor="middle">Classification</text>
+  <text x="705" y="170" font-family="Arial" font-size="30" text-anchor="middle" font-weight="bold">7</text>
+  
+  <!-- Advantages section -->
+  <rect x="100" y="320" width="600" height="100" fill="#ffffff" stroke="#333333" stroke-width="1" />
+  <text x="400" y="340" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Trois avantages majeurs des CNN</text>
+  
+  <text x="120" y="370" font-family="Arial" font-size="14" text-anchor="start">1.</text>
+  <line x1="135" y1="370" x2="400" y2="370" stroke="#333" stroke-width="1" stroke-dasharray="2,2"/>
+  
+  <text x="120" y="395" font-family="Arial" font-size="14" text-anchor="start">2.</text>
+  <line x1="135" y1="395" x2="400" y2="395" stroke="#333" stroke-width="1" stroke-dasharray="2,2"/>
+  
+  <text x="420" y="370" font-family="Arial" font-size="14" text-anchor="start">3.</text>
+  <line x1="435" y1="370" x2="680" y2="370" stroke="#333" stroke-width="1" stroke-dasharray="2,2"/>
+  
+  <!-- Instructions -->
+  <text x="400" y="430" font-family="Arial" font-size="12" text-anchor="middle" fill="#666" font-style="italic">Complétez ce schéma en identifiant les trois types de couches et leurs fonctions principales</text>
+</svg>

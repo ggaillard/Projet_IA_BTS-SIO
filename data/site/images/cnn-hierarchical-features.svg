@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <!-- Background -->
+  <rect width="900" height="400" fill="#f8f9fa" rx="10" ry="10" />
+  
+  <!-- Title -->
+  <text x="450" y="30" font-family="Arial" font-size="20" text-anchor="middle" font-weight="bold">Hiérarchie des caractéristiques extraites par un CNN</text>
+  
+  <!-- Original image -->
+  <rect x="50" y="70" width="120" height="120" fill="#ffffff" stroke="#333333" />
+  <text x="110" y="60" font-family="Arial" font-size="16" text-anchor="middle">Image originale</text>
+  
+  <!-- Digit 7 in the original image -->
+  <path d="M85 100 L135 100 L115 170" stroke="#000000" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  
+  <!-- Arrows -->
+  <path d="M180 130 L230 130" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  <path d="M360 130 L410 130" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  <path d="M540 130 L590 130" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  <path d="M720 130 L770 130" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Arrowhead marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- Layer 1: Edge detection -->
+  <rect x="240" y="70" width="120" height="120" fill="#ffffff" stroke="#333333" />
+  <text x="300" y="60" font-family="Arial" font-size="16" text-anchor="middle">Couche 1</text>
+  <text x="300" y="210" font-family="Arial" font-size="14" text-anchor="middle" fill="#555">Contours et bords</text>
+  
+  <!-- Simple edge detection visualization -->
+  <line x1="265" y1="100" x2="315" y2="100" stroke="#3498db" stroke-width="4" />
+  <line x1="295" y1="100" x2="275" y2="170" stroke="#3498db" stroke-width="4" />
+  
+  <!-- Layer 2: Simple shapes -->
+  <rect x="420" y="70" width="120" height="120" fill="#ffffff" stroke="#333333" />
+  <text x="480" y="60" font-family="Arial" font-size="16" text-anchor="middle">Couche 2</text>
+  <text x="480" y="210" font-family="Arial" font-size="14" text-anchor="middle" fill="#555">Formes simples</text>
+  
+  <!-- Simple shapes visualization -->
+  <line x1="445" y1="100" x2="495" y2="100" stroke="#9b59b6" stroke-width="4" />
+  <path d="M475 100 C 465 130, 460 150, 455 170" stroke="#9b59b6" stroke-width="4" fill="none" />
+  
+  <!-- Layer 3: Complex shapes -->
+  <rect x="600" y="70" width="120" height="120" fill="#ffffff" stroke="#333333" />
+  <text x="660" y="60" font-family="Arial" font-size="16" text-anchor="middle">Couche 3</text>
+  <text x="660" y="210" font-family="Arial" font-size="14" text-anchor="middle" fill="#555">Formes complexes</text>
+  
+  <!-- More abstract representation of the digit -->
+  <path d="M625 100 L675 100 L655 165" stroke="#e74c3c" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  
+  <!-- Layer 4: Digit classification -->
+  <rect x="780" y="70" width="120" height="120" fill="#ffffff" stroke="#333333" />
+  <text x="840" y="60" font-family="Arial" font-size="16" text-anchor="middle">Sortie</text>
+  <text x="840" y="210" font-family="Arial" font-size="14" text-anchor="middle" fill="#555">Classification</text>
+  
+  <!-- Classification result -->
+  <text x="840" y="140" font-family="Arial" font-size="40" text-anchor="middle" font-weight="bold">7</text>
+  <text x="840" y="170" font-family="Arial" font-size="14" text-anchor="middle">99.8%</text>
+  
+  <!-- Bottom description -->
+  <text x="450" y="270" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Abstraction croissante des caractéristiques</text>
+  <text x="450" y="300" font-family="Arial" font-size="14" text-anchor="middle" fill="#555">Les premières couches détectent des éléments simples (bords, textures)</text>
+  <text x="450" y="320" font-family="Arial" font-size="14" text-anchor="middle" fill="#555">Les couches intermédiaires combinent ces éléments en formes plus complexes</text>
+  <text x="450" y="340" font-family="Arial" font-size="14" text-anchor="middle" fill="#555">Les couches profondes identifient des objets entiers et leurs caractéristiques distinctives</text>
+  <text x="450" y="370" font-family="Arial" font-size="14" text-anchor="middle" fill="#555" font-style="italic">Remarque : Chaque couche apprend automatiquement quelles caractéristiques sont importantes</text>
+</svg>

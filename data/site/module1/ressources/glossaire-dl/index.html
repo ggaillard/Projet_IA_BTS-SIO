@@ -1,0 +1,2599 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours de Deep Learning pour le BTS SIO">
+      
+      
+        <meta name="author" content="G.GAILLARD">
+      
+      
+      
+        <link rel="prev" href="../../../module2/qcm-evaluation-module2/">
+      
+      
+        <link rel="next" href="../../../module3/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Glossaire - Atelier Deep Learning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/progress.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#glossaire-du-deep-learning" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="Atelier Deep Learning" class="md-header__button md-logo" aria-label="Atelier Deep Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Atelier Deep Learning
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Glossaire
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer au mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer au mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Module 1 - Fondamentaux
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../module2/" class="md-tabs__link">
+          
+  
+  Module 2 - Architectures
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../module3/" class="md-tabs__link">
+          
+  
+  Module 3 - Applications
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../module4/" class="md-tabs__link">
+          
+  
+  Module 4 - Projet
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Atelier Deep Learning" class="md-nav__button md-logo" aria-label="Atelier Deep Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Atelier Deep Learning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Module 1 - Fondamentaux
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Module 1 - Fondamentaux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vue d'ensemble
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction-pratique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Introduction pratique
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts-fondamentaux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Concepts fondamentaux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mini-projet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Mini-projet individuel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qcm-evaluation-module1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auto-évaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ressources
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ressources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Glossaire
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Glossaire
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#glossaire-du-deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      📕 Glossaire du Deep Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📕 Glossaire du Deep Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#termes-fondamentaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Termes fondamentaux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architectures-de-reseaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architectures de réseaux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apprentissage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apprentissage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#techniques-specifiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Techniques spécifiques
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convolutions-et-cnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convolutions et CNN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metriques-devaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métriques d'évaluation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problemes-courants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problèmes courants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#termes-relatifs-aux-modeles-de-langage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Termes relatifs aux modèles de langage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frameworks-et-outils" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frameworks et outils
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications-du-deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications du Deep Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explications-des-termes-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explications des termes techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explications des termes techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fonctions-dactivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonctions d'activation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimiseurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimiseurs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modeles-de-langage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modèles de langage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modeles-de-reconnaissance-vocale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modèles de reconnaissance vocale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architectures-de-reseaux_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architectures de réseaux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modeles-de-langage-avances" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modèles de langage avancés
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide-colab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guide Colab
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../synthese-visuelle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Synthèse visuelle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Module 2 - Architectures
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Module 2 - Architectures
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vue d'ensemble
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module2/reseaux-convolutifs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Réseaux convolutifs (CNN)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module2/reseaux-recurrents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Réseaux récurrents (RNN)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module2/qcm-evaluation-module2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auto-évaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Ressources
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Ressources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Glossaire
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Glossaire
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#glossaire-du-deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      📕 Glossaire du Deep Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📕 Glossaire du Deep Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#termes-fondamentaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Termes fondamentaux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architectures-de-reseaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architectures de réseaux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apprentissage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apprentissage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#techniques-specifiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Techniques spécifiques
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convolutions-et-cnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convolutions et CNN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metriques-devaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métriques d'évaluation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problemes-courants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problèmes courants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#termes-relatifs-aux-modeles-de-langage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Termes relatifs aux modèles de langage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frameworks-et-outils" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frameworks et outils
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications-du-deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications du Deep Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explications-des-termes-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explications des termes techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explications des termes techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fonctions-dactivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonctions d'activation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimiseurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimiseurs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modeles-de-langage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modèles de langage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modeles-de-reconnaissance-vocale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modèles de reconnaissance vocale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architectures-de-reseaux_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architectures de réseaux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modeles-de-langage-avances" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modèles de langage avancés
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Module 3 - Applications
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Module 3 - Applications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vue d'ensemble
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module3/frameworks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Frameworks et bonnes pratiques
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module3/integration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Intégration et optimisation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module3/preparation-projet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Préparation au projet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module3/qcm-evaluation-module3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auto-évaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ressources
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ressources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ressources/base-connaissances/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Base de connaissances
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module3/pratique-tensorflow-keras.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TensorFlow pour débutants
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ressources/api-mistral/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Mistral
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Module 4 - Projet
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Module 4 - Projet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vue d'ensemble
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module4/projet-chatbot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cahier des charges
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module4/partie1-developpement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Développement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module4/partie2-finalisation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Finalisation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module4/partie3-presentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Présentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module4/qcm-evaluation-module4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auto-évaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ressources
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            Ressources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ressources/base-connaissances/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Base de connaissances
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ressources/json-schemas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structure JSON
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#glossaire-du-deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      📕 Glossaire du Deep Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📕 Glossaire du Deep Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#termes-fondamentaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Termes fondamentaux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architectures-de-reseaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architectures de réseaux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apprentissage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apprentissage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#techniques-specifiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Techniques spécifiques
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convolutions-et-cnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convolutions et CNN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metriques-devaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métriques d'évaluation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problemes-courants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problèmes courants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#termes-relatifs-aux-modeles-de-langage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Termes relatifs aux modèles de langage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frameworks-et-outils" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frameworks et outils
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications-du-deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications du Deep Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explications-des-termes-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explications des termes techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explications des termes techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fonctions-dactivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonctions d'activation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimiseurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimiseurs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modeles-de-langage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modèles de langage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modeles-de-reconnaissance-vocale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modèles de reconnaissance vocale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architectures-de-reseaux_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architectures de réseaux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modeles-de-langage-avances" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modèles de langage avancés
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Glossaire</h1>
+
+<p>Voici le glossaire du Deep Learning avec des liens vers les définitions des termes techniques mentionnés :</p>
+<h2 id="glossaire-du-deep-learning">📕 Glossaire du Deep Learning</h2>
+<h3 id="termes-fondamentaux">Termes fondamentaux</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Terme</strong></th>
+<th><strong>Définition</strong></th>
+<th><strong>Exemple concret</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Deep Learning</strong></td>
+<td>Sous-domaine du Machine Learning utilisant des réseaux de neurones à plusieurs couches pour modéliser des abstractions de haut niveau dans les données.</td>
+<td>Reconnaissance d'objets dans des photos.</td>
+</tr>
+<tr>
+<td><strong>Réseau de neurones</strong></td>
+<td>Système inspiré du cerveau humain composé de nœuds (neurones) interconnectés qui traitent les informations.</td>
+<td>Réseau capable de reconnaître des chiffres manuscrits.</td>
+</tr>
+<tr>
+<td><strong>Neurone artificiel</strong></td>
+<td>Unité de calcul de base dans un réseau de neurones qui reçoit des entrées, applique une transformation et produit une sortie.</td>
+<td>Un neurone qui s'active quand il détecte un contour vertical.</td>
+</tr>
+<tr>
+<td><strong>Couche</strong></td>
+<td>Ensemble de neurones situés au même niveau dans le réseau.</td>
+<td>Couche d'entrée, couche cachée, couche de sortie.</td>
+</tr>
+<tr>
+<td><strong>Poids</strong></td>
+<td>Valeurs numériques qui définissent l'importance relative de chaque connexion entre les neurones.</td>
+<td>Un poids élevé (ex: 0.8) indique une forte influence.</td>
+</tr>
+<tr>
+<td><strong>Biais</strong></td>
+<td>Valeur ajoutée à la somme pondérée des entrées d'un neurone pour ajuster le seuil d'activation.</td>
+<td>Permet à un neurone de s'activer même si toutes les entrées sont nulles.</td>
+</tr>
+<tr>
+<td><strong>Fonction d'activation</strong></td>
+<td>Fonction mathématique qui détermine la sortie d'un neurone en fonction de ses entrées.</td>
+<td><a href="#relu">ReLU</a>, <a href="#sigmoid">Sigmoid</a>, <a href="#tanh">Tanh</a>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="architectures-de-reseaux">Architectures de réseaux</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Terme</strong></th>
+<th><strong>Définition</strong></th>
+<th><strong>Cas d'utilisation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Réseau dense</strong></td>
+<td>Réseau où chaque neurone est connecté à tous les neurones de la couche précédente.</td>
+<td>Classification d'images simples, prédiction de valeurs.</td>
+</tr>
+<tr>
+<td><strong>Réseau convolutif (CNN)</strong></td>
+<td>Réseau spécialisé dans le traitement des données en grille comme les images, utilisant des filtres pour détecter des caractéristiques.</td>
+<td>Reconnaissance d'objets, classification d'images.</td>
+</tr>
+<tr>
+<td><strong>Réseau récurrent (RNN)</strong></td>
+<td>Réseau avec des connexions formant des cycles, adapté aux données séquentielles.</td>
+<td>Traduction automatique, génération de texte.</td>
+</tr>
+<tr>
+<td><strong>LSTM/GRU</strong></td>
+<td>Types de RNN capables de mémoriser l'information sur de longues séquences grâce à des mécanismes de mémoire.</td>
+<td>Analyse de texte long, prédiction de séries temporelles.</td>
+</tr>
+<tr>
+<td><strong>Transformer</strong></td>
+<td>Architecture basée sur des mécanismes d'attention, sans récurrence, permettant de traiter les données en parallèle.</td>
+<td>Modèles de langage avancés comme <a href="#gpt">GPT</a>, <a href="#bert">BERT</a>, Mistral.</td>
+</tr>
+<tr>
+<td><strong>Autoencoder</strong></td>
+<td>Réseau qui apprend à encoder puis décoder les données pour réduire la dimensionnalité ou détecter des anomalies.</td>
+<td>Réduction de dimensionnalité, détection d'anomalies.</td>
+</tr>
+<tr>
+<td><strong>GAN (Generative Adversarial Network)</strong></td>
+<td>Deux réseaux en compétition : un générateur crée des données et un discriminateur essaie de les distinguer des données réelles.</td>
+<td>Création d'images réalistes, deepfakes.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="apprentissage">Apprentissage</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Terme</strong></th>
+<th><strong>Définition</strong></th>
+<th><strong>Exemple</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Forward propagation</strong></td>
+<td>Passage des données d'entrée à travers le réseau pour produire une prédiction.</td>
+<td>Calcul de la sortie d'un modèle pour une image d'entrée.</td>
+</tr>
+<tr>
+<td><strong>Loss (perte)</strong></td>
+<td>Mesure de l'écart entre les prédictions du modèle et les valeurs réelles.</td>
+<td>Erreur quadratique moyenne, entropie croisée.</td>
+</tr>
+<tr>
+<td><strong>Backpropagation</strong></td>
+<td>Algorithme qui calcule le gradient de l'erreur par rapport aux poids du réseau pour les ajuster.</td>
+<td>Calcul de la contribution de chaque poids à l'erreur totale.</td>
+</tr>
+<tr>
+<td><strong>Descente de gradient</strong></td>
+<td>Algorithme d'optimisation qui ajuste les poids du réseau pour minimiser l'erreur.</td>
+<td>Modification itérative des poids dans la direction du gradient négatif.</td>
+</tr>
+<tr>
+<td><strong>Époque</strong></td>
+<td>Un passage complet à travers l'ensemble des données d'entraînement.</td>
+<td>Entraîner un modèle pendant 10 époques.</td>
+</tr>
+<tr>
+<td><strong>Batch</strong></td>
+<td>Sous-ensemble des données traité avant une mise à jour des poids.</td>
+<td>Traiter les données par lots de 32 exemples.</td>
+</tr>
+<tr>
+<td><strong>Optimiseur</strong></td>
+<td>Algorithme qui implémente la descente de gradient pour ajuster les poids du réseau.</td>
+<td><a href="#adam">Adam</a>, <a href="#sgd">SGD</a>, <a href="#rmsprop">RMSprop</a>.</td>
+</tr>
+<tr>
+<td><strong>Learning rate</strong></td>
+<td>Taux qui contrôle l'ampleur des ajustements des poids lors de l'entraînement.</td>
+<td>Trop élevé : divergence, trop faible : apprentissage lent.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="techniques-specifiques">Techniques spécifiques</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Terme</strong></th>
+<th><strong>Définition</strong></th>
+<th><strong>Utilisation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Transfer learning</strong></td>
+<td>Réutilisation d'un modèle pré-entraîné sur une nouvelle tâche pour bénéficier de ses connaissances.</td>
+<td>Adapter un modèle <a href="#imagenet">ImageNet</a> pour reconnaître des maladies de plantes.</td>
+</tr>
+<tr>
+<td><strong>Fine-tuning</strong></td>
+<td>Ajustement d'un modèle pré-entraîné sur des données spécifiques pour améliorer ses performances sur une tâche particulière.</td>
+<td>Réentraîner les dernières couches d'un modèle <a href="#bert">BERT</a> pour la classification de texte.</td>
+</tr>
+<tr>
+<td><strong>Data augmentation</strong></td>
+<td>Génération de nouvelles données d'entraînement par transformation des données existantes pour augmenter la diversité.</td>
+<td>Rotation, mise à l'échelle, distorsion d'images.</td>
+</tr>
+<tr>
+<td><strong>Dropout</strong></td>
+<td>Technique où des neurones sont aléatoirement désactivés pendant l'entraînement pour réduire l'overfitting.</td>
+<td>Force le réseau à être redondant et robuste.</td>
+</tr>
+<tr>
+<td><strong>Batch normalization</strong></td>
+<td>Normalisation des activations d'une couche pour stabiliser et accélérer l'apprentissage.</td>
+<td>Améliore la convergence et permet d'utiliser des taux d'apprentissage plus élevés.</td>
+</tr>
+<tr>
+<td><strong>Early stopping</strong></td>
+<td>Arrêt de l'entraînement quand les performances sur la validation cessent de s'améliorer pour éviter l'overfitting.</td>
+<td>Empêche le surajustement aux données d'entraînement.</td>
+</tr>
+<tr>
+<td><strong>Embedding</strong></td>
+<td>Conversion de données catégorielles en vecteurs denses pour les représenter dans un espace continu.</td>
+<td>Word embeddings dans le NLP (<a href="#word2vec">Word2Vec</a>, <a href="#glove">GloVe</a>).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="convolutions-et-cnn">Convolutions et CNN</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Terme</strong></th>
+<th><strong>Définition</strong></th>
+<th><strong>Rôle</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Filtre (kernel)</strong></td>
+<td>Matrice de poids appliquée à une région de l'image pour détecter des caractéristiques spécifiques.</td>
+<td>Détecte des caractéristiques spécifiques (bords, textures).</td>
+</tr>
+<tr>
+<td><strong>Feature map</strong></td>
+<td>Sortie d'un filtre de convolution appliqué à une image, représentant les caractéristiques détectées.</td>
+<td>Carte d'activation des caractéristiques détectées.</td>
+</tr>
+<tr>
+<td><strong>Pooling</strong></td>
+<td>Opération de sous-échantillonnage réduisant les dimensions de la feature map pour généraliser les caractéristiques.</td>
+<td>Réduit la complexité computationnelle et contrôle l'overfitting.</td>
+</tr>
+<tr>
+<td><strong>Padding</strong></td>
+<td>Ajout de pixels (généralement zéros) aux bords d'une image pour conserver les dimensions après convolution.</td>
+<td>Permet de conserver les dimensions de l'image après l'application des filtres.</td>
+</tr>
+<tr>
+<td><strong>Stride</strong></td>
+<td>Pas de déplacement du filtre sur l'image, contrôlant le chevauchement des champs réceptifs.</td>
+<td>Contrôle la taille de la feature map et la quantité de chevauchement.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="metriques-devaluation">Métriques d'évaluation</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Métrique</strong></th>
+<th><strong>Définition</strong></th>
+<th><strong>Cas d'usage</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Accuracy</strong></td>
+<td>Proportion de prédictions correctes parmi toutes les prédictions.</td>
+<td>Classification équilibrée.</td>
+</tr>
+<tr>
+<td><strong>Precision</strong></td>
+<td>Proportion des prédictions positives qui sont correctes.</td>
+<td>Quand les faux positifs sont coûteux.</td>
+</tr>
+<tr>
+<td><strong>Recall</strong></td>
+<td>Proportion des cas positifs réels correctement identifiés.</td>
+<td>Quand les faux négatifs sont coûteux.</td>
+</tr>
+<tr>
+<td><strong>F1-Score</strong></td>
+<td>Moyenne harmonique de la précision et du rappel, équilibrant les deux métriques.</td>
+<td>Classification avec classes déséquilibrées.</td>
+</tr>
+<tr>
+<td><strong>ROC-AUC</strong></td>
+<td>Aire sous la courbe ROC, mesurant la qualité de la discrimination entre les classes.</td>
+<td>Évaluation des modèles de classification.</td>
+</tr>
+<tr>
+<td><strong>MAE (Mean Absolute Error)</strong></td>
+<td>Moyenne des valeurs absolues des erreurs entre les prédictions et les valeurs réelles.</td>
+<td>Régression, quand les écarts importants ne sont pas surpondérés.</td>
+</tr>
+<tr>
+<td><strong>RMSE (Root Mean Squared Error)</strong></td>
+<td>Racine carrée de la moyenne des carrés des erreurs entre les prédictions et les valeurs réelles.</td>
+<td>Régression, pénalise davantage les grands écarts.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="problemes-courants">Problèmes courants</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Terme</strong></th>
+<th><strong>Définition</strong></th>
+<th><strong>Solution possible</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Overfitting</strong></td>
+<td>Le modèle apprend trop bien les données d'entraînement au détriment de la généralisation sur de nouvelles données.</td>
+<td>Régularisation, dropout, plus de données.</td>
+</tr>
+<tr>
+<td><strong>Underfitting</strong></td>
+<td>Le modèle est trop simple pour capturer la complexité des données, résultant en de mauvaises performances.</td>
+<td>Augmenter la complexité du modèle, entraîner plus longtemps.</td>
+</tr>
+<tr>
+<td><strong>Vanishing gradient</strong></td>
+<td>Problème où le gradient devient très petit, ralentissant l'apprentissage dans les couches profondes.</td>
+<td>Utiliser <a href="#relu">ReLU</a>, <a href="#lstm">LSTM</a>, initialisation des poids adaptée.</td>
+</tr>
+<tr>
+<td><strong>Exploding gradient</strong></td>
+<td>Problème où le gradient devient très grand, déstabilisant l'apprentissage.</td>
+<td>Gradient clipping, normalisation des poids.</td>
+</tr>
+<tr>
+<td><strong>Imbalanced data</strong></td>
+<td>Jeu de données où certaines classes sont beaucoup plus fréquentes que d'autres, biaisant le modèle.</td>
+<td>Rééchantillonnage, pondération des classes, techniques d'augmentation.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="termes-relatifs-aux-modeles-de-langage">Termes relatifs aux modèles de langage</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Terme</strong></th>
+<th><strong>Définition</strong></th>
+<th><strong>Exemple</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Token</strong></td>
+<td>Unité de base du texte pour les modèles de langage, comme un mot, sous-mot ou caractère.</td>
+<td>"Je suis prêt" → ["Je", "suis", "prêt"].</td>
+</tr>
+<tr>
+<td><strong>Tokenization</strong></td>
+<td>Processus de découpage du texte en tokens pour les traiter dans un modèle de langage.</td>
+<td>"Je suis prêt" → ["Je", "suis", "prêt"].</td>
+</tr>
+<tr>
+<td><strong>Prompt</strong></td>
+<td>Texte initial fourni à un modèle de langage pour guider sa génération de texte.</td>
+<td>"Rédige un poème sur le printemps:".</td>
+</tr>
+<tr>
+<td><strong>Context window</strong></td>
+<td>Nombre maximum de tokens qu'un modèle peut traiter en une fois, déterminant la quantité d'information contextuelle.</td>
+<td><a href="#gpt-4">GPT-4</a> a une fenêtre contextuelle de 8k-32k tokens.</td>
+</tr>
+<tr>
+<td><strong>Attention</strong></td>
+<td>Mécanisme permettant au modèle de se concentrer sur différentes parties de l'entrée pour générer une sortie pertinente.</td>
+<td>Self-attention dans les Transformers.</td>
+</tr>
+<tr>
+<td><strong>Fine-tuning</strong></td>
+<td>Adaptation d'un modèle pré-entraîné à une tâche spécifique en ajustant ses poids sur des données spécifiques.</td>
+<td>Ajuster <a href="#gpt">GPT</a> pour une tâche de customer support.</td>
+</tr>
+<tr>
+<td><strong>Few-shot learning</strong></td>
+<td>Capacité d'un modèle à apprendre à partir de très peu d'exemples, souvent en fournissant quelques exemples dans le prompt.</td>
+<td>Donner 2-3 exemples dans le prompt pour guider le modèle.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="frameworks-et-outils">Frameworks et outils</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Terme</strong></th>
+<th><strong>Définition</strong></th>
+<th><strong>Cas d'utilisation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TensorFlow</strong></td>
+<td>Framework de Machine Learning développé par Google, utilisé pour créer et entraîner des modèles de Deep Learning.</td>
+<td>Déploiement en production, applications mobiles.</td>
+</tr>
+<tr>
+<td><strong>PyTorch</strong></td>
+<td>Framework de Machine Learning développé par Facebook, connu pour sa flexibilité et sa facilité d'utilisation.</td>
+<td>Recherche, prototypage rapide.</td>
+</tr>
+<tr>
+<td><strong>Keras</strong></td>
+<td>API de haut niveau s'exécutant sur TensorFlow, facilitant le développement rapide de modèles de Deep Learning.</td>
+<td>Développement rapide de prototypes.</td>
+</tr>
+<tr>
+<td><strong>Hugging Face</strong></td>
+<td>Bibliothèque pour les modèles de NLP pré-entraînés, facilitant leur utilisation et leur fine-tuning.</td>
+<td>Utilisation de <a href="#bert">BERT</a>, <a href="#gpt">GPT</a> et autres modèles de langage.</td>
+</tr>
+<tr>
+<td><strong>ONNX</strong></td>
+<td>Format d'échange pour modèles de Machine Learning, permettant l'interopérabilité entre différents frameworks.</td>
+<td>Transfert de modèles entre TensorFlow, PyTorch, etc.</td>
+</tr>
+<tr>
+<td><strong>TensorBoard</strong></td>
+<td>Outil de visualisation pour TensorFlow, permettant de suivre les métriques d'entraînement et de visualiser les graphes de modèles.</td>
+<td>Suivi des métriques d'entraînement.</td>
+</tr>
+<tr>
+<td><strong>MLflow</strong></td>
+<td>Plateforme pour gérer le cycle de vie des modèles de Machine Learning, incluant le suivi des expériences et la gestion des modèles.</td>
+<td>Suivi des expériences, gestion des modèles.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="applications-du-deep-learning">Applications du Deep Learning</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Application</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Architecture typique</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Computer Vision</strong></td>
+<td>Domaine du Deep Learning dédié à l'analyse et la compréhension d'images et de vidéos.</td>
+<td>CNN (<a href="#resnet">ResNet</a>, <a href="#yolo">YOLO</a>, <a href="#efficientnet">EfficientNet</a>).</td>
+</tr>
+<tr>
+<td><strong>Natural Language Processing (NLP)</strong></td>
+<td>Domaine du Deep Learning dédié au traitement et à la génération de texte.</td>
+<td>Transformers (<a href="#bert">BERT</a>, <a href="#gpt">GPT</a>, T5).</td>
+</tr>
+<tr>
+<td><strong>Speech Recognition</strong></td>
+<td>Conversion de la parole en texte à l'aide de modèles de Deep Learning.</td>
+<td>RNN, Transformers (<a href="#wav2vec">Wav2Vec</a>).</td>
+</tr>
+<tr>
+<td><strong>Recommendation Systems</strong></td>
+<td>Systèmes qui suggèrent du contenu personnalisé en fonction des préférences de l'utilisateur.</td>
+<td>Réseaux de neurones profonds, embeddings.</td>
+</tr>
+<tr>
+<td><strong>Generative AI</strong></td>
+<td>Création de contenu nouveau (images, texte, audio) à l'aide de modèles de Deep Learning.</td>
+<td>GANs, Diffusion Models, Transformers.</td>
+</tr>
+<tr>
+<td><strong>Reinforcement Learning</strong></td>
+<td>Apprentissage par essai-erreur et récompense, où un agent apprend à prendre des décisions pour maximiser une récompense.</td>
+<td>Deep Q-Networks, Policy Gradients.</td>
+</tr>
+<tr>
+<td><strong>Time Series Analysis</strong></td>
+<td>Prédiction de valeurs futures dans des séquences temporelles à l'aide de modèles de Deep Learning.</td>
+<td>LSTM, Transformers temporels.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="explications-des-termes-techniques">Explications des termes techniques</h3>
+<h4 id="fonctions-dactivation">Fonctions d'activation</h4>
+<ul>
+<li><strong>ReLU (Rectified Linear Unit)</strong> : Fonction d'activation qui retourne 0 si l'entrée est négative et l'entrée elle-même si elle est positive. Elle est couramment utilisée dans les réseaux de neurones pour introduire de la non-linéarité.</li>
+<li><strong>Sigmoid</strong> : Fonction d'activation qui mappe les valeurs d'entrée à une plage de 0 à 1, souvent utilisée pour les problèmes de classification binaire.</li>
+<li><strong>Tanh (Hyperbolic Tangent)</strong> : Fonction d'activation qui mappe les valeurs d'entrée à une plage de -1 à 1, souvent utilisée dans les réseaux récurrents.</li>
+</ul>
+<h4 id="optimiseurs">Optimiseurs</h4>
+<ul>
+<li><strong>Adam (Adaptive Moment Estimation)</strong> : Algorithme d'optimisation qui combine les avantages de deux autres extensions de la descente de gradient stochastique, à savoir AdaGrad et RMSProp. Il est largement utilisé pour entraîner des réseaux de neurones.</li>
+<li><strong>SGD (Stochastic Gradient Descent)</strong> : Algorithme d'optimisation qui met à jour les poids du réseau en utilisant une estimation stochastique du gradient de la fonction de perte.</li>
+<li><strong>RMSprop</strong> : Algorithme d'optimisation qui adapte le taux d'apprentissage pour chaque paramètre, ce qui permet de stabiliser et d'accélérer l'entraînement.</li>
+</ul>
+<h4 id="modeles-de-langage">Modèles de langage</h4>
+<ul>
+<li><strong>Word2Vec</strong> : Modèle de langage qui apprend des représentations vectorielles des mots (embeddings) en utilisant des réseaux de neurones. Il est utilisé pour capturer les relations sémantiques entre les mots.</li>
+<li><strong>GloVe (Global Vectors for Word Representation)</strong> : Modèle de langage qui apprend des embeddings de mots en utilisant une matrice de co-occurrence des mots dans un corpus.</li>
+</ul>
+<h4 id="modeles-de-reconnaissance-vocale">Modèles de reconnaissance vocale</h4>
+<ul>
+<li><strong>Wav2Vec</strong> : Modèle de reconnaissance vocale qui apprend des représentations vectorielles des segments audio en utilisant des réseaux de neurones. Il est utilisé pour convertir la parole en texte.</li>
+</ul>
+<h4 id="architectures-de-reseaux_1">Architectures de réseaux</h4>
+<ul>
+<li><strong>ResNet (Residual Networks)</strong> : Architecture de réseau de neurones convolutifs qui utilise des connexions résiduelles pour permettre l'entraînement de réseaux très profonds sans dégradation des performances.</li>
+<li><strong>YOLO (You Only Look Once)</strong> : Architecture de réseau de neurones convolutifs utilisée pour la détection d'objets en temps réel. Elle divise l'image en une grille et prédit des boîtes englobantes et des classes pour chaque cellule de la grille.</li>
+<li><strong>EfficientNet</strong> : Architecture de réseau de neurones convolutifs qui utilise une approche de mise à l'échelle composée pour optimiser la précision et l'efficacité du modèle.</li>
+</ul>
+<h4 id="modeles-de-langage-avances">Modèles de langage avancés</h4>
+<ul>
+<li><strong>BERT (Bidirectional Encoder Representations from Transformers)</strong> : Modèle de langage basé sur les Transformers qui utilise des mécanismes d'attention bidirectionnelle pour capturer le contexte des mots dans une phrase. Il est largement utilisé pour des tâches de traitement du langage naturel.</li>
+<li><strong>GPT (Generative Pre-trained Transformer)</strong> : Modèle de langage basé sur les Transformers qui est pré-entraîné sur un grand corpus de texte et peut être fine-tuné pour des tâches spécifiques. Il est utilisé pour la génération de texte et d'autres tâches de traitement du langage naturel.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2025 Atelier-deeplearning
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/votre-repo/chatbot-deeplearning" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../../javascripts/progress.js"></script>
+      
+    
+  </body>
+</html>

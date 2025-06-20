@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f5f7fa"/>
+  
+  <!-- Header -->
+  <rect width="800" height="60" fill="#2c3e50"/>
+  <text x="20" y="38" font-family="Arial" font-size="24" font-weight="bold" fill="white">Système de Tickets d'Assistance</text>
+  <rect x="650" y="15" width="130" height="30" rx="5" fill="#3498db"/>
+  <text x="665" y="35" font-family="Arial" font-size="14" fill="white">Nouveau Ticket</text>
+  
+  <!-- Main Panel -->
+  <rect x="20" y="80" width="760" height="400" rx="5" fill="white" stroke="#ddd" stroke-width="1"/>
+  <text x="40" y="110" font-family="Arial" font-size="18" font-weight="bold" fill="#2c3e50">Tickets en cours</text>
+  
+  <!-- Table Header -->
+  <rect x="40" y="130" width="720" height="40" fill="#ecf0f1"/>
+  <text x="55" y="155" font-family="Arial" font-size="14" font-weight="bold" fill="#2c3e50">ID</text>
+  <text x="120" y="155" font-family="Arial" font-size="14" font-weight="bold" fill="#2c3e50">Titre</text>
+  <text x="310" y="155" font-family="Arial" font-size="14" font-weight="bold" fill="#2c3e50">Catégorie</text>
+  <text x="420" y="155" font-family="Arial" font-size="14" font-weight="bold" fill="#2c3e50">Priorité</text>
+  <text x="510" y="155" font-family="Arial" font-size="14" font-weight="bold" fill="#2c3e50">Statut</text>
+  <text x="600" y="155" font-family="Arial" font-size="14" font-weight="bold" fill="#2c3e50">Date</text>
+  <text x="710" y="155" font-family="Arial" font-size="14" font-weight="bold" fill="#2c3e50">Actions</text>
+  
+  <!-- Table Row 1 -->
+  <rect x="40" y="170" width="720" height="50" fill="white" stroke="#ecf0f1" stroke-width="1"/>
+  <text x="55" y="200" font-family="Arial" font-size="14" fill="#2c3e50">T001</text>
+  <text x="120" y="200" font-family="Arial" font-size="14" fill="#2c3e50">Ordinateur qui ne démarre pas</text>
+  <text x="310" y="200" font-family="Arial" font-size="14" fill="#2c3e50">Matériel</text>
+  <rect x="420" y="185" width="70" height="20" rx="10" fill="#e74c3c" opacity="0.2"/>
+  <text x="435" y="200" font-family="Arial" font-size="14" fill="#e74c3c">Haute</text>
+  <text x="510" y="200" font-family="Arial" font-size="14" fill="#2c3e50">Ouvert</text>
+  <text x="600" y="200" font-family="Arial" font-size="14" fill="#7f8c8d">2023-05-21</text>
+  <text x="710" y="200" font-family="Arial" font-size="14" fill="#3498db">Voir</text>
+  
+  <!-- Table Row 2 -->
+  <rect x="40" y="220" width="720" height="50" fill="#f9f9f9" stroke="#ecf0f1" stroke-width="1"/>
+  <text x="55" y="250" font-family="Arial" font-size="14" fill="#2c3e50">T002</text>
+  <text x="120" y="250" font-family="Arial" font-size="14" fill="#2c3e50">Problème de connexion à la messagerie</text>
+  <text x="310" y="250" font-family="Arial" font-size="14" fill="#2c3e50">Accès/Compte</text>
+  <rect x="420" y="235" width="70" height="20" rx="10" fill="#f39c12" opacity="0.2"/>
+  <text x="430" y="250" font-family="Arial" font-size="14" fill="#f39c12">Moyenne</text>
+  <text x="510" y="250" font-family="Arial" font-size="14" fill="#2c3e50">En cours</text>
+  <text x="600" y="250" font-family="Arial" font-size="14" fill="#7f8c8d">2023-05-20</text>
+  <text x="710" y="250" font-family="Arial" font-size="14" fill="#3498db">Voir</text>
+  
+  <!-- Table Row 3 -->
+  <rect x="40" y="270" width="720" height="50" fill="white" stroke="#ecf0f1" stroke-width="1"/>
+  <text x="55" y="300" font-family="Arial" font-size="14" fill="#2c3e50">T003</text>
+  <text x="120" y="300" font-family="Arial" font-size="14" fill="#2c3e50">Installation du logiciel comptable</text>
+  <text x="310" y="300" font-family="Arial" font-size="14" fill="#2c3e50">Logiciel</text>
+  <rect x="420" y="285" width="70" height="20" rx="10" fill="#2ecc71" opacity="0.2"/>
+  <text x="435" y="300" font-family="Arial" font-size="14" fill="#2ecc71">Basse</text>
+  <text x="510" y="300" font-family="Arial" font-size="14" fill="#2c3e50">Ouvert</text>
+  <text x="600" y="300" font-family="Arial" font-size="14" fill="#7f8c8d">2023-05-19</text>
+  <text x="710" y="300" font-family="Arial" font-size="14" fill="#3498db">Voir</text>
+  
+  <!-- Horizontal line separators -->
+  <line x1="40" y1="170" x2="760" y2="170" stroke="#ecf0f1" stroke-width="1"/>
+  <line x1="40" y1="220" x2="760" y2="220" stroke="#ecf0f1" stroke-width="1"/>
+  <line x1="40" y1="270" x2="760" y2="270" stroke="#ecf0f1" stroke-width="1"/>
+  <line x1="40" y1="320" x2="760" y2="320" stroke="#ecf0f1" stroke-width="1"/>
+  
+  <!-- Vertical line separators -->
+  <line x1="110" y1="130" x2="110" y2="320" stroke="#ecf0f1" stroke-width="1"/>
+  <line x1="300" y1="130" x2="300" y2="320" stroke="#ecf0f1" stroke-width="1"/>
+  <line x1="410" y1="130" x2="410" y2="320" stroke="#ecf0f1" stroke-width="1"/>
+  <line x1="500" y1="130" x2="500" y2="320" stroke="#ecf0f1" stroke-width="1"/>
+  <line x1="590" y1="130" x2="590" y2="320" stroke="#ecf0f1" stroke-width="1"/>
+  <line x1="700" y1="130" x2="700" y2="320" stroke="#ecf0f1" stroke-width="1"/>
+</svg>

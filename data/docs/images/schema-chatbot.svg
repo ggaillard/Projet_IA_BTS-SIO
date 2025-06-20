@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Styles -->
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5C6BC0"/>
+      <stop offset="100%" stop-color="#3F51B5"/>
+    </linearGradient>
+    <linearGradient id="userGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4DB6AC"/>
+      <stop offset="100%" stop-color="#26A69A"/>
+    </linearGradient>
+    <linearGradient id="apiGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7986CB"/>
+      <stop offset="100%" stop-color="#5C6BC0"/>
+    </linearGradient>
+    <linearGradient id="dbGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFB74D"/>
+      <stop offset="100%" stop-color="#FFA726"/>
+    </linearGradient>
+    <linearGradient id="contextGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E57373"/>
+      <stop offset="100%" stop-color="#EF5350"/>
+    </linearGradient>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: white; text-anchor: middle; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 16px; fill: white; text-anchor: middle; }
+      .component { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: white; text-anchor: middle; }
+      .description { font-family: Arial, sans-serif; font-size: 12px; fill: white; text-anchor: middle; }
+      .arrow { stroke: #555; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .data-label { font-family: Arial, sans-serif; font-size: 11px; fill: #555; }
+    </style>
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" 
+      markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- Header -->
+  <rect x="150" y="20" width="500" height="60" rx="10" ry="10" fill="url(#headerGrad)" filter="url(#shadow)"/>
+  <text x="400" y="50" class="title">Architecture du Chatbot Pédagogique</text>
+  <text x="400" y="70" class="subtitle">BTS SIO - Projet Deep Learning</text>
+
+  <!-- Interface Utilisateur Component -->
+  <rect x="50" y="150" width="200" height="120" rx="10" ry="10" fill="url(#userGrad)" filter="url(#shadow)"/>
+  <text x="150" y="180" class="component">Interface</text>
+  <text x="150" y="200" class="component">Conversationnelle</text>
+  <text x="150" y="235" class="description">Zone de dialogue</text>
+  <text x="150" y="250" class="description">Historique des messages</text>
+  
+  <!-- API Mistral AI Component -->
+  <rect x="300" y="350" width="200" height="120" rx="10" ry="10" fill="url(#apiGrad)" filter="url(#shadow)"/>
+  <text x="400" y="400" class="component">API Mistral AI</text>
+  <text x="400" y="435" class="description">Génération de réponses</text>
+  <text x="400" y="450" class="description">Compréhension du contexte</text>
+
+  <!-- Context Manager Component -->
+  <rect x="550" y="150" width="200" height="120" rx="10" ry="10" fill="url(#contextGrad)" filter="url(#shadow)"/>
+  <text x="650" y="180" class="component">Système de Gestion</text>
+  <text x="650" y="200" class="component">de Contexte</text>
+  <text x="650" y="235" class="description">Maintien de la cohérence</text>
+  <text x="650" y="250" class="description">Historique des conversations</text>
+
+  <!-- Knowledge Base Component -->
+  <rect x="300" y="150" width="200" height="120" rx="10" ry="10" fill="url(#dbGrad)" filter="url(#shadow)"/>
+  <text x="400" y="180" class="component">Base de</text>
+  <text x="400" y="200" class="component">Connaissances</text>
+  <text x="400" y="235" class="description">Concepts du Deep Learning</text>
+  <text x="400" y="250" class="description">Exemples et exercices</text>
+
+  <!-- Arrows -->
+  <!-- Interface to Knowledge Base -->
+  <path d="M 250 200 L 300 200" class="arrow"/>
+  <text x="275" y="190" class="data-label">Requêtes</text>
+  
+  <!-- Knowledge Base to Context Manager -->
+  <path d="M 500 200 L 550 200" class="arrow"/>
+  <text x="525" y="220" class="data-label">Enrichissement</text>
+  
+  <!-- Interface to Context Manager -->
+  <path d="M 650 270 C 650 300 400 300 150 270" class="arrow" stroke-dasharray="5,3"/>
+  <text x="400" y="315" class="data-label">Historique de conversation</text>
+  
+  <!-- Knowledge Base to API Mistral -->
+  <path d="M 400 270 L 400 350" class="arrow"/>
+  <text x="420" y="340" class="data-label">Prompt enrichi</text>
+  
+  <!-- API Mistral to Interface (completing the circle) -->
+  <path d="M 300 400 C 200 400 120 300 120 270" class="arrow"/>
+  <text x="150" y="380" class="data-label">Réponses générées</text>
+  
+  <!-- Context to API -->
+  <path d="M 575 270 C 550 300 500 330 500 350" class="arrow" stroke-dasharray="5,3"/>
+  <text x="550" y="330" class="data-label">Contexte</text>
+</svg>

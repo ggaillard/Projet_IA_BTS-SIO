@@ -1,0 +1,2022 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours de Deep Learning pour le BTS SIO">
+      
+      
+        <meta name="author" content="G.GAILLARD">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Préparation au Projet Final - Atelier Deep Learning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/progress.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#preparation-au-projet-final" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Atelier Deep Learning" class="md-header__button md-logo" aria-label="Atelier Deep Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Atelier Deep Learning
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Préparation au Projet Final
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer au mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer au mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../module1/" class="md-tabs__link">
+          
+  
+  Module 1 - Fondamentaux
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../module2/" class="md-tabs__link">
+          
+  
+  Module 2 - Architectures
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../module3/" class="md-tabs__link">
+          
+  
+  Module 3 - Applications
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Module 4 - Projet
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Atelier Deep Learning" class="md-nav__button md-logo" aria-label="Atelier Deep Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Atelier Deep Learning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Module 1 - Fondamentaux
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Module 1 - Fondamentaux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vue d'ensemble
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module1/introduction-pratique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Introduction pratique
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module1/concepts-fondamentaux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Concepts fondamentaux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module1/mini-projet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Mini-projet individuel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module1/qcm-evaluation-module1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auto-évaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ressources
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ressources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module1/ressources/glossaire-dl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossaire
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module1/ressources/guide-colab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guide Colab
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module1/ressources/synthese-visuelle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Synthèse visuelle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Module 2 - Architectures
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Module 2 - Architectures
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vue d'ensemble
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module2/reseaux-convolutifs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Réseaux convolutifs (CNN)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module2/reseaux-recurrents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Réseaux récurrents (RNN)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module2/qcm-evaluation-module2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auto-évaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ressources
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Ressources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module1/ressources/glossaire-dl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossaire
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Module 3 - Applications
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Module 3 - Applications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vue d'ensemble
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module3/frameworks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Frameworks et bonnes pratiques
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module3/integration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Intégration et optimisation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module3/preparation-projet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Préparation au projet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module3/qcm-evaluation-module3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auto-évaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ressources
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ressources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ressources/base-connaissances/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Base de connaissances
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module3/pratique-tensorflow-keras.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TensorFlow pour débutants
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ressources/api-mistral/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Mistral
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Module 4 - Projet
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Module 4 - Projet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vue d'ensemble
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projet-chatbot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cahier des charges
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../partie1-developpement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Développement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../partie2-finalisation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Finalisation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../partie3-presentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Présentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qcm-evaluation-module4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auto-évaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ressources
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            Ressources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ressources/base-connaissances/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Base de connaissances
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ressources/json-schemas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structure JSON
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectifs-de-la-phase-de-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectifs de la phase de préparation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-analyse-du-cahier-des-charges-15-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Analyse du cahier des charges (15 min)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Analyse du cahier des charges (15 min)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-de-priorisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercice de priorisation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-etude-de-cas-dentreprises-utilisant-des-chatbots-15-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Étude de cas d'entreprises utilisant des chatbots (15 min)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Étude de cas d&#39;entreprises utilisant des chatbots (15 min)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cas-1-chatbot-pedagogique-pour-une-ecole-de-programmation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cas 1: Chatbot pédagogique pour une école de programmation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cas-2-assistant-virtuel-pour-la-formation-interne" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cas 2: Assistant virtuel pour la formation interne
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-exploration-de-lapi-mistral-ai-20-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Exploration de l'API Mistral AI (20 min)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Exploration de l&#39;API Mistral AI (20 min)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction-a-mistral-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction à Mistral AI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creation-dun-compte-et-cle-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Création d'un compte et clé API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#premier-test-avec-lapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Premier test avec l'API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-de-lapi-mistral" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure de l'API Mistral
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-du-contexte-conversationnel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestion du contexte conversationnel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimisation-des-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimisation des prompts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optimisation des prompts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-instructions-systeme-claires-et-detaillees" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Instructions système claires et détaillées
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-enrichissement-avec-la-base-de-connaissances" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Enrichissement avec la base de connaissances
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-parametrage-adapte" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Paramétrage adapté
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-planification-et-organisation-10-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Planification et organisation (10 min)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Planification et organisation (10 min)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structure-recommandee-du-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure recommandée du projet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repartition-des-taches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Répartition des tâches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planning-recommande" class="md-nav__link">
+    <span class="md-ellipsis">
+      Planning recommandé
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-exemple-de-base-de-connaissances" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Exemple de base de connaissances
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-conclusion-et-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Conclusion et préparation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="preparation-au-projet-final">Préparation au Projet Final</h1>
+<p><img alt="Préparation au projet" src="../images/banner-preparation-projet.svg" /></p>
+<h2 id="objectifs-de-la-phase-de-preparation">Objectifs de la phase de préparation</h2>
+<p>Cette phase vous permettra de :
+- Comprendre en détail les spécifications du projet de chatbot pédagogique
+- Analyser des exemples concrets d'utilisation de chatbots similaires
+- Explorer l'API Mistral AI en profondeur
+- Planifier et organiser votre travail pour le développement</p>
+<h2 id="1-analyse-du-cahier-des-charges-15-min">1. Analyse du cahier des charges (15 min)</h2>
+<p>Le cahier des charges de votre chatbot pédagogique a été présenté en détail dans le document <a href="../projet-chatbot/">Projet Chatbot Pédagogique</a>. Prenez le temps de le lire attentivement et de vous poser les questions suivantes :</p>
+<ol>
+<li><strong>Quelles fonctionnalités sont essentielles</strong> et lesquelles sont optionnelles ?</li>
+<li><strong>Quels concepts du Deep Learning</strong> devront impérativement être couverts dans la base de connaissances ?</li>
+<li><strong>Quels sont les points techniques</strong> qui pourraient poser problème ?</li>
+<li><strong>Comment adapter le niveau des explications</strong> aux différents utilisateurs ?</li>
+<li><strong>Quelles fonctionnalités pédagogiques</strong> apporteraient une réelle valeur ajoutée ?</li>
+</ol>
+<h3 id="exercice-de-priorisation">Exercice de priorisation</h3>
+<p>Établissez une liste des fonctionnalités à développer classées par ordre de priorité :</p>
+<ol>
+<li>Fonctionnalités de base (MVP - Produit Minimum Viable)</li>
+<li>Fonctionnalités importantes </li>
+<li>Fonctionnalités optionnelles (si le temps le permet)</li>
+</ol>
+<h2 id="2-etude-de-cas-dentreprises-utilisant-des-chatbots-15-min">2. Étude de cas d'entreprises utilisant des chatbots (15 min)</h2>
+<p>Avant de commencer le développement, examinons quelques exemples concrets d'entreprises qui ont mis en place des chatbots similaires à celui que vous allez développer.</p>
+<h3 id="cas-1-chatbot-pedagogique-pour-une-ecole-de-programmation">Cas 1: Chatbot pédagogique pour une école de programmation</h3>
+<p><strong>Entreprise</strong>: CodeSchool (30 formateurs, 500+ étudiants)</p>
+<p><strong>Problématique</strong>: Les formateurs recevaient de nombreuses questions basiques identiques, ce qui limitait leur disponibilité pour des problèmes plus complexes.</p>
+<p><strong>Solution</strong>: Développement d'un chatbot assistant basé sur une API de LLM, avec une base de connaissances construite à partir du matériel de cours.</p>
+<p><strong>Architecture</strong>:
+- Frontend: Interface web intégrée à la plateforme d'apprentissage
+- Backend: API Flask avec mise en cache Redis
+- LLM: OpenAI API avec fine-tuning spécifique aux cours
+- Base de connaissances: Structurée en JSON par modules de cours</p>
+<p><strong>Résultats</strong>:
+- Réduction de 40% des questions basiques aux formateurs
+- Satisfaction des étudiants à 85% concernant les réponses du chatbot
+- ROI positif après 4 mois d'utilisation
+- Création de 15 nouveaux modules de cours grâce au temps libéré</p>
+<p><strong>Leçons apprises</strong>:
+- Importance d'un système de feedback immédiat sur les réponses
+- Nécessité de maintenir la base de connaissances à jour
+- Valeur des réponses comportant des exemples de code fonctionnels</p>
+<h3 id="cas-2-assistant-virtuel-pour-la-formation-interne">Cas 2: Assistant virtuel pour la formation interne</h3>
+<p><strong>Entreprise</strong>: TechConsult (cabinet de conseil IT, 120 employés)</p>
+<p><strong>Problématique</strong>: Difficulté à former rapidement les nouveaux consultants sur les technologies spécifiques utilisées par l'entreprise.</p>
+<p><strong>Solution</strong>: Chatbot de formation accessible 24/7, intégré à l'intranet, avec connaissance des processus et technologies internes.</p>
+<p><strong>Architecture</strong>:
+- Interface: Application web responsive
+- Backend: NodeJS avec FastAPI
+- LLM: Combinaison d'API locale et Mistral AI
+- Base de connaissances: Documents techniques convertis en embeddings vectoriels</p>
+<p><strong>Résultats</strong>:
+- Réduction du temps d'onboarding de 3 semaines à 10 jours
+- Augmentation de 25% du taux de réussite aux certifications internes
+- Économie estimée de 180 heures de formation par an
+- Adoption à 92% parmi les nouveaux employés</p>
+<p><strong>Leçons apprises</strong>:
+- L'importance d'utiliser le vocabulaire spécifique de l'entreprise
+- La valeur d'un historique de conversation persistant
+- L'utilité des prompts techniques bien formulés</p>
+<h2 id="3-exploration-de-lapi-mistral-ai-20-min">3. Exploration de l'API Mistral AI (20 min)</h2>
+<h3 id="introduction-a-mistral-ai">Introduction à Mistral AI</h3>
+<p>Mistral AI est une entreprise française qui développe des modèles de langage de pointe, particulièrement adaptés pour des usages en français et dans un contexte éducatif. Son API permet d'accéder à ces modèles pour générer du texte, répondre à des questions, et plus encore.</p>
+<h3 id="creation-dun-compte-et-cle-api">Création d'un compte et clé API</h3>
+<ol>
+<li>Rendez-vous sur <a href="https://console.mistral.ai/">console.mistral.ai</a></li>
+<li>Créez un compte (gratuit)</li>
+<li>Une fois connecté, cliquez sur "API Keys" dans le menu</li>
+<li>Cliquez sur "Create API Key", donnez-lui un nom (ex: "Projet Chatbot BTS")</li>
+<li><strong>Important</strong>: Copiez et sauvegardez la clé générée, elle ne sera plus affichée ensuite</li>
+</ol>
+<h3 id="premier-test-avec-lapi">Premier test avec l'API</h3>
+<p>Commençons par un exemple simple pour tester l'API:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mistralai.client</span><span class="w"> </span><span class="kn">import</span> <span class="n">MistralClient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mistralai.models.chat_completion</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatMessage</span>
+
+<span class="c1"># Configuration de l&#39;API</span>
+<span class="n">api_key</span> <span class="o">=</span> <span class="s2">&quot;votre_clé_api_ici&quot;</span>  <span class="c1"># Remplacez par votre clé</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">MistralClient</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">)</span>
+
+<span class="c1"># Messages</span>
+<span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">ChatMessage</span><span class="p">(</span><span class="n">role</span><span class="o">=</span><span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">&quot;Tu es un assistant pédagogique spécialisé dans l&#39;explication du Deep Learning pour des étudiants de BTS SIO.&quot;</span><span class="p">),</span>
+    <span class="n">ChatMessage</span><span class="p">(</span><span class="n">role</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">&quot;Peux-tu m&#39;expliquer simplement ce qu&#39;est un réseau de neurones convolutif?&quot;</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="c1"># Appel à l&#39;API</span>
+<span class="n">chat_response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;mistral-tiny&quot;</span><span class="p">,</span>  <span class="c1"># Modèle le plus léger</span>
+    <span class="n">messages</span><span class="o">=</span><span class="n">messages</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Affichage de la réponse</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">chat_response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="structure-de-lapi-mistral">Structure de l'API Mistral</h3>
+<p>L'API Mistral AI fonctionne avec une structure simple :</p>
+<ol>
+<li><strong>Messages</strong> : Liste de messages représentant une conversation, chacun avec un rôle (system, user, assistant)</li>
+<li><strong>Modèle</strong> : Choix du modèle Mistral à utiliser (mistral-tiny, mistral-small, mistral-medium...)</li>
+<li><strong>Paramètres</strong> : Configuration du comportement (température, nombre max de tokens, etc.)</li>
+</ol>
+<h3 id="gestion-du-contexte-conversationnel">Gestion du contexte conversationnel</h3>
+<p>Pour maintenir un contexte de conversation, il suffit d'ajouter les messages précédents à chaque requête :</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Fonction pour gérer une conversation</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">chat_with_context</span><span class="p">(</span><span class="n">messages</span><span class="p">,</span> <span class="n">user_input</span><span class="p">):</span>
+    <span class="c1"># Ajouter le message de l&#39;utilisateur</span>
+    <span class="n">messages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ChatMessage</span><span class="p">(</span><span class="n">role</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="n">user_input</span><span class="p">))</span>
+
+    <span class="c1"># Appel à l&#39;API</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="p">(</span>
+        <span class="n">model</span><span class="o">=</span><span class="s2">&quot;mistral-tiny&quot;</span><span class="p">,</span>
+        <span class="n">messages</span><span class="o">=</span><span class="n">messages</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Récupérer la réponse</span>
+    <span class="n">assistant_message</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>
+
+    <span class="c1"># Ajouter la réponse au contexte</span>
+    <span class="n">messages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ChatMessage</span><span class="p">(</span><span class="n">role</span><span class="o">=</span><span class="s2">&quot;assistant&quot;</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="n">assistant_message</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">assistant_message</span><span class="p">,</span> <span class="n">messages</span>
+
+<span class="c1"># Initialiser la conversation</span>
+<span class="n">conversation</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">ChatMessage</span><span class="p">(</span><span class="n">role</span><span class="o">=</span><span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">&quot;Tu es un assistant pédagogique spécialisé dans l&#39;explication du Deep Learning pour des étudiants de BTS SIO.&quot;</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="c1"># Premier échange</span>
+<span class="n">response</span><span class="p">,</span> <span class="n">conversation</span> <span class="o">=</span> <span class="n">chat_with_context</span><span class="p">(</span><span class="n">conversation</span><span class="p">,</span> <span class="s2">&quot;Qu&#39;est-ce qu&#39;un réseau de neurones?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Assistant:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+
+<span class="c1"># Deuxième échange (avec le contexte précédent)</span>
+<span class="n">response</span><span class="p">,</span> <span class="n">conversation</span> <span class="o">=</span> <span class="n">chat_with_context</span><span class="p">(</span><span class="n">conversation</span><span class="p">,</span> <span class="s2">&quot;Comment fonctionne l&#39;apprentissage?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Assistant:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="optimisation-des-prompts">Optimisation des prompts</h3>
+<p>La qualité des réponses dépend beaucoup de la façon dont vous formulez vos instructions (prompts). Voici quelques conseils pour les optimiser :</p>
+<h4 id="1-instructions-systeme-claires-et-detaillees">1. Instructions système claires et détaillées</h4>
+<div class="highlight"><pre><span></span><code><span class="n">system_prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Tu es un assistant pédagogique spécialisé dans le Deep Learning pour des étudiants de BTS SIO. </span>
+<span class="s2">Quand tu réponds:</span>
+<span class="s2">1. Utilise un langage simple et accessible</span>
+<span class="s2">2. Fournis toujours un exemple concret</span>
+<span class="s2">3. Structure tes explications en plusieurs points</span>
+<span class="s2">4. Si tu n&#39;es pas sûr d&#39;une information, indique-le clairement</span>
+<span class="s2">5. Adapte le niveau technique au profil de l&#39;étudiant (débutant, intermédiaire, avancé)</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</code></pre></div>
+<h4 id="2-enrichissement-avec-la-base-de-connaissances">2. Enrichissement avec la base de connaissances</h4>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">enrich_prompt_with_knowledge</span><span class="p">(</span><span class="n">user_query</span><span class="p">,</span> <span class="n">knowledge_base</span><span class="p">,</span> <span class="n">user_level</span><span class="o">=</span><span class="s2">&quot;débutant&quot;</span><span class="p">):</span>
+    <span class="c1"># Rechercher des informations pertinentes dans la base de connaissances</span>
+    <span class="n">relevant_info</span> <span class="o">=</span> <span class="n">search_knowledge_base</span><span class="p">(</span><span class="n">user_query</span><span class="p">,</span> <span class="n">knowledge_base</span><span class="p">)</span>
+
+    <span class="c1"># Enrichir le prompt avec ces informations</span>
+    <span class="n">enriched_prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Question de l&#39;utilisateur: </span><span class="si">{</span><span class="n">user_query</span><span class="si">}</span>
+
+<span class="s2">Informations pertinentes (niveau: </span><span class="si">{</span><span class="n">user_level</span><span class="si">}</span><span class="s2">):</span>
+<span class="si">{</span><span class="n">relevant_info</span><span class="si">}</span>
+
+<span class="s2">Réponds de manière pédagogique en utilisant ces informations et en adaptant ton explication au niveau </span><span class="si">{</span><span class="n">user_level</span><span class="si">}</span><span class="s2">.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">enriched_prompt</span>
+</code></pre></div>
+<h4 id="3-parametrage-adapte">3. Paramétrage adapté</h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Pour des explications techniques (plus précises, moins créatives)</span>
+<span class="n">technical_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span>  <span class="c1"># Faible température pour des réponses plus déterministes</span>
+    <span class="s2">&quot;max_tokens&quot;</span><span class="p">:</span> <span class="mi">500</span>    <span class="c1"># Limite de longueur raisonnable</span>
+<span class="p">}</span>
+
+<span class="c1"># Pour des exemples et analogies (plus créatifs)</span>
+<span class="n">creative_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">,</span>  <span class="c1"># Température plus élevée pour plus de créativité</span>
+    <span class="s2">&quot;max_tokens&quot;</span><span class="p">:</span> <span class="mi">300</span>    <span class="c1"># Limite de longueur adaptée</span>
+<span class="p">}</span>
+
+<span class="c1"># Fonction de choix de paramètres selon le contexte</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_params_for_query</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s2">&quot;explique&quot;</span> <span class="ow">in</span> <span class="n">query</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">&quot;définition&quot;</span> <span class="ow">in</span> <span class="n">query</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">technical_params</span>
+    <span class="k">elif</span> <span class="s2">&quot;exemple&quot;</span> <span class="ow">in</span> <span class="n">query</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">&quot;analogie&quot;</span> <span class="ow">in</span> <span class="n">query</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">creative_params</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;max_tokens&quot;</span><span class="p">:</span> <span class="mi">400</span><span class="p">}</span>  <span class="c1"># Paramètres par défaut</span>
+</code></pre></div>
+<h2 id="4-planification-et-organisation-10-min">4. Planification et organisation (10 min)</h2>
+<h3 id="structure-recommandee-du-projet">Structure recommandée du projet</h3>
+<div class="highlight"><pre><span></span><code>chatbot-pedagogique/
+├── app.py                   # Application principale Flask/FastAPI
+├── config.py                # Configuration (clés API, paramètres)
+├── templates/               # Templates HTML
+│   └── index.html           # Interface web
+├── static/                  # Fichiers statiques (CSS, JS)
+├── services/                # Services métier
+│   ├── mistral_service.py   # Intégration API Mistral
+│   └── knowledge_service.py # Gestion base de connaissances
+└── knowledge_base/          # Base de connaissances
+    └── concepts.json        # Structure des concepts DL
+</code></pre></div>
+<h3 id="repartition-des-taches">Répartition des tâches</h3>
+<p>Si vous travaillez en binôme, une répartition efficace des tâches pourrait être :</p>
+<p><strong>Option 1: Répartition par couche</strong>
+- <strong>Membre 1:</strong> Backend (Python, API Mistral, logique métier)
+- <strong>Membre 2:</strong> Frontend (HTML/CSS/JS, interface, expérience utilisateur)</p>
+<p><strong>Option 2: Répartition par fonctionnalité</strong>
+- <strong>Membre 1:</strong> Interface conversationnelle + intégration API
+- <strong>Membre 2:</strong> Base de connaissances + fonctionnalités pédagogiques</p>
+<h3 id="planning-recommande">Planning recommandé</h3>
+<p>Pour le développement proprement dit (Séance 4), voici un planning suggéré :</p>
+<table>
+<thead>
+<tr>
+<th>Temps</th>
+<th>Tâche</th>
+<th>Objectif</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0h00-0h30</td>
+<td>Mise en place de l'environnement</td>
+<td>Structure du projet, installation des dépendances</td>
+</tr>
+<tr>
+<td>0h30-1h15</td>
+<td>Développement du MVP</td>
+<td>Interface de base, intégration API simple</td>
+</tr>
+<tr>
+<td>1h15-2h00</td>
+<td>Base de connaissances</td>
+<td>Structuration et intégration</td>
+</tr>
+<tr>
+<td>2h00-2h30</td>
+<td>Fonctionnalités pédagogiques</td>
+<td>Quiz, adaptation au niveau</td>
+</tr>
+<tr>
+<td>2h30-3h00</td>
+<td>Tests et corrections</td>
+<td>Validation fonctionnelle</td>
+</tr>
+<tr>
+<td>3h00-3h30</td>
+<td>Documentation et préparation</td>
+<td>Documentation technique et présentation</td>
+</tr>
+<tr>
+<td>3h30-4h00</td>
+<td>Présentations</td>
+<td>Démonstration du chatbot</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-exemple-de-base-de-connaissances">5. Exemple de base de connaissances</h2>
+<p>Voici un exemple simplifié de structure pour votre base de connaissances :</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;concepts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;neural_network&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Réseau de neurones&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Modèle de calcul inspiré du fonctionnement des neurones biologiques.&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;levels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;beginner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Un réseau de neurones est comme un ensemble de filtres interconnectés qui apprennent à reconnaître des motifs dans les données, un peu comme votre cerveau apprend à reconnaître des visages ou des objets.&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;intermediate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Système composé de neurones artificiels organisés en couches qui transforment des entrées en sorties à travers des poids et des fonctions d&#39;activation, permettant d&#39;approximer des fonctions complexes par apprentissage.&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;advanced&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Structure mathématique composée d&#39;unités de calcul interconnectées qui effectuent des transformations non-linéaires successives sur les données d&#39;entrée, optimisées par rétropropagation du gradient pour minimiser une fonction de coût.&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;examples&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;Reconnaissance d&#39;images: un réseau peut apprendre à identifier des chats dans des photos&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;Traduction automatique: des réseaux traduisent du texte d&#39;une langue à une autre&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;analogies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;Un réseau de neurones ressemble à une chaîne de traitement dans une usine, où chaque station (neurone) effectue une opération spécifique sur le produit qui passe.&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;Comme un orchestre où chaque musicien (neurone) joue une petite partie, et ensemble ils créent une symphonie complexe (prédiction).&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;related_concepts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;perceptron&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;deep_learning&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;activation_function&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="6-conclusion-et-preparation">6. Conclusion et préparation</h2>
+<p>Pour vous préparer efficacement au développement du chatbot lors de la prochaine séance :</p>
+<ol>
+<li><strong>Créez votre compte Mistral AI</strong> et obtenez votre clé API</li>
+<li><strong>Testez l'API</strong> avec quelques prompts simples pour vous familiariser</li>
+<li><strong>Réfléchissez à la structure</strong> de votre base de connaissances</li>
+<li><strong>Organisez votre travail</strong> en équipe si applicable</li>
+<li><strong>Préparez des questions</strong> sur les aspects techniques que vous ne maîtrisez pas encore complètement</li>
+</ol>
+<p>Cette phase de préparation est essentielle pour garantir un développement efficace lors de la séance finale. En anticipant les défis et en planifiant votre approche, vous maximiserez vos chances de créer un chatbot pédagogique fonctionnel et de qualité.</p>
+<p><a class="md-button" href="../">Retour à l'aperçu du module</a>
+<a class="md-button md-button--primary" href="../partie1-developpement/">Commencer le développement</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2025 Atelier-deeplearning
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/votre-repo/chatbot-deeplearning" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../javascripts/progress.js"></script>
+      
+    
+  </body>
+</html>
