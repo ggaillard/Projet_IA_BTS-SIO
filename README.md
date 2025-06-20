@@ -1,1 +1,3 @@
-# Projet_IA_BTS-SIO
+# Chatbot IA avec base documentaire
+
+Projet pour BTS SIO SLAM dans GitHub Codespaces.
