@@ -1,7 +1,10 @@
-langchain
 openai
 faiss-cpu
 python-dotenv
 PyMuPDF
 gitpython
 streamlit
+langchain>=0.1.13
+langchain-community>=0.0.17
+mistralai>=0.1.0  # si tu utilises l'API officielle Mistral
+tiktoken
