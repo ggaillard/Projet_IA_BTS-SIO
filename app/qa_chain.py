@@ -19,7 +19,7 @@ from app.config import (
     get_model_config
 )
 
-class AdvancedQAChain:
+class SimpleQAChain:
     def __init__(self, vectorstore_path: str = "vectorstore"):
         self.vectorstore_path = vectorstore_path
         self.vectorstore = None
@@ -64,40 +64,9 @@ class AdvancedQAChain:
                 max_tokens=1000
             )
     
-    def create_custom_prompt(self, include_history: bool = False) -> PromptTemplate:
+    def create_custom_prompt(self) -> PromptTemplate:
         """Crée un prompt personnalisé"""
-        if include_history and self.conversation_history:
-            history_text = "\n".join([
-                f"Q: {item['question']}\nR: {item['answer']}" 
-                for item in self.conversation_history[-3:]  # Garder seulement les 3 dernières
-            ])
-            
-            template = """Vous êtes un assistant IA spécialisé dans l'analyse de documents. 
-Utilisez les informations suivantes pour répondre à la question de manière précise et détaillée.
-
-Historique de la conversation:
-{history}
-
-Contexte actuel:
-{context}
-
-Question: {question}
-
-Instructions:
-- Répondez uniquement en vous basant sur les informations fournies
-- Si vous ne trouvez pas l'information, dites-le clairement
-- Citez les sources quand c'est pertinent
-- Soyez précis et concis
-- Adaptez votre ton à la question posée
-
-Réponse:"""
-            
-            return PromptTemplate(
-                template=template,
-                input_variables=["history", "context", "question"]
-            )
-        else:
-            template = """Vous êtes un assistant IA spécialisé dans l'analyse de documents.
+        template = """Vous êtes un assistant IA spécialisé dans l'analyse de documents.
 Utilisez les informations suivantes pour répondre à la question de manière précise et détaillée.
 
 Contexte:
@@ -112,27 +81,23 @@ Instructions:
 - Soyez précis et concis
 
 Réponse:"""
-            
-            return PromptTemplate(
-                template=template,
-                input_variables=["context", "question"]
-            )
+        
+        return PromptTemplate(
+            template=template,
+            input_variables=["context", "question"]
+        )
     
-    def setup_qa_chain(self, use_history: bool = False):
+    def setup_qa_chain(self):
         """Configure la chaîne QA"""
         if not self.vectorstore:
             raise ValueError("Vectorstore non chargé")
         
         llm = self.create_llm()
-        prompt = self.create_custom_prompt(use_history)
+        prompt = self.create_custom_prompt()
         
-        # Créer le retriever avec des paramètres personnalisés
+        # Créer le retriever avec des paramètres basiques
         retriever = self.vectorstore.as_retriever(
-            search_type="similarity_score_threshold",
-            search_kwargs={
-                "k": MAX_RESULTS,
-                "score_threshold": SIMILARITY_THRESHOLD
-            }
+            search_kwargs={"k": MAX_RESULTS}
         )
         
         self.qa_chain = RetrievalQA.from_chain_type(
@@ -166,22 +131,11 @@ Réponse:"""
                 }
         
         if not self.qa_chain:
-            self.setup_qa_chain(use_history)
+            self.setup_qa_chain()
         
         try:
             # Obtenir la réponse
-            if use_history:
-                history_text = "\n".join([
-                    f"Q: {item['question']}\nR: {item['answer']}" 
-                    for item in self.conversation_history[-3:]
-                ])
-                
-                result = self.qa_chain({
-                    "query": question,
-                    "history": history_text
-                })
-            else:
-                result = self.qa_chain({"query": question})
+            result = self.qa_chain({"query": question})
             
             # Extraire les sources
             sources = []
@@ -195,7 +149,7 @@ Réponse:"""
                     })
             
             # Calculer un score de confiance basique
-            confidence = min(len(sources) / MAX_RESULTS, 1.0)
+            confidence = min(len(sources) / MAX_RESULTS, 1.0) if sources else 0.5
             
             # Sauvegarder dans l'historique
             self.conversation_history.append({
@@ -268,9 +222,9 @@ Réponse:"""
 
 # Instance globale pour la session
 if 'qa_chain' not in st.session_state:
-    st.session_state.qa_chain = AdvancedQAChain()
+    st.session_state.qa_chain = SimpleQAChain()
 
-def get_qa_chain() -> AdvancedQAChain:
+def get_qa_chain() -> SimpleQAChain:
     """Retourne l'instance QA Chain"""
     return st.session_state.qa_chain
 

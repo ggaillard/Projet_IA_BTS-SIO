@@ -3,32 +3,34 @@ import shutil
 import streamlit as st
 from pathlib import Path
 from typing import List, Optional
-from git import Repo, GitCommandError
-from langchain.document_loaders import (
-    TextLoader, 
-    PyMuPDFLoader, 
-    DirectoryLoader
-)
+try:
+    from git import Repo, GitCommandError
+    GIT_AVAILABLE = True
+except ImportError:
+    GIT_AVAILABLE = False
+    st.warning("GitPython non installé. Fonctionnalité de clonage désactivée.")
+
+from langchain.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.schema import Document
-from app.config import (
-    REPO_URL, 
-    CHUNK_SIZE, 
-    CHUNK_OVERLAP, 
-    OPENAI_API_KEY,
-    EMBEDDING_MODEL
-)
 
-class DocumentIngestor:
+# Import des variables de configuration
+from app.config import OPENAI_API_KEY, EMBEDDING_MODEL, CHUNK_SIZE, CHUNK_OVERLAP
+
+class SimpleDocumentIngestor:
     def __init__(self, data_dir: str = "data", vectorstore_dir: str = "vectorstore"):
         self.data_dir = Path(data_dir)
         self.vectorstore_dir = Path(vectorstore_dir)
-        self.supported_extensions = {'.txt', '.md', '.py', '.js', '.html', '.css', '.json', '.xml', '.pdf'}
+        self.supported_extensions = {'.txt', '.md', '.py', '.js', '.html', '.css', '.json', '.xml'}
         
     def clone_repository(self, repo_url: str) -> bool:
         """Clone un repository Git"""
+        if not GIT_AVAILABLE:
+            st.error("GitPython non installé. Impossible de cloner le repository.")
+            return False
+            
         try:
             if self.data_dir.exists():
                 shutil.rmtree(self.data_dir)
@@ -37,11 +39,8 @@ class DocumentIngestor:
             st.success(f"Repository cloné avec succès depuis {repo_url}")
             return True
             
-        except GitCommandError as e:
-            st.error(f"Erreur lors du clonage : {e}")
-            return False
         except Exception as e:
-            st.error(f"Erreur inattendue : {e}")
+            st.error(f"Erreur lors du clonage : {e}")
             return False
     
     def load_documents_from_directory(self) -> List[Document]:
@@ -58,12 +57,7 @@ class DocumentIngestor:
         for file_path in self.data_dir.rglob("*"):
             if file_path.is_file() and file_path.suffix.lower() in self.supported_extensions:
                 try:
-                    # Charger selon le type de fichier
-                    if file_path.suffix.lower() == '.pdf':
-                        loader = PyMuPDFLoader(str(file_path))
-                    else:
-                        loader = TextLoader(str(file_path), encoding="utf-8")
-                    
+                    loader = TextLoader(str(file_path), encoding="utf-8")
                     docs = loader.load()
                     
                     # Ajouter des métadonnées
@@ -104,24 +98,23 @@ class DocumentIngestor:
             with open(file_path, "wb") as f:
                 f.write(uploaded_file.getbuffer())
             
-            # Charger le document
+            # Charger le document (seulement les fichiers texte pour l'instant)
             try:
-                if file_path.suffix.lower() == '.pdf':
-                    loader = PyMuPDFLoader(str(file_path))
-                else:
+                if file_path.suffix.lower() in self.supported_extensions:
                     loader = TextLoader(str(file_path), encoding="utf-8")
-                
-                docs = loader.load()
-                
-                # Ajouter des métadonnées
-                for doc in docs:
-                    doc.metadata.update({
-                        'source_file': uploaded_file.name,
-                        'file_type': file_path.suffix.lower(),
-                        'uploaded': True
-                    })
-                
-                documents.extend(docs)
+                    docs = loader.load()
+                    
+                    # Ajouter des métadonnées
+                    for doc in docs:
+                        doc.metadata.update({
+                            'source_file': uploaded_file.name,
+                            'file_type': file_path.suffix.lower(),
+                            'uploaded': True
+                        })
+                    
+                    documents.extend(docs)
+                else:
+                    st.warning(f"Type de fichier non supporté: {uploaded_file.name}")
                 
             except Exception as e:
                 st.error(f"Erreur lors du traitement de {uploaded_file.name}: {e}")
@@ -227,7 +220,7 @@ class DocumentIngestor:
 
 def ingest_documents(repo_url: str = None, uploaded_files=None) -> bool:
     """Fonction principale d'ingestion"""
-    ingestor = DocumentIngestor()
+    ingestor = SimpleDocumentIngestor()
     
     if repo_url:
         return ingestor.ingest_from_repo(repo_url)
