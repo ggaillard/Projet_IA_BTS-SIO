@@ -1,10 +1,34 @@
-openai
-faiss-cpu
-python-dotenv
-PyMuPDF
-gitpython
-streamlit
+# LLM et Embeddings
+openai>=1.0.0
+mistralai>=0.4.0
+
+# Vector Store et Search
+faiss-cpu>=1.7.4
 langchain>=0.1.13
 langchain-community>=0.0.17
-mistralai>=0.1.0  # si tu utilises l'API officielle Mistral
-tiktoken
+langchain-openai>=0.0.5
+
+# Interface utilisateur
+streamlit>=1.28.0
+
+# Traitement de documents
+PyMuPDF>=1.23.0  # Pour les PDFs
+python-docx>=0.8.11  # Pour les fichiers Word
+openpyxl>=3.1.0  # Pour les fichiers Excel
+
+# Utilitaires
+python-dotenv>=1.0.0
+gitpython>=3.1.40
+tiktoken>=0.5.0
+
+# Analyse et monitoring
+nltk>=3.8.1
+textstat>=0.7.3
+
+# Développement et tests
+pytest>=7.4.0
+black>=23.0.0
+flake8>=6.0.0
+
+# Sécurité
+cryptography>=41.0.0
