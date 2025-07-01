@@ -198,5 +198,3 @@ Ce projet est sous licence MIT. Voir [LICENSE](LICENSE) pour plus de détails.
 
 **[G.G]**  
 ---
-
-⭐ **N'hésitez pas à mettre une étoile si ce projet vous aide !**
